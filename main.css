@@ -146,7 +146,7 @@ pre {
     }
     .cell:hover {
         img {
-            object-fit: contain;
+            object-fit: scale-down;
         }
     }
 }
