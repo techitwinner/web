@@ -43,16 +43,9 @@
         --primary-content-color: 0,0,0;
         --secondary-content-color: 255,255,255;
     }
-
     .text-highlight {
-        background-color: rgba(255, 242, 0, 0.75); /* Highlight background color */
-        color: yellow; /* Text color */
-    }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    * {
-        transition: all 0.1s cubic-bezier(var(--easeOut));
+        background-color: rgba(255, 242, 0, 0.75);
+        color: yellow;
     }
 }
 
