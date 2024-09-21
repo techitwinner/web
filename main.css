@@ -1,5 +1,6 @@
 /* Font faces */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50..200,200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css');
 
 /* Stylesheet rules */
 :root {
@@ -56,9 +57,10 @@ body {
     padding: 0;
     background: rgb(var(--primary-content-color));
     color: rgb(var(--primary-color));
+    min-height: 100vh;
 }
 
-code, pre, tt, kbd, samp {
+code, pre, tt, kbd, samp, .font-mono {
     font-family: 'Inconsolata', Consolas, "Liberation Mono", "Courier New", monospace !important;
 }
 
@@ -74,6 +76,12 @@ pre {
     font-weight: 500;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+}
+
+.divider {
+    background: rgba(var(--primary-color),0.15);
+    height: 1px;
+    width: 100%;
 }
 
 .main-container {
@@ -127,6 +135,20 @@ pre {
     height:100%;
     width:100%;
     border-radius: var(--border-radius);
+}
+
+.photography-grids {
+    .cell {
+        img {
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+    }
+    .cell:hover {
+        img {
+            object-fit: contain;
+        }
+    }
 }
 
 .btn {
