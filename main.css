@@ -34,16 +34,16 @@
     --easeOut: 0.25,1,0.25,1;
     --easeIn: 0.75,0,0.75,0;
     --absoluteEaseInOut: 1,0,0,1;
-
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-color: 0,0,0;
-        --secondary-color: 235,235,235;
-        --primary-content-color: 255,255,255;
-        --secondary-content-color: 0,0,0;
+        --primary-color: 255,255,255;
+        --secondary-color: 30,30,30;
+        --primary-content-color: 0,0,0;
+        --secondary-content-color: 255,255,255;
     }
+
     .text-highlight {
         background-color: rgba(255, 242, 0, 0.75); /* Highlight background color */
         color: yellow; /* Text color */
