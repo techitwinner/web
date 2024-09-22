@@ -76,8 +76,8 @@ code, pre, tt, kbd, samp, .font-mono {
 }
 
 pre {
-    background: #000;
-    color: #fff;
+    background: rgba(var(--primary-color),0.05);
+    color: rgba(var(--text-base-color));
     padding: 8px 12px;
     border-radius: var(--border-radius);
 }
@@ -98,6 +98,15 @@ pre {
     background: rgba(var(--primary-color),0.15);
     height: 1px;
     width: 100%;
+}
+
+input {
+    font-size: inherit;
+    border-radius: var(--border-radius);
+    border-style: none;
+    padding: 6px 8px;
+    background: rgba(var(--primary-color));
+    color: rgba(var(--primary-content-color));
 }
 
 .main-container {
@@ -208,6 +217,7 @@ pre {
     vertical-align: middle;
     border: none;
     outline: none;
+    font-size: 16px;
     cursor: pointer;
     width: fit-content;
     -webkit-user-select: none;
@@ -278,8 +288,6 @@ pre {
 }
 
 .navbar-parent {
-    background-color: rgba(var(--text-base-color),0.05);
-    border-radius: var(--border-radius-3xl);
     .top-title {
         animation: weightIn 0.5s forwards cubic-bezier(var(--easeOut));
         margin: 0;
@@ -287,6 +295,9 @@ pre {
 }
 
 .navbar {
+    background-color: rgba(var(--text-base-color),0.05);
+    border-radius: var(--border-radius);
+    padding: 6px 12px;
     color: var(--primary-color);
     position: sticky;
     top: 0;
@@ -294,10 +305,11 @@ pre {
     flex-direction: row;
     align-items: center;
     justify-content: start;
-    width: 100%;
+    width: fit-content;
     height: var(--navbar-height);
     .navbar-start {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         align-items: center;
         justify-content: start;
