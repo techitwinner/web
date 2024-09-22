@@ -3,12 +3,49 @@
     <head>
         <title>Photography | Techit Thawiang</title>
         <meta name="description" content="A collection of my photography, capturing moments and sharing the story behind why I started.">
+        <meta name="author" content="Techit Thawiang">
+        <link rel="canonical" href="https://techit.win/">
+        <meta name="robots" content="noindex">
+        <meta property="og:title" content="Techit's Photography">
+        <meta property="og:description" content="Explore my photos, images, portrait, landscape I shoot using cameras.">
+        <meta property="og:url" content="https://techit.win/photography">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://techit.win/og-photography.jpg">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/main.css?v=9999" rel="stylesheet" />
+        <style>
+            /* Additional styles */
+            .photography-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 0.5rem;
+                .cell {
+                    border-radius: var(--border-radius);
+                }
+                .cell {
+                    img {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: var(--border-radius);
+                    }
+                    transition: all 0.2s cubic-bezier(var(--easeOut));
+                }
+                .cell:hover {
+                    opacity:0.75;
+                }
+                .cell:active {
+                    scale: 0.95;
+                }
+            }
+        </style>
     </head>
     <body>
-        <div class="main-container content">
+        <div class="main-container">
             <div class="main-child">
                 <h1 style="margin:0;">Photography<br/>captures life’s vivid harmony.</h1>
                 <nav class="navbar">
@@ -31,7 +68,7 @@
                 </section>
                 <section style="display:flex;flex-direction:column;gap:0.25rem;">
                     <p class="big-paragraph">Here's some of them.</p>
-                    <div class="grid is-col-min-10 is-gap-1 photography-grids">
+                    <div class="grid is-col-min-10 is-gap-1 photography-grid">
                         <a class="cell" href="https://files.techit.win/images/photography/IMG_4183.JPG">
                             <img loading="lazy" alt="" src="https://files.techit.win/images/photography/IMG_4183.JPG"/>
                         </a>
