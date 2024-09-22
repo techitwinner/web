@@ -19,8 +19,8 @@
     </head>
     <body>
         <div class="main-container">
-            <div class="main-child">
-                <h1 style="margin:0;">Know more<br/>about me.</h1>
+            <div class="main-child navbar-parent">
+                <h1 class="top-title">Know more<br/>about me.</h1>
                 <nav class="navbar">
                     <div class="navbar-start">
                         <a target="_parent" class="link" href="/">/</a>
@@ -50,14 +50,21 @@
                     <p class="big-paragraph">For now, I’m just a teen who loves to learn and explore new possibilities in tech.</p>
                 </section>
             </div>
-            <div class="main-child">
-                <section style="display:flex;flex-direction:column;gap:0.25rem;">
+            <div class="main-child-grid-2-col">
+                <section class="cell main-section">
                     <p class="big-paragraph">About this Website</p>
                     <p>
                         This website is built with just HTML and CSS—simple and clean.<br/>
                         I prefer not to use web frameworks as they can be tricky to learn and aren't really necessary for what I want to do here.<br/><br/>
                         If you’d like to create your own simple personal page, check it out at <a class="link" href="https://github.com/techitwinner/web">github.com/techitwinner/web</a>.<br/>
                         It’s completely free and open-source, licensed under the MIT license.
+                    </p>
+                </section>
+                <section class="cell" style="display:flex;flex-direction:column;gap:0.25rem;">
+                    <p class="big-paragraph">Where is the Thai language?</p>
+                    <p>
+                        Although it was once available, I prefer to keep things simple.<br/><br/>
+                        Implementing internationalization (i18n) can be challenging without JavaScript and external tools,<br/>so reintroducing Thai seems unnecessary.
                     </p>
                 </section>
             </div>
