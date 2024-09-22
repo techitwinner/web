@@ -14,19 +14,24 @@
     --this-is-me-hw: 300px;
     /* Color stuff */
     --accent-color: 0,102,255;
-    --primary-color: 0,0,0;
-    --secondary-color: 235,235,235;
+    --primary-color: 15,23,42;
+    --secondary-color: 226,232,240;
+    --old-primary-color: 0,0,0;
+    --old-secondary-color: 235,235,235;
     --info-color: 34,161,250;
     --success-color: 89,205,123;
     --warning-color: 255,150,30;
     --danger-color: 255,93,93;
     --accent-content-color: 230,239,255;
-    --primary-content-color: 255,255,255;
-    --secondary-content-color: 0,0,0;
+    --primary-content-color: 241,245,249;
+    --secondary-content-color: 30,41,59;
+    --old-primary-content-color: 255,255,255;
+    --old-secondary-content-color: 0,0,0;
     --info-content-color: 223,240,255;
     --success-content-color: 3,34,14;
     --warning-content-color: 64,34,7;
     --danger-content-color: 255,234,234;
+    --text-base-color: 30,41,59;
     /* Easing */
     --bounceIn: 0.25,1,0.5,1;
     --bounceOut: 0.5,2,0,1;
@@ -38,10 +43,12 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-color: 255,255,255;
-        --secondary-color: 30,30,30;
-        --primary-content-color: 0,0,0;
-        --secondary-content-color: 255,255,255;
+        --primary-color: 241,245,249;
+        --secondary-color: 30,41,59;
+        --primary-content-color: 15,23,42;
+        --secondary-content-color: 226,232,240;
+
+        --text-base-color: 203,213,225;
     }
     .text-highlight {
         background-color: rgba(255, 242, 0, 0.75);
@@ -55,7 +62,7 @@ body {
     margin: 0;
     padding: 0;
     background: rgb(var(--primary-content-color));
-    color: rgb(var(--primary-color));
+    color: rgb(var(--text-base-color));
     min-height: 100vh;
 }
 
