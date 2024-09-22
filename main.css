@@ -4,7 +4,12 @@
 /* Stylesheet rules */
 :root {
     /* Appearance stuff */
+    --border-radius-sm: 4px;
     --border-radius: 6px;
+    --border-radius-lg: 8px;
+    --border-radius-xl: 10px;
+    --border-radius-2xl: 12px;
+    --border-radius-3xl: 16px;
     --border-radius-full: 9999px;
 
     --navbar-height: fit-content;
@@ -133,6 +138,34 @@ pre {
     flex-wrap: wrap;
 }
 
+.main-section {
+    display:flex;
+    flex-direction:column;
+    gap:0.25rem;
+}
+
+.main-child-grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1rem;
+    padding: var(--res-padding-lr);
+    width: 100%;
+    max-width: 1024px;
+    box-sizing: border-box;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    .cell {
+        width: 100%;
+        flex-grow: 1;
+    }
+}
+.main-child-grid-2-col:first-child {
+    margin-top: 3rem;
+}
+.main-child-grid-2-col:last-child {
+    margin-bottom: 3rem;
+}
+
 .text-highlight {
     background-color: rgba(255, 242, 0, 0.75); /* Highlight background color */
     color: black; /* Text color */
@@ -244,8 +277,16 @@ pre {
     color: rgba(var(--accent-color));
 }
 
+.navbar-parent {
+    background-color: rgba(var(--text-base-color),0.05);
+    border-radius: var(--border-radius-3xl);
+    .top-title {
+        animation: weightIn 0.5s forwards cubic-bezier(var(--easeOut));
+        margin: 0;
+    }
+}
+
 .navbar {
-    background: rgba(var(--primary-content-color));
     color: var(--primary-color);
     position: sticky;
     top: 0;
@@ -263,19 +304,14 @@ pre {
         flex: 1;
         gap: 0.75rem;
     }
-    .logo {
-        height: var(--navbar-logo-hw);
-        width: var(--navbar-logo-hw);
+}
+
+@keyframes weightIn {
+    0% {
+        font-weight: 900;
     }
-    .link-pill {
-        display: flex;
-        flex-direction: row;
-        gap: 0;
-        align-items: center;
-        justify-content: center;
-        width: fit-content;
-        padding: 8px;
-        box-sizing: border-box;
+    100% {
+        font-weight: 600;
     }
 }
 
