@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Stuff | Techit Thawiang</title>
+        <meta name="description" content="A collection of my photography, capturing moments and sharing the story behind why I started.">
+        <meta name="author" content="Techit Thawiang">
+        <link rel="canonical" href="https://techit.win/">
+        <meta name="robots" content="all">
+        <meta property="og:title" content="Techit's Photography">
+        <meta property="og:description" content="Explore my photos, images, portrait, landscape I shoot using cameras.">
+        <meta property="og:url" content="https://techit.win/photography">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://techit.win/og-photography.jpg">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/main.css?v=9999" rel="stylesheet" />
+        <link rel="icon" href="https://techit.win/favicon.svg" type="image/svg+xml">
+        <link rel="icon" href="https://techit.win/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="main-child navbar-parent">
+                <h1 class="top-title">Tools,<br/>stuff.</h1>
+                <nav class="navbar">
+                    <div class="navbar-start">
+                        <a target="_parent" class="link" href="/">/</a>
+                        <a target="_parent" class="link" href="/about">/about</a>
+                        <a target="_parent" class="link" href="/photography">/photography</a>
+                        <a target="_parent" class="link" href="/projects">/projects</a>
+                        <a target="_parent" class="link link-active" href="/stuff">/stuff</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="main-child">
+                <section style="display:flex;flex-direction:column;gap:0.25rem;">
+                  <p style="font-size:13px;">Warning: This page is not for those with JavaScript allergies.</p>
+                </section>
+                <h1 style="margin:0;">Image Mapper</h1>
+                <section class="flex-gap-2">
+                    <input type="text" id="json-url" value="https://" style="width: 100%;">
+                    <button class="btn btn-accent btn-no-scale" onclick="fetchJson()">Fetch JSON and map them into HTML code</button>
+                    <button class="btn btn-no-scale" onclick="clearJson()">Clear</button>
+                </section>
+                <pre style="font-size:14px;" id="output"></pre>
+            </div>
+        </div>
+
+
+        <script>
+        function fetchJson() {
+            const url = document.getElementById('json-url').value;
+            if (!url) {
+                alert("Please enter a valid URL");
+                return;
+            }
+
+            fetch(url)
+            .then(response => response.json())
+            .then(data => mapJsonToHtmlCode(data))
+            .catch(error => console.error("Error fetching JSON:", error));
+        }
+        function mapJsonToHtmlCode(data) {
+            const output = document.getElementById('output');
+            const jsonUrl = document.getElementById('json-url');
+            output.innerHTML = '';
+
+            const baseUrl = jsonUrl.value;
+            let htmlCode = '';
+
+            data.forEach(item => {
+                if (item.type === 'file') { // Ensure it's a file
+                const encodedName = item.name.replace(/ /g, '%20');
+                const imgSrc = `${baseUrl}${encodedName}`;
+                    htmlCode += `<a class="cell" href="${imgSrc}">\n`;
+                    htmlCode += `    <img loading="lazy" alt="${item.name}" src="${imgSrc}"/>\n`;
+                    htmlCode += `</a>\n`;
+                }
+            });
+            output.textContent = htmlCode;
+        }
+        function clearJson() {
+            output.textContent = '';
+        }
+        </script>
+    </body>
+</html>
