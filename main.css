@@ -1,6 +1,5 @@
 /* Font faces */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50..200,200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css');
 
 /* Stylesheet rules */
 :root {
@@ -76,6 +75,7 @@ pre {
     font-weight: 500;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    word-wrap: break-word;
 }
 
 .divider {
