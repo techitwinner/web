@@ -155,7 +155,7 @@ input {
 
 .main-child-grid-2-col {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, 2fr);
     gap: 1rem;
     padding: var(--res-padding-lr);
     width: 100%;
