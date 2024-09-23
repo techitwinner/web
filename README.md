@@ -13,4 +13,5 @@ This project is a simple website built using pure HTML and CSS. It reflects my p
 ## License
 
 This project (web) is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
+
 All images and content are owned by me and protected under a proprietary license.
