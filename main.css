@@ -55,10 +55,6 @@
 
         --text-base-color: 203,213,225;
     }
-    .text-highlight {
-        background-color: rgba(255, 242, 0, 0.75);
-        color: yellow;
-    }
 }
 
 body {
@@ -176,8 +172,8 @@ input {
 }
 
 .text-highlight {
-    background-color: rgba(255, 242, 0, 0.75); /* Highlight background color */
-    color: black; /* Text color */
+    background-color: #0066FF3F; /* Highlight background color */
+    color: #0066FF; /* Text color */
     padding: 2px 4px; /* Padding around the highlighted text */
     border-radius: 4px; /* Rounded corners */
 }
@@ -337,5 +333,12 @@ input {
         margin-top: 0.45rem;
         margin-bottom: 0.45rem;
         word-wrap: break-word;
+    }
+}
+
+@media print
+{
+    .no-print, .no-print * {
+        display: none !important;
     }
 }
