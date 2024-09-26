@@ -27,7 +27,7 @@ const links = [
         label: 'Contact'
     }
 ]
-const url = Astro.url.pathname;
+const url = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
 ---
 
 <PageSection role="nav">
