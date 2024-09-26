@@ -36,7 +36,7 @@ const url = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url
         <div class="links">
             {
                 links.map((item) => (
-                    <a class={`link ${url === item.href ? 'link-active' : ''}`} href={item.href}>{item.href}</a>
+                    <a class={`link ${url === item.href ? 'link-active' : ''}`} href={`${item.href}/`}>{item.href}</a>
                 ))
             }
         </div>
