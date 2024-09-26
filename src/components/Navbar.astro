@@ -8,22 +8,27 @@ const { title } = Astro.props;
 const links = [
     {
         href: '/',
+        i: '/',
         label: 'Home'
     },
     {
-        href: '/about',
+        href: '/about/',
+        i: '/about',
         label: 'About'
     },
     {
-        href: '/photography',
+        href: '/photography/',
+        i: '/photography',
         label: 'Photography'
     },
     {
-        href: '/projects',
+        href: '/projects/',
+        i: '/projects',
         label: 'Projects'
     },
     {
-        href: '/contact',
+        href: '/contact/',
+        i: '/contact',
         label: 'Contact'
     }
 ]
@@ -36,7 +41,7 @@ const url = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url
         <div class="links">
             {
                 links.map((item) => (
-                    <a class={`link ${url === item.href ? 'link-active' : ''}`} href={`${item.href}/`}>{item.href}</a>
+                    <a class={`link ${url === item.href ? 'link-active' : ''}`} href={item.href}>{item.i}</a>
                 ))
             }
         </div>
