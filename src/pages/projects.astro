@@ -1,0 +1,19 @@
+---
+
+import Layout from "../layouts/Layout.astro";
+import PageSection from "../components/PageSection.astro";
+import ContentSection from "../components/ContentSection.astro";---
+<Layout title="Projects | Techit Thawiang" navTitle="My<br/>projects.">
+    <PageSection display="grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+        <ContentSection>
+            <img loading="lazy" alt="jzcraft logo" class="project-logo" src="https://files.techit.win/images/logos/jzcraft/JZStoneBricks.png"/>
+            <a rel="noreferrer nofollow noopener" href="https://discord.gg/dtDTDHWRf3" class="big-paragraph link">jzcraft</a>
+            <p>Co-maintained with <a rel="nofollow noopener noreferrer" class="link" href="https://diskette.dailitation.xyz">DisketteGuy</a> and staff — an ordinary Minecraft server aiming to build a minigames community. The server is in development, with a release targeted for 2025. Join our Discord for updates!</p>
+        </ContentSection>
+        <ContentSection>
+            <img loading="lazy" alt="coinbag pro logo" class="project-logo" src="https://files.techit.win/images/logos/techit.win/coinbagpro.png"/>
+            <a rel="noreferrer nofollow noopener" href="https://github.com/techitwinner/coinbag-pro" class="big-paragraph link">coinbag pro</a>
+            <p class="">I designed this typeface using the FontLab app to give it a natural, handwriting-like appearance. It's open-source, so anyone can contribute (I’m still learning and could use some help improving it!). Check out the link to contribute and be part of the project!</p>
+        </ContentSection>
+    </PageSection>
+</Layout>

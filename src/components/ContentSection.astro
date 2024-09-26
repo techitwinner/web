@@ -1,0 +1,39 @@
+---
+interface props {
+    className?: string;
+    jus?: string | null;
+    display?: 'flex' | 'grid';
+    flexDir?: 'row' | 'col';
+}
+const {jus, display, flexDir, className} = Astro.props;
+---
+
+<div
+    class={`
+        ${className}
+        ${flexDir === 'row' ? 'row' : 'col'}
+        ${jus === "center" ? "center" : jus === "end" ? "end" : "center"}
+        ${display === "grid" ? "grid" : "flex"}
+    `}
+>
+    <slot/>
+</div>
+
+<style>
+    div {
+        gap: 0.5rem;
+        .big-paragraph {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0.5rem 0;
+        }
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+    .col {
+        display: flex;
+        flex-direction: column;
+    }
+</style>

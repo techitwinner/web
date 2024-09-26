@@ -1,0 +1,30 @@
+---
+interface props {
+    className?: string;
+    to?: string;
+    }
+const {to, className} = Astro.props;
+---
+
+<a
+        href={to}
+        class={`${className} ${to !== null ? "cursor-pointer" : ""}`}
+>
+    <slot/>
+</a>
+
+<style>
+    a {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        .big-paragraph {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0.5rem 0;
+        }
+    }
+    .cursor-pointer {
+        cursor: pointer;
+    }
+</style>

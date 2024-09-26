@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageSection from "../components/PageSection.astro";
+import ContentSection from "../components/ContentSection.astro";
+---
+<Layout title="Contact | Techit Thawiang" navTitle="Get in touch<br/>with me.">
+    <PageSection>
+        <ContentSection>
+            <p class="big-paragraph">Not sure if you're here to get in touch or just exploring the site, but either way, I'd love to hear from you! Here's how you can contact and follow me.</p>
+        </ContentSection>
+        <ContentSection>
+            <p class="big-paragraph">Social media platform</p>
+            <ContentSection flexDir="row">
+                <p style="margin:0;">techitwinner @</p>
+                <a target="_blank" rel="noreferrer noopener nofollow" class="link" href="https://instagram.com/techitwinner">Instagram</a>
+                <a target="_blank" rel="noreferrer noopener nofollow" class="link" href="https://facebook.com/techitwinner">Facebook</a>
+                <a target="_blank" rel="noreferrer noopener nofollow" class="link" href="https://keybase.io/techitwinner">Keybase</a>
+                <a target="_blank" rel="noreferrer noopener nofollow" class="link" href="https://github.com/techitwinner">GitHub</a>
+                <a target="_blank" rel="noreferrer noopener nofollow" class="link" href="https://x.com/techitwinner">X</a>
+            </ContentSection>
+        </ContentSection>
+        <ContentSection>
+            <p class="big-paragraph">Or e-mail addresses...</p>
+            <div class="flex-col-gap-2 big-paragraph font-mono" style="user-select:none;gap:8px;">
+                <p style="margin:0;">techit<span style="color:rgb(var(--accent-color))">[at]</span>dailitation<span style="color:rgb(var(--accent-color))">[dot]</span>xyz</p>
+                <p style="margin:0;">techitwinner<span style="color:rgb(var(--accent-color))">[at]</span>gmail<span style="color:rgb(var(--accent-color))">[dot]</span>com</p>
+            </div>
+        </ContentSection>
+    </PageSection>
+</Layout>

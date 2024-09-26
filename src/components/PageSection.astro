@@ -1,0 +1,51 @@
+---
+interface Props {
+    role?: string | null;
+    jus?: string | null;
+    display?: 'flex' | 'grid';
+    className?: string;
+    style?: string;
+}
+
+const { className, display, role, jus, style } = Astro.props;
+---
+
+<div
+    class={`
+        ${role === "footer" ? "footer" : role === "nav" ? "nav" : "page"}
+        ${jus === "center" ? "center" : jus === "end" ? "end" : "center"}
+        ${display === "grid" ? "grid" : "flex"}
+        ${className}
+    `}
+    style={style}
+>
+    <slot/>
+</div>
+
+<style>
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+        width: 100%;
+        padding: 0rem;
+    }
+    .nav {
+        margin: 2rem 0 1rem 0;
+        max-width: 64rem;
+    }
+    .page {
+        margin: 1rem 0;
+        max-width: 64rem;
+    }
+    .footer {
+        margin: 1rem 0 2rem 0;
+        max-width: 64rem;
+    }
+    .flex {
+        display: flex;
+    }
+    .grid {
+        display: grid;
+    }
+</style>

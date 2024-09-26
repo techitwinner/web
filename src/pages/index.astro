@@ -1,23 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import PageSection from "../components/PageSection.astro";
+import ContentSection from "../components/ContentSection.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Embrace It</h1>
-	</main>
+<Layout title="Welcome to Astro." navTitle="Hello!<br/>My name is Techit.">
+	<PageSection>
+		<ContentSection>
+			<p class="big-paragraph font-mono" style="margin:0;">&gt; whoami</p>
+			<p class="big-paragraph">I'm a Grade 9 student at Kopho Tuay Ngam Wittaya School. I'm Thai living in Chonburi, Thailand.</p>
+		</ContentSection>
+		<ContentSection>
+			<p class="big-paragraph font-mono" style="margin:0;">&gt; echo $INTERESTS</p>
+			<p class="big-paragraph">Linux, networking, development, eating, meeting people, travel around the world, enjoy my life.</p>
+		</ContentSection>
+		<ContentSection>
+			<p class="big-paragraph font-mono" style="margin:0;">&gt; echo $SOCIALS</p>
+			<div class="flex-gap-2 big-paragraph" style="user-select:none;gap:8px;">
+				<a target="_blank" rel="noreferrer noopener nofollow" class="link" href="https://instagram.com/techitwinner">Instagram</a>
+				<a target="_blank" rel="noreferrer noopener nofollow" class="link" href="https://facebook.com/techitwinner">Facebook</a>
+				<a target="_blank" rel="noreferrer noopener nofollow" class="link" href="https://keybase.io/techitwinner">Keybase</a>
+				<a target="_blank" rel="noreferrer noopener nofollow" class="link" href="https://github.com/techitwinner">GitHub</a>
+			</div>
+		</ContentSection>
+	</PageSection>
 </Layout>
-
-<style is:global>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 100%;
-		max-width: 1024px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-</style>
