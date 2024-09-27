@@ -1,11 +1,13 @@
 ---
 import PageSection from "./PageSection.astro";
 import ContentSection from "./ContentSection.astro";
+
+const currentYear = new Date().getFullYear();
 ---
 <PageSection role="footer">
     <ContentSection>
         <p class="big-paragraph">
-            Copyleft 🄯 2023 - 2024 Techit Thawiang - All rights reversed.<br/>
+            Copyleft <span style="font-family:'Noto Sans Symbols', sans-serif;height:20px;display:inline-flex;">🄯</span> 2023 - {currentYear} Techit Thawiang - All rights reversed.<br/>
             This website is open source, see <a target="_blank" rel="noreferrer noopener nofollow" class="link" href="https://github.com/techitwinner/web">Source Code</a>.
         </p>
         <p class="big-paragraph">
