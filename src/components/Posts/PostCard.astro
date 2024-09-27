@@ -1,0 +1,69 @@
+---
+interface Props {
+    title: string;
+    url: string;
+    desc: string;
+    date: string;
+    tags: string[];
+}
+
+const { title, url, desc, date, tags, } = Astro.props;
+
+function formatDate(dateString:string) {
+    if (dateString?.includes('T')) {
+        return dateString?.split('T')[0];
+    }
+    return dateString;
+}
+---
+
+<a href={url} class="t" loading="lazy">
+    <p style="opacity: 0.75;font-size:14px;">{new Date(date).toDateString()}</p>
+    <div style="text-overflow:ellipsis;line-clamp:2;">
+        <p style="font-weight: bold">{title}</p>
+    </div>
+    <section class="badge" style="font-size:14px;display:flex;flex-direction:row;flex-wrap:wrap;">
+        {tags?.map(tag => (
+            <p class="tag">
+                [{tag}]
+            </p>
+        ))}
+    </section>
+    <p style="font-size:14px;">{desc}</p>
+</a>
+
+<style>
+    .t {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        color: rgba(var(--primary-color));
+        text-decoration: none;
+        box-sizing: border-box;
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        border: 1px solid rgba(var(--primary-color),0.05);
+        p {
+            padding: 0;
+            margin: 0;
+        }
+        opacity: 0.75;
+        transition: all 0.3s cubic-bezier(var(--easeOut));
+    }
+
+    .t:hover {
+        opacity: 1;
+        background: rgba(var(--primary-color),0.05);
+    }
+
+    .t:active {
+        opacity: 0.5;
+        transition-duration: 0.1s; scale: 0.99;
+    }
+
+    .tag {
+        opacity: 0.75;
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+</style>

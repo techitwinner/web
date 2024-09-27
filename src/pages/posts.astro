@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import PageSection from "../components/PageSection.astro";
+import PostCard from "../components/Posts/PostCard.astro";
+import ContentSection from "../components/ContentSection.astro";
+
+// Fetch and sort posts by publication date (newest first)
+const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Layout
+        title="Posts | Techit Thawiang"
+        description="Techit's personal blog used for yapping and writing stuff."
+        navTitle="More you read,<br/>more you know."
+        ogTitle="Techit's personal blog"
+        ogDescription="Techit's personal space for yap and do stuff."
+        ogUrl="https://techit.win/posts"
+>
+    <PageSection display="grid" style="grid-template-columns: repeat(auto-fill, 1fr));gap:0.5rem;">
+        {
+            posts.map((post) => (
+                <PostCard
+                        title={post.data.title}
+                        desc={post.data.description}
+                        url={post.slug}
+                        date={post.data.pubDate}
+                        tags={post.data.tags}
+                />
+            ))
+        }
+    </PageSection>
+</Layout>
