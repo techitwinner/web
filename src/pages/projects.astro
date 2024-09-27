@@ -3,7 +3,14 @@
 import Layout from "../layouts/Layout.astro";
 import PageSection from "../components/PageSection.astro";
 import ContentSection from "../components/ContentSection.astro";---
-<Layout title="Projects | Techit Thawiang" navTitle="My<br/>projects.">
+<Layout
+        title="Projects | Techit Thawiang"
+        description="Collection of my projects, contribution & stuff."
+        navTitle="My<br/>projects."
+        ogTitle="Techit's Projects and Contribution"
+        ogDescription="Collection of my projects & stuff."
+        ogUrl="https://techit.win/photography"
+>
     <PageSection display="grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
         <ContentSection>
             <img loading="lazy" alt="jzcraft logo" class="project-logo" src="https://files.techit.win/images/logos/jzcraft/JZStoneBricks.png"/>
