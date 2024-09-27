@@ -19,15 +19,15 @@ const posts = (await getCollection('blog')).sort(
         ogDescription="Techit's personal space for yap and do stuff."
         ogUrl="https://techit.win/posts"
 >
-    <PageSection display="grid" style="grid-template-columns: repeat(auto-fill, 1fr));gap:0.5rem;">
+    <PageSection display="grid" style="grid-template-columns: repeat(auto-fill, 1fr);gap:0.5rem;">
         {
             posts.map((post) => (
                 <PostCard
                         title={post.data.title}
                         desc={post.data.description}
                         url={post.slug}
-                        date={post.data.pubDate}
-                        tags={post.data.tags}
+                        date={post.data.pubDate.toISOString()}
+                        tags={post.data.tags ?? []}
                 />
             ))
         }
