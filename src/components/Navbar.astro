@@ -17,6 +17,11 @@ const links = [
         label: 'About'
     },
     {
+        href: '/posts/',
+        i: '/posts',
+        label: 'Posts'
+    },
+    {
         href: '/photography/',
         i: '/photography',
         label: 'Photography'
@@ -41,7 +46,7 @@ const url = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url
         <div class="links">
             {
                 links.map((item) => (
-                    <a class={`link ${url === item.href ? 'link-active' : ''}`} href={item.href}>{item.i}</a>
+                    <a class={`link font-mono ${url === item.href ? 'link-active' : ''}`} href={item.href}>{item.i}</a>
                 ))
             }
         </div>
@@ -54,9 +59,8 @@ const url = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url
         flex-direction: column;
         align-items: start;
         justify-content: start;
-        font-size: 20px;
         .links {
-            font-size: 17px;
+            font-size: 16px;
             display: flex;
             flex-direction: row;
             align-items: center;
