@@ -1,0 +1,34 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import Layout from "../../layouts/Layout.astro";
+import PageSection from "../../components/PageSection.astro";
+import ContentSection from "../../components/ContentSection.astro";
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+type Props = CollectionEntry<'posts'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout
+	{...post.data}
+	title={post.data.title}
+	description={post.data.description}
+	navTitle={post.data.title}
+	ogTitle={post.data.title}
+	ogDescription={post.data.description}
+	ogUrl={`https://techit.win/posts/${post.data.url}`}
+>
+	<PageSection className="post-content">
+		<ContentSection>
+			<Content/>
+		</ContentSection>
+	</PageSection>
+</Layout>
