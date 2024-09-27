@@ -1,7 +1,7 @@
 ---
 interface props {
     className?: string;
-    jus?: string | null;
+    jus?: 'start' | 'center' | 'end';
     display?: 'flex' | 'grid';
     flexDir?: 'row' | 'col';
 }
@@ -12,7 +12,18 @@ const {jus, display, flexDir, className} = Astro.props;
     class={`
         ${className}
         ${flexDir === 'row' ? 'row' : 'col'}
-        ${jus === "center" ? "center" : jus === "end" ? "end" : "center"}
+        ${
+            (() => {
+                switch (jus) {
+                    case 'center':
+                        return 'center';
+                    case 'end':
+                        return 'end';
+                    default:
+                        return 'start'; // default to 'start'
+                    }
+            })()
+        }
         ${display === "grid" ? "grid" : "flex"}
     `}
 >
@@ -22,11 +33,6 @@ const {jus, display, flexDir, className} = Astro.props;
 <style>
     div {
         gap: 0.5rem;
-        .big-paragraph {
-            font-size: 20px;
-            font-weight: 500;
-            margin: 0.5rem 0;
-        }
     }
     .row {
         display: flex;
@@ -35,5 +41,14 @@ const {jus, display, flexDir, className} = Astro.props;
     .col {
         display: flex;
         flex-direction: column;
+    }
+    .end {
+        align-items: end;
+    }
+    .center {
+        align-items: center;
+    }
+    .start {
+        align-items: start;
     }
 </style>
