@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import PageSection from "../../components/PageSection.astro";
 import ContentSection from "../../components/ContentSection.astro";
 
+// Get all posts from the 'blog' collection
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return posts.map((post) => ({
@@ -11,9 +12,17 @@ export async function getStaticPaths() {
 		props: post,
 	}));
 }
-type Props = CollectionEntry<'posts'>;
 
-const post = Astro.props;
+type Props = CollectionEntry<'blog'>;
+
+const { slug } = Astro.params;
+const posts = await getCollection('blog');
+const post = posts.find((p) => p.slug === slug);
+
+if (!post) {
+	throw new Error("Post not found");
+}
+
 const { Content } = await post.render();
 ---
 
@@ -24,11 +33,11 @@ const { Content } = await post.render();
 	navTitle={post.data.title}
 	ogTitle={post.data.title}
 	ogDescription={post.data.description}
-	ogUrl={`https://techit.win/posts/${post.data.url}`}
+	ogUrl={`https://techit.win/posts/${post.slug}`}
 >
-	<PageSection className="post-content">
-		<ContentSection>
-			<Content/>
-		</ContentSection>
-	</PageSection>
+<PageSection className="post-content">
+	<ContentSection>
+		<Content/>
+	</ContentSection>
+</PageSection>
 </Layout>
