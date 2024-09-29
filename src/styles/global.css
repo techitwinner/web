@@ -233,6 +233,7 @@ body {
 }
 
 .post-content {
+    max-width: 64rem;
     pre {
         overflow-x: auto;
         -ms-overflow-style: auto;
@@ -253,5 +254,9 @@ body {
         color: rgba(var(--primary-content-color));
         padding: 0 0.25rem;
         border-radius: var(--border-radius);
+    }
+    img {
+        width: 100%;
+        max-width: 60rem;
     }
 }
