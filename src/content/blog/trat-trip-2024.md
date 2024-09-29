@@ -12,6 +12,7 @@ My dad's friend invite so we go.
 Yes [here](https://files.techit.win/images/photography/trip/trat2024)
 
 heres some
+
 ![img1](https://files.techit.win/images/photography/trip/trat2024/IMG20240928110929.jpg)
 ![img2](https://files.techit.win/images/photography/trip/trat2024/IMG20240928205328.jpg)
 ![img3](https://files.techit.win/images/photography/trip/trat2024/IMG20240928205328.jpg)
