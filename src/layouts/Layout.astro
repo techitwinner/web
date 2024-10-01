@@ -35,7 +35,7 @@ import '../styles/global.css';
 		<meta property="og:description" content={ogDescription}>
 		<meta property="og:url" content={ogUrl}>
 		<meta property="og:type" content="website">
-		<meta property="og:image" content="https://techit.win/og.jpg">
+		<meta property="og:image" content={`${ogImage || 'https://techit.win/og.jpg'}`}>
 	</head>
 	<body>
 		<Navbar title={navTitle}/>
