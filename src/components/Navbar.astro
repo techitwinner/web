@@ -8,7 +8,7 @@ const { title } = Astro.props;
 const links = [
     {
         href: '/',
-        i: '/',
+        i: '~/',
         label: 'Home'
     },
     {
@@ -41,12 +41,13 @@ const url = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url
 ---
 
 <PageSection role="nav">
-    <nav class="navbar">
-        <h1 set:html={title}/>
+    <nav class="navbar prose prose-slate dark:prose-invert">
+        <h2 set:html={title}/>
+        <slot/>
         <div class="links">
             {
                 links.map((item) => (
-                    <a class={`link font-mono ${url === item.href ? 'link-active' : ''}`} href={item.href}>{item.i}</a>
+                    <a class={`navitem font-mono ${url === item.href ? 'navitem-active' : ''}`} href={item.href}>{item.i}</a>
                 ))
             }
         </div>
@@ -65,11 +66,26 @@ const url = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url
             flex-direction: row;
             align-items: center;
             justify-items: start;
-            gap: 0.75rem;
-            padding: 0.35rem 0.75rem;
-            border-radius: var(--border-radius);
+            gap: 0.25rem;
+            padding: 0.25rem;
+            border-radius: 20px;
             background-color: rgba(var(--primary-color), 0.05);
             flex-wrap: wrap;
+            .navitem {
+                box-sizing: border-box;
+                color: rgba(var(--text-base-color), 0.7);
+                text-decoration: none;
+                padding: 0.1rem 0.5rem;
+                border-radius: var(--border-radius-full);
+                transition: all 0.2s cubic-bezier(var(--easeOut));
+            }
+            .navitem:active {
+                opacity: 0.7;
+            }
+            .navitem-active, .navitem:hover {
+                color: white;
+                background-color: rgba(var(--accent-color), 1);
+            }
         }
     }
 </style>

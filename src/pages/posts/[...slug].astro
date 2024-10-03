@@ -36,8 +36,8 @@ const { Content } = await post.render();
 	ogUrl={`https://techit.win/posts/${post.slug}`}
 >
 <PageSection className="post-content">
-	<ContentSection>
+	<div class="prose prose-slate dark:prose-invert">
 		<Content/>
-	</ContentSection>
+	</div>
 </PageSection>
 </Layout>

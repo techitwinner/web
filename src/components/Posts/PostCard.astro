@@ -18,18 +18,18 @@ function formatDate(dateString:string) {
 ---
 
 <a href={url} class="t">
-    <p style="opacity: 0.75;font-size:14px;">{new Date(date).toDateString()}</p>
+    <p style="opacity: 0.75;font-size:16px;">{new Date(date).toDateString()}</p>
     <div style="text-overflow:ellipsis;line-clamp:2;">
-        <p style="font-weight: bold">{title}</p>
+        <p class="text-xl font-bold">{title}</p>
     </div>
-    <section class="badge" style="font-size:14px;display:flex;flex-direction:row;flex-wrap:wrap;">
+    <section class="badge" style="font-size:16px;display:flex;flex-direction:row;flex-wrap:wrap;gap:4px;color:rgba(var(--accent-color),1)">
         {tags?.map(tag => (
             <p class="tag">
                 [{tag}]
             </p>
         ))}
     </section>
-    <p style="font-size:14px;">{desc}</p>
+    <p style="font-size:16px;">{desc}</p>
 </a>
 
 <style>
@@ -39,10 +39,8 @@ function formatDate(dateString:string) {
         gap: 0.5rem;
         color: rgba(var(--primary-color));
         text-decoration: none;
-        box-sizing: border-box;
         padding: 1rem;
-        border-radius: var(--border-radius);
-        border: 1px solid rgba(var(--primary-color),0.05);
+        border-radius: var(--border-radius-3xl);
         p {
             padding: 0;
             margin: 0;

@@ -9,9 +9,10 @@ interface Props {
 	ogImage?: string;
 	ogDescription: string;
 	ogUrl: string;
+	ogType?: string;
 }
 
-const { title, description, navTitle, ogDescription, ogTitle, ogUrl, ogImage } = Astro.props;
+const { title, description, navTitle, ogDescription, ogTitle, ogUrl, ogImage, ogType } = Astro.props;
 import '../styles/global.css';
 ---
 
@@ -19,26 +20,45 @@ import '../styles/global.css';
 <html dir="ltr" lang="en">
 	<head>
 		<!-- Generic -->
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-		<meta name="generator" content={Astro.generator} />
-		<!-- Must -->
 		<title>{title}</title>
 		<meta name="description" content={description}/>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="generator" content={Astro.generator} />
+		<!-- Security headers -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+		<meta http-equiv="refresh" content="strict-origin-when-cross-origin">
+		<!-- Viewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Icons -->
+
+		<link rel="icon" sizes="any" href="/favicon.svg" type="image/svg+xml">
 		<!-- Author Name -->
 		<meta name="author" content="Techit Thawiang">
 		<link rel="canonical" href="https://techit.win/">
 		<meta name="robots" content="index,follow">
 		<meta name="googlebot" content="index,follow">
-		<!-- Open Graph -->
+		<!-- Open Graph Social Media Share Card -->
 		<meta property="og:title" content={ogTitle}>
 		<meta property="og:description" content={ogDescription}>
 		<meta property="og:url" content={ogUrl}>
 		<meta property="og:type" content="website">
 		<meta property="og:image" content={`${ogImage || 'https://techit.win/og.jpg'}`}>
+		<meta property="og:type" content={`${ogType || 'article'}`}>
+		<meta property="og:locale" content="th_TH" />
+		<meta property="og:site_name" content="techit.win">
+		<!-- Twitter/X Card -->
+		<meta name="twitter:creator" content="@techitwinner">
+		<meta name="twitter:site" content="@techitwinner">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:image" content="">
+		<!-- Apple Mobile Web App -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Techit Thawiang">
 	</head>
-	<body>
+	<body class="w-full">
 		<Navbar title={navTitle}/>
 		<slot />
 		<Footer/>

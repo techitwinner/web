@@ -2,7 +2,9 @@
 
 import Layout from "../layouts/Layout.astro";
 import PageSection from "../components/PageSection.astro";
-import ContentSection from "../components/ContentSection.astro";---
+import ContentSection from "../components/ContentSection.astro";
+import Card from "../components/Card.astro";
+---
 <Layout
         title="Projects | Techit Thawiang"
         description="Collection of my projects, contribution & stuff."
@@ -11,16 +13,18 @@ import ContentSection from "../components/ContentSection.astro";---
         ogDescription="Collection of my projects & stuff."
         ogUrl="https://techit.win/photography"
 >
-    <PageSection display="grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
-        <ContentSection>
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 max-w-[64rem]">
+        <Card url="https://discord.gg/dtDTDHWRf3">
             <img loading="lazy" alt="jzcraft logo" class="project-logo" src="https://files.techit.win/images/logos/jzcraft/JZStoneBricks.png"/>
-            <a rel="noreferrer nofollow noopener" href="https://discord.gg/dtDTDHWRf3" class=" link">jzcraft</a>
-            <p>Co-maintained with <a rel="nofollow noopener noreferrer" class="link" href="https://diskette.dailitation.xyz">DisketteGuy</a> and staff — an ordinary Minecraft server aiming to build a minigames community. The server is in development, with a release targeted for 2025. Join our Discord for updates!</p>
-        </ContentSection>
-        <ContentSection>
+            <p class="text-xl font-bold">JzCraft - Minecraft Server</p>
+            <code class="text-[rgba(var(--accent-color))]">[games] [minecraft]</code>
+            <p class="opacity-75">Co-maintained with DisketteGuy and our staff — an ordinary Minecraft server aiming to build a minigames community. The server is in development, with a release targeted for 2025. Join our Discord for updates!</p>
+        </Card>
+        <Card url="https://github.com/techitwinner/coinbag-pro">
             <img loading="lazy" alt="coinbag pro logo" class="project-logo" src="https://files.techit.win/images/logos/techit.win/coinbagpro.png"/>
-            <a rel="noreferrer nofollow noopener" href="https://github.com/techitwinner/coinbag-pro" class=" link">coinbag pro</a>
-            <p class="">I designed this typeface using the FontLab app to give it a natural, handwriting-like appearance. It's open-source, so anyone can contribute (I’m still learning and could use some help improving it!). Check out the link to contribute and be part of the project!</p>
-        </ContentSection>
-    </PageSection>
+            <p class="text-xl font-bold">Coinbag Pro</p>
+            <code class="text-[rgba(var(--accent-color))]">[typefaces]</code>
+            <p class="opacity-75">I designed this typeface using the FontLab app to give it a natural, handwriting-like appearance. It's open-source, so anyone can contribute (I’m still learning and could use some help improving it!). Check out the link to contribute and be part of the project!</p>
+        </Card>
+    </div>
 </Layout>

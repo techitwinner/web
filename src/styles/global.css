@@ -1,6 +1,5 @@
 /* Typefaces */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans+Symbols:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-/* Stylesheet rules */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans+Symbols:wght@100..900&family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');/* Stylesheet rules */
 :root {
     /* Appearance stuff */
     --border-radius-sm: 4px;
@@ -46,13 +45,21 @@
     --absoluteEaseInOut: 1,0,0,1;
 }
 html {
-    font-family: 'Victor Mono', monospace;
+    font-size: 16px;
+    font-family: 'Noto Sans', 'Noto Sans Thai', monospace;
     background: rgb(var(--primary-content-color));
     color: rgb(var(--primary-color));
+    outline: none;
+}
+:focus {
+    outline: none;
+}
+:focus-visible {
+    outline: 3px solid rgba(var(--accent-color), 0.5);
 }
 code, pre, kbd, samp, tt, .font-mono {
     font-family:
-            'Victor Mono',
+            'Noto Sans Mono',
             Menlo,
             Monaco,
             'Lucida Console',
@@ -62,6 +69,7 @@ code, pre, kbd, samp, tt, .font-mono {
             'Courier New',
             monospace;
 }
+
 p {
     margin: 0.5rem 0;
 }
@@ -94,8 +102,12 @@ body {
 .text-highlight {
     background-color: #0066FF3F; /* Highlight background color */
     color: #0066FF; /* Text color */
-    padding: 2px 4px; /* Padding around the highlighted text */
-    border-radius: 4px; /* Rounded corners */
+    padding: 1px 6px 3px 6px; /* Padding around the highlighted text */
+    border-radius: var(--border-radius); /* Rounded corners */
+}
+
+.bp {
+    font-size: 1.25rem;
 }
 
 .this-is-me {
@@ -193,6 +205,10 @@ body {
 }
 .link:hover {
     opacity: 1;
+    text-decoration: underline;
+}
+.link:focus {
+    text-decoration: underline;
 }
 .link:active { opacity: 0.65; }
 
