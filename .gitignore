@@ -3,3 +3,4 @@ node_modules/
 .astro/
 .idea/
 /dist
+bun.lockb
