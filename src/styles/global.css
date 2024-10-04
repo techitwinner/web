@@ -45,7 +45,6 @@
     --absoluteEaseInOut: 1,0,0,1;
 }
 html {
-    font-size: 16px;
     font-family: 'Noto Sans', 'Noto Sans Thai', monospace;
     background: rgb(var(--primary-content-color));
     color: rgb(var(--primary-color));
@@ -195,9 +194,6 @@ body {
 .link {
     color: rgba(var(--primary-color));
     text-decoration: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
     cursor: pointer;
     opacity: 0.5;
     transition: all 0.2s cubic-bezier(var(--easeOut));
