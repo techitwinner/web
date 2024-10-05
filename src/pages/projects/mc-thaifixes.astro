@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import PageSection from "../../components/PageSection.astro";
 import ContentSection from "../../components/ContentSection.astro";
 import Card from "../../components/Card.astro";
+import GetOnModrinth from "../../components/GetOnModrinth.astro";
 ---
 <Layout
         title="Techit's Minecraft ThaiFixes"
@@ -18,49 +19,20 @@ import Card from "../../components/Card.astro";
             <p class="text-sm opacity-50">Disclaimer: This page is in Thai.</p>
             <img loading="lazy" class="w-32 h-32 rounded-lg" src="https://files.techit.win/images/site/ThaiFixes-Kanit.png" alt=""/>
             <p class="text-6xl font-bold">Techit's ThaiFixes</p>
-            <p>Hihi ผม Techit ทำรีซอร์สแพ็คแก้ภาษาไทยตัวใหม่มาแจกทุกคน สามารถนำไปแจกจ่ายได้ตามใจชอบเลย<br/>หากต้องการแชร์หน้าเว็บดาวน์โหลดสามารถเลือกได้ระหว่างลิงค์</p>
-            <p><code>https://techit.win/projects/mc-thaifixes/</code> หรือ<br/><code>https://github.com/techitwinner/mc-thaifixes/releases/</code></p>
+            <p>Hihi ผม Techit ทำรีซอร์สแพ็คแก้ภาษาไทยตัวใหม่มาแจกทุกคน สามารถนำไปแจกจ่ายได้ตามใจชอบเลย<br/>
+                หากต้องการแชร์หน้าเว็บดาวน์โหลด ให้แชร์ลิงค์ลิงค์<br/>
+                <code>https://modrinth.com/resourcepack/techit-thaifixes/versions</code>
+            </p>
             <p>&lt;&excl;&gt; จะอัพเดตให้แค่หน้าเว็บนี้เท่านั้น</p>
             <p class="text-2xl font-bold">&lt;&excl;&gt; สำหรับเวอร์ชั่น Java 1.21 ขึ้นไปเท่านั้น!</p>
         </ContentSection>
     </PageSection>
-    <div class="flex flex-col w-full max-w-[64rem] rounded-3xl py-4 px-6 bg-[rgba(var(--accent-color),0.1)] border-2 border-[rgba(var(--accent-color),1)]">
+    <div class="flex flex-col w-full max-w-[64rem] rounded-3xl p-4 bg-[rgba(var(--modrinth-brand-color),0.1)] border-2 border-[rgba(var(--modrinth-brand-color),1)]">
         <ContentSection>
             <h1 class="text-4xl font-bold">ดาวน์โหลด</h1>
-            <p>แต่ละปุ่มคือชื่อฟอนต์ในรีซอร์สแพ็คนะเธอ</p>
+            <p>ย้ายไปที่ Modrinth หมดแล้ว เชิญไปดาวน์โหลดที่ Modrinth ครับ</p>
         </ContentSection>
-        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 max-w-[64rem]">
-            <Card url="https://github.com/techitwinner/mc-thaifixes/releases/download/1.0.1/techits-thaifixes-kanit.zip">
-                <ContentSection>
-                    <img loading="lazy" class="w-16 h-16 rounded-md" src="https://files.techit.win/images/site/ThaiFixes-Kanit.png" alt=""/>
-                    <p class="text-sm opacity-50">Techit's ThaiFixes | คลิกเพื่อดาวน์โหลด</p>
-                    <p class="text-2xl font-bold">ฟอนต์: Kanit <code class="text-[16px]">v1.0.1</code></p>
-                </ContentSection>
-                <ContentSection>
-                    <div class="relative rounded-md aspect-video w-full justify-end flex flex-col overflow-hidden">
-                        <img loading="lazy" class=" absolute top-0 left-0 w-full h-full object-cover" src="https://files.techit.win/images/site/kanit-ex.png" alt=""/>
-                        <div class="z-[9] flex flex-col justify-end p-4 relative h-1/2 bg-gradient-to-b from-black/0 to-black">
-                            <p class="">ภาพตัวอย่างในเกม</p>
-                        </div>
-                    </div>
-                </ContentSection>
-            </Card>
-            <Card url="https://github.com/techitwinner/mc-thaifixes/releases/download/1.0.1/techits-thaifixes-mali.zip">
-                <ContentSection>
-                    <img loading="lazy" class="w-16 h-16 rounded-md" src="https://files.techit.win/images/site/ThaiFixes-Mali.png" alt=""/>
-                    <p class="text-sm opacity-50">Techit's ThaiFixes | คลิกเพื่อดาวน์โหลด</p>
-                    <p class="text-2xl font-bold">ฟอนต์: Mali <code class="text-[16px]">v1.0.1</code></p>
-                </ContentSection>
-                <ContentSection>
-                    <div class="relative rounded-md aspect-video w-full justify-end flex flex-col overflow-hidden">
-                        <img loading="lazy"class=" absolute top-0 left-0 w-full h-full object-cover" src="https://files.techit.win/images/site/mali-ex.png" alt=""/>
-                        <div class="z-[9] flex flex-col justify-end p-4 relative h-1/2 bg-gradient-to-b from-black/0 to-black">
-                            <p class="">ภาพตัวอย่างในเกม</p>
-                        </div>
-                    </div>
-                </ContentSection>
-            </Card>
-        </div>
+        <GetOnModrinth url="https://modrinth.com/resourcepack/techit-thaifixes/versions"/>
     </div>
     <PageSection>
         <ContentSection>
