@@ -43,6 +43,8 @@
     --easeOut: 0.25,1,0.25,1;
     --easeIn: 0.75,0,0.75,0;
     --absoluteEaseInOut: 1,0,0,1;
+    /* External styles */
+    --modrinth-brand-color: 27,217,106;
 }
 html {
     font-family: 'Noto Sans', 'Noto Sans Thai', monospace;
@@ -143,7 +145,8 @@ body {
     background: rgba(var(--primary-color));
     color: rgba(var(--primary-content-color));
     padding: 8px 16px;
-    display: flex;
+    display: inline-flex;
+    gap: 0.5rem;
     text-align: center;
     vertical-align: middle;
     border: none;
@@ -181,7 +184,8 @@ body {
 .btn-success { --btn-color: var(--success-color); --btn-content: var(--success-content-color); }
 .btn-warning { --btn-color: var(--warning-color); --btn-content: var(--warning-content-color); }
 .btn-danger { --btn-color: var(--danger-color); --btn-content: var(--danger-content-color); }
-.btn-secondary, .btn-accent, .btn-info, .btn-success, .btn-warning, .btn-danger { background: rgba(var(--btn-color)); color: rgba(var(--btn-content)); }
+.btn-modrinth { --btn-color: var(--modrinth-brand-color); --btn-content: black; }
+.btn-secondary, .btn-accent, .btn-info, .btn-success, .btn-warning, .btn-danger, .btn-modrinth { background: rgba(var(--btn-color)); color: rgba(var(--btn-content)); }
 .btn-dashed, .btn-outline, .btn-dotted, .btn-ghost { background: transparent; color: rgba(var(--btn-color, var(--primary-color))); }
 .btn-dashed, .btn-outline, .btn-dotted { border: 1px solid rgba(var(--btn-color, var(--primary-color))); }
 .btn-dashed { border-style: dashed; }
