@@ -10,9 +10,10 @@ interface Props {
 	ogDescription: string;
 	ogUrl: string;
 	ogType?: string;
+	noIndex?: boolean;
 }
 
-const { title, description, navTitle, ogDescription, ogTitle, ogUrl, ogImage, ogType } = Astro.props;
+const { title, description, navTitle, ogDescription, ogTitle, ogUrl, ogImage, ogType, noIndex } = Astro.props;
 import '../styles/global.css';
 ---
 
@@ -36,8 +37,8 @@ import '../styles/global.css';
 		<!-- Author Name -->
 		<meta name="author" content="Techit Thawiang">
 		<link rel="canonical" href="https://techit.win/">
-		<meta name="robots" content="index,follow">
-		<meta name="googlebot" content="index,follow">
+		<meta name="robots" content={noIndex ? 'noindex' : 'index,follow'}>
+		<meta name="googlebot" content={noIndex ? 'noindex' : 'index,follow'}>
 		<!-- Open Graph Social Media Share Card -->
 		<meta property="og:title" content={ogTitle}>
 		<meta property="og:description" content={ogDescription}>
