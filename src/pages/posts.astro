@@ -19,7 +19,13 @@ const posts = (await getCollection('blog')).sort(
         ogDescription="Techit's personal space for yap and do stuff."
         ogUrl="https://techit.win/posts"
 >
-    <PageSection display="grid" style="grid-template-columns: repeat(auto-fill, 1fr);gap:0.5rem;">
+    <PageSection>
+        <ContentSection>
+            <h1>Latest posts ✨</h1>
+        </ContentSection>
+    </PageSection>
+    <div class="hr-super"/>
+    <div class="grid grid-cols-1 gap-4 max-w-[56rem] w-full my-2">
         {
             posts.map((post) => (
                 <PostCard
@@ -31,5 +37,6 @@ const posts = (await getCollection('blog')).sort(
                 />
             ))
         }
-    </PageSection>
+    </div>
+    <div class="hr-super"/>
 </Layout>
