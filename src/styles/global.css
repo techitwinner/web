@@ -1,6 +1,5 @@
 /* Typefaces */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans+Symbols:wght@100..900&family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');/* Stylesheet rules */
-:root {
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans+Thai+Looped:wght@100;200;300;400;500;600;700&family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&family=Noto+Sans+Symbols:wght@100..900&display=swap');:root {
     /* Appearance stuff */
     --border-radius-sm: 4px;
     --border-radius: 6px;
@@ -13,6 +12,8 @@
     --navbar-height: fit-content;
     --navbar-logo-hw: 40px;
     --res-padding-lr: 1rem;
+
+    --max-w-value: 56rem;
 
     --this-is-me-hw: 300px;
     ---project-logo-hw: 64px;
@@ -47,7 +48,7 @@
     --modrinth-brand-color: 27,217,106;
 }
 html {
-    font-family: 'Noto Sans', 'Noto Sans Thai', monospace;
+    font-family: 'IBM Plex Sans', 'IBM Plex Sans Thai Looped', monospace;
     background: rgb(var(--primary-content-color));
     color: rgb(var(--primary-color));
     outline: none;
@@ -59,16 +60,7 @@ html {
     outline: 3px solid rgba(var(--accent-color), 0.5);
 }
 code, pre, kbd, samp, tt, .font-mono {
-    font-family:
-            'Noto Sans Mono',
-            Menlo,
-            Monaco,
-            'Lucida Console',
-            'Liberation Mono',
-            'DejaVu Sans Mono',
-            'Bitstream Vera Sans Mono',
-            'Courier New',
-            monospace;
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 p {
@@ -194,6 +186,8 @@ body {
 .btn-ghost:hover { background: rgba(var(--btn-color, var(--primary-color)), 0.1); }
 .btn-dashed:hover, .btn-outline:hover, .btn-dotted:hover { background: rgba(var(--btn-color, var(--primary-color))); color: rgba(var(--btn-content, var(--primary-content-color)));}
 .btn-sm { padding:4px 8px;height:28px;font-size: 14px; }
+.btn-lg { padding:24px; font-size: 18px; }
+.btn-xl { padding:32px; font-size: 22px; }
 
 .link {
     color: rgba(var(--primary-color));
@@ -248,8 +242,32 @@ body {
     border-radius: var(--border-radius);
 }
 
+h1 {
+    @apply text-3xl font-bold leading-tight;
+}
+h2 {
+    @apply text-2xl font-bold leading-tight;
+}
+h3 {
+    @apply text-xl font-bold leading-tight;
+}
+h4 {
+    @apply font-bold leading-tight;
+}
+
 .post-content {
-    max-width: 64rem;
+    h1 {
+        @apply text-3xl font-bold leading-tight;
+    }
+    h2 {
+        @apply text-2xl font-bold leading-tight;
+    }
+    h3 {
+        @apply text-xl font-bold leading-tight;
+    }
+    h4 {
+        @apply font-bold leading-tight;
+    }
     pre {
         overflow-x: auto;
         -ms-overflow-style: auto;
@@ -257,7 +275,7 @@ body {
         border-radius: var(--border-radius);
         font-size: 13px;
         code {
-            background:none;
+            background: none;
             border: none;
             color: inherit;
             padding: 0;
@@ -274,5 +292,10 @@ body {
     img {
         width: 100%;
         max-width: 60rem;
+        border-radius: var(--border-radius);
     }
+}
+
+.hr-super {
+    @apply h-[1px] w-full max-w-[var(--max-w-value)] bg-[rgba(var(--primary-color),0.25)];
 }
