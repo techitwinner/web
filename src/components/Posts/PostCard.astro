@@ -18,17 +18,19 @@ function formatDate(dateString:string) {
 ---
 
 <a href={url} class="t">
-    <p style="opacity: 0.75;font-size:16px;">{new Date(date).toDateString()}</p>
-    <div style="text-overflow:ellipsis;line-clamp:2;">
+    <div class="title w-fit max-w-fit" style="text-overflow:ellipsis;line-clamp:2;">
         <p class="text-xl font-bold">{title}</p>
     </div>
-    <section class="badge" style="font-size:16px;display:flex;flex-direction:row;flex-wrap:wrap;gap:4px;color:rgba(var(--accent-color),1)">
-        {tags?.map(tag => (
-            <p class="tag">
-                [{tag}]
-            </p>
-        ))}
-    </section>
+    <div class="flex flex-row flex-wrap items-center gap-3">
+        <p class="italic font-mono tracking-tighter" style="opacity: 0.75;font-size:16px;">{new Date(date).toDateString()}</p>
+        <section class="badge" style="font-size:14px;display:flex;flex-direction:row;flex-wrap:wrap;gap:4px;">
+            {tags?.map(tag => (
+                    <p class="tag">
+                        {tag}
+                    </p>
+            ))}
+        </section>
+    </div>
     <p style="font-size:16px;">{desc}</p>
 </a>
 
@@ -39,7 +41,6 @@ function formatDate(dateString:string) {
         gap: 0.5rem;
         color: rgba(var(--primary-color));
         text-decoration: none;
-        padding: 1rem;
         border-radius: var(--border-radius-3xl);
         p {
             padding: 0;
@@ -47,11 +48,18 @@ function formatDate(dateString:string) {
         }
         opacity: 0.75;
         transition: all 0.3s cubic-bezier(var(--easeOut));
+        .title {
+            box-sizing: border-box;
+            color: rgba(var(--accent-color));
+            border-bottom: 2px dashed rgba(var(--accent-color),0);
+        }
     }
 
     .t:hover {
         opacity: 1;
-        background: rgba(var(--primary-color),0.05);
+        .title {
+            border-bottom: 2px dashed rgba(var(--accent-color));
+        }
     }
 
     .t:active {
@@ -59,9 +67,13 @@ function formatDate(dateString:string) {
         transition-duration: 0.1s; scale: 0.99;
     }
 
-    .tag {
-        opacity: 0.75;
-        color: var(--primary-color);
-        text-decoration: none;
+    .badge {
+        .tag {
+            @apply shadow;
+            background-color: rgba(var(--secondary-color));
+            border: 1px solid rgba(var(--primary-color),0.2);
+            padding: .1rem .5rem;
+            border-radius: var(--border-radius-full);
+        }
     }
 </style>
