@@ -30,14 +30,54 @@ const { Content } = await post.render();
 	{...post.data}
 	title={post.data.title}
 	description={post.data.description}
-	navTitle={post.data.title}
+	navTitle={`Viewing:<br/>${post.data.title}`}
 	ogTitle={post.data.title}
 	ogDescription={post.data.description}
 	ogUrl={`https://techit.win/posts/${post.slug}`}
 >
-<PageSection className="post-content">
-	<div class="prose prose-slate dark:prose-invert">
-		<Content/>
-	</div>
-</PageSection>
+	<PageSection>
+		<ContentSection>
+			<img src={post.data.heroImage} alt="" class="aspect-video w-full rounded-[var(--border-radius-3xl)]"/>
+		</ContentSection>
+		<ContentSection>
+			<h1 class="m-0">{post.data.title}</h1>
+			<p class="m-0">{post.data.description}</p>
+			<div class="flex flex-row flex-wrap items-center gap-3">
+				<p class="italic font-mono tracking-tighter" style="opacity: 0.75;font-size:16px;">{new Date(post.data.pubDate).toDateString()}</p>
+				<section class="badge" style="font-size:14px;display:flex;flex-direction:row;flex-wrap:wrap;gap:4px;">
+					{post.data.tags?.map(tag => (
+						<p class="tag">
+							{tag}
+						</p>
+					))}
+				</section>
+			</div>
+		</ContentSection>
+	</PageSection>
+	<div class="hr-super"/>
+	<PageSection className="post-content">
+		<div class="prose prose-slate dark:prose-invert max-w-[56rem] w-full">
+			<Content/>
+		</div>
+	</PageSection>
 </Layout>
+
+<style>
+	.badge {
+		.tag {
+			@apply shadow;
+			background-color: rgba(var(--secondary-color));
+			border: 1px solid rgba(var(--primary-color),0.2);
+			padding: .1rem .5rem;
+			border-radius: var(--border-radius-full);
+			transition: all 0.2s cubic-bezier(var(--easeOut));
+			cursor: pointer;
+		}
+		.tag:hover {
+			@apply shadow-lg -translate-y-[1px];
+		}
+		.tag:active {
+			@apply shadow translate-y-0;
+		}
+	}
+</style>
