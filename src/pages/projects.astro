@@ -13,7 +13,12 @@ import Card from "../components/Card.astro";
         ogDescription="Collection of my projects & stuff."
         ogUrl="https://techit.win/photography"
 >
-    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 max-w-[64rem]">
+    <PageSection>
+        <ContentSection>
+            <h1>My personal/collaboration projects 💼</h1>
+        </ContentSection>
+    </PageSection>
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 max-w-[56rem]">
         <Card url="/projects/mc-thaifixes">
             <img loading="lazy" alt="jzcraft logo" class="project-logo" src="https://files.techit.win/images/site/ThaiFixes-Mali.png"/>
             <p class="text-xl font-bold">Techit's ThaiFixes</p>
