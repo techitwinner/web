@@ -13,6 +13,9 @@ import ContentSection from "../components/ContentSection.astro";
 >
     <PageSection>
         <ContentSection>
+            <h1>Hello! 👋</h1>
+        </ContentSection>
+        <ContentSection>
             <p >Hi, My name is Techit Thawiang. A <span class="text-highlight">fifteen</span> years old kid with a passion on many thing, especially coding. You can call me Sumo, that&apos;s my nickname.</p>
         </ContentSection>
         <ContentSection>
@@ -30,9 +33,9 @@ import ContentSection from "../components/ContentSection.astro";
             <p >For now, I’m just a teen who loves to learn and explore new possibilities in tech.</p>
         </ContentSection>
     </PageSection>
-    <PageSection display="grid" className="main-child-grid-2-col">
-        <ContentSection class="cell">
-            <p >About this Website</p>
+    <PageSection display="grid" className="grid-cols-1 sm:grid-cols-2">
+        <ContentSection>
+            <h3>About this Website</h3>
             <p>
                 This website is built with Astro, which I didn't really wanted to.<br/>
                 Using web frameworks can be tricky and hard to learn, but yeah it can do what I want as I'm super lazy.<br/><br/>
@@ -40,17 +43,12 @@ import ContentSection from "../components/ContentSection.astro";
                 It’s completely free and open-source, licensed under the MIT license.
             </p>
         </ContentSection>
-        <ContentSection class="cell">
-            <p >Where is the Thai language?</p>
+        <ContentSection>
+            <h3>Where is the Thai language?</h3>
             <p>
                 Although it was once available, I prefer to keep things simple.<br/><br/>
                 Implementing internationalization (i18n) can be challenging without JavaScript and external tools,<br/>so reintroducing Thai seems unnecessary.
             </p>
-        </ContentSection>
-    </PageSection>
-    <PageSection>
-        <ContentSection>
-            <p >Love you all,<br/>Thanks for reading.</p>
         </ContentSection>
     </PageSection>
 </Layout>
