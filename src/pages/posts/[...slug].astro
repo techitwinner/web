@@ -37,7 +37,7 @@ const { Content } = await post.render();
 >
 	<PageSection>
 		<ContentSection>
-			<img src={post.data.heroImage} alt="" class="aspect-video w-full rounded-[var(--border-radius-3xl)]"/>
+			<img src={post.data.heroImage} alt="" class={post.data.heroImage ? 'aspect-video w-full rounded-[var(--border-radius)]' : ''}/>
 		</ContentSection>
 		<ContentSection>
 			<h1 class="m-0">{post.data.title}</h1>
@@ -61,23 +61,3 @@ const { Content } = await post.render();
 		</div>
 	</PageSection>
 </Layout>
-
-<style>
-	.badge {
-		.tag {
-			@apply shadow;
-			background-color: rgba(var(--secondary-color));
-			border: 1px solid rgba(var(--primary-color),0.2);
-			padding: .1rem .5rem;
-			border-radius: var(--border-radius-full);
-			transition: all 0.2s cubic-bezier(var(--easeOut));
-			cursor: pointer;
-		}
-		.tag:hover {
-			@apply shadow-lg -translate-y-[1px];
-		}
-		.tag:active {
-			@apply shadow translate-y-0;
-		}
-	}
-</style>
