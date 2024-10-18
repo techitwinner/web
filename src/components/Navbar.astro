@@ -41,8 +41,8 @@ const url = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url
 ---
 
 <PageSection role="nav">
-    <nav class="navbar prose prose-slate dark:prose-invert max-w-[56rem]">
-        <h2 set:html={title}/>
+    <nav class="navbar max-w-[56rem]">
+        <h2 class="leading-tight mb-4" set:html={title}/>
         <slot/>
         <div class="links">
             {
@@ -61,31 +61,27 @@ const url = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url
         align-items: start;
         justify-content: start;
         .links {
-            font-size: 16px;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-items: start;
             gap: 0.25rem;
             width: fit-content;
-            padding: 0.25rem;
-            border-radius: 19.5px;
-            background-color: rgba(var(--primary-color), 0.05);
             flex-wrap: wrap;
             .navitem {
                 box-sizing: border-box;
-                color: rgba(var(--text-base-color), 0.7);
+                color: rgba(var(--color-foreground), 0.5);
                 text-decoration: none;
                 padding: 0.1rem 0.5rem;
-                border-radius: var(--border-radius-full);
-                transition: all 0.2s cubic-bezier(var(--easeOut));
+                transition: all 0.2s cubic-bezier(var(--animation-bezier-easeOut));
+                border-bottom: 1px solid rgba(var(--color-foreground),0)
             }
             .navitem:active {
                 opacity: 0.7;
             }
             .navitem-active, .navitem:hover {
-                color: white;
-                background-color: rgba(var(--accent-color), 1);
+                text-decoration: underline;
+                color: rgba(var(--color-foreground),1);
             }
         }
     }

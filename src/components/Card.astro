@@ -6,33 +6,34 @@ interface Props {
 const { url } = Astro.props;
 ---
 
-<a rel="noreferrer nofollow noopener" href={url} class="t">
+<a rel="noreferrer nofollow noopener" href={url} class="card">
 	<slot/>
 </a>
 
 <style>
-	.t {
+	.card {
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		color: rgba(var(--primary-color));
+		color: rgba(var(--color-foreground));
+		background-color: rgba(var(--color-foreground),0);
 		text-decoration: none;
-		padding: 1rem;
-		border-radius: var(--border-radius-3xl);
+		padding: 0.75rem;
+		border-radius: var(--border-radius-big-2x);
+		opacity: 0.75;
+		transition: all 0.3s cubic-bezier(var(--animation-bezier-easeOut));
 		p {
 			padding: 0;
 			margin: 0;
 		}
-		opacity: 0.75;
-		transition: all 0.3s cubic-bezier(var(--easeOut));
 	}
 
-	.t:hover {
+	.card:hover {
 		opacity: 1;
-		background: rgba(var(--primary-color),0.05);
+		background-color: rgba(var(--color-foreground),0.05);
 	}
 
-	.t:active {
+	.card:active {
 		opacity: 0.5;
 		transition-duration: 0.1s; scale: 0.99;
 	}
