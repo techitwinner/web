@@ -17,7 +17,7 @@ function formatDate(dateString:string) {
 }
 ---
 
-<a href={url} class="t">
+<a href={url} class="post-card">
     <div class="title w-fit max-w-fit" style="text-overflow:ellipsis;line-clamp:2;">
         <p class="text-xl font-bold">{title}</p>
     </div>
@@ -33,47 +33,3 @@ function formatDate(dateString:string) {
     </div>
     <p style="font-size:16px;">{desc}</p>
 </a>
-
-<style>
-    .t {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        color: rgba(var(--primary-color));
-        text-decoration: none;
-        border-radius: var(--border-radius-3xl);
-        p {
-            padding: 0;
-            margin: 0;
-        }
-        opacity: 0.75;
-        transition: all 0.3s cubic-bezier(var(--easeOut));
-        .title {
-            box-sizing: border-box;
-            color: rgba(var(--accent-color));
-            border-bottom: 2px dashed rgba(var(--accent-color),0);
-        }
-    }
-
-    .t:hover {
-        opacity: 1;
-        .title {
-            border-bottom: 2px dashed rgba(var(--accent-color));
-        }
-    }
-
-    .t:active {
-        opacity: 0.5;
-        transition-duration: 0.1s; scale: 0.99;
-    }
-
-    .badge {
-        .tag {
-            @apply shadow;
-            background-color: rgba(var(--secondary-color));
-            border: 1px solid rgba(var(--primary-color),0.2);
-            padding: .1rem .5rem;
-            border-radius: var(--border-radius-full);
-        }
-    }
-</style>
