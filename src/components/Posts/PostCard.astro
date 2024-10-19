@@ -3,8 +3,8 @@ interface Props {
     title: string;
     url: string;
     desc: string;
-    date: string;
-    tags: string[];
+    date?: string;
+    tags?: string[];
 }
 
 const { title, url, desc, date, tags, } = Astro.props;
@@ -22,7 +22,7 @@ function formatDate(dateString:string) {
         <p class="text-xl font-bold">{title}</p>
     </div>
     <div class="flex flex-row flex-wrap items-center gap-3">
-        <p class="italic font-mono tracking-tighter" style="opacity: 0.75;font-size:16px;">{new Date(date).toDateString()}</p>
+        <p class={date ? 'italic font-mono tracking-tighter opacity-75' : 'hidden'}>{new Date(date).toDateString()}</p>
         <section class="badge" style="font-size:14px;display:flex;flex-direction:row;flex-wrap:wrap;gap:4px;">
             {tags?.map(tag => (
                     <p class="tag">
