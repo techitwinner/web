@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageSection from "../components/PageSection.astro";
+import Countdown from "../components/Countdown.astro";
 import ContentSection from "../components/ContentSection.astro";
 ---
 
@@ -20,5 +21,8 @@ import ContentSection from "../components/ContentSection.astro";
 			<h1>Hi! My name is Techit.</h1>
 			<p>Welcome to my website. Powered by dailitation.xyz</p>
 		</ContentSection>
+	</PageSection>
+	<PageSection>
+		<Countdown isGlobal={false} time="2024-12-31T23:59:59Z" utc="UTC+7" />
 	</PageSection>
 </Layout>
