@@ -32,9 +32,12 @@
     --color-tertiary-ct: 15,23,42;
     --color-ts: 2,6,23,0.1;
     --color-ts-ct: 2,6,23;
-    --color-background: 185,205,225;
+    --color-background: 241,245,249;
     --color-foreground: 15,25,45;
     --color-foreground-heading: 0,10,30;
+    /* Fonts */
+    --font-family: 'Anuphan', 'IBM Plex Sans', sans-serif;
+    --font-family-monospace: 'IBM Plex Mono', monospace;
     /* Gap */
     --gap: 6px;
     --gap-big: 12px;
@@ -79,7 +82,7 @@
 }
 
 html {
-    font-family: 'Anuphan', 'IBM Plex Sans', sans-serif;
+    font-family: var(--font-family);
     outline: none;
     background-color: rgba(var(--color-background));
     color: rgba(var(--color-foreground));
@@ -365,6 +368,20 @@ a, button + .btn {
         padding: .1rem .5rem;
         border-radius: var(--border-radius-full);
     }
+}
+/* INPUT */
+.input {
+    border-radius: var(--border-radius);
+    padding: 0.5rem 0.75rem;
+    background-color: rgba(var(--color-foreground),0.05);
+}
+
+.input-block {
+    width: 100%;
+}
+
+.input-big-text {
+    font-size: 2rem;
 }
 
 /* ETC / WORKAROUND / ADDITIONAL STUFF */
