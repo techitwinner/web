@@ -1,0 +1,50 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import Layout from "../../layouts/Layout.astro";
+import PageSection from "../../components/PageSection.astro";
+import ContentSection from "../../components/ContentSection.astro";
+
+// Get all posts from the 'collections' collection
+export async function getStaticPaths() {
+	const collections = await getCollection('collection');
+	return collections.map((collection) => ({
+		params: { slug: collection.slug },
+		props: collection,
+	}));
+}
+
+type Props = CollectionEntry<'collection'>;
+
+const { slug } = Astro.params;
+const collections = await getCollection('collection');
+const collection = collections.find((c) => c.slug === slug);
+
+if (!collection) {
+	throw new Error("Collection not found");
+}
+
+const { Content } = await collection.render();
+---
+
+<Layout
+	{...collection.data}
+	title={collection.data.title}
+	description={collection.data.description}
+	navTitle={`Viewing Collection:<br/>${collection.data.title}`}
+	ogTitle={collection.data.title}
+	ogDescription={collection.data.description}
+	ogUrl={`https://techit.win/collections/${collection.slug}`}
+>
+	<PageSection>
+		<ContentSection>
+			<h1 class="m-0">{collection.data.title}</h1>
+			<p class="m-0">{collection.data.description}</p>
+		</ContentSection>
+	</PageSection>
+	<div class="hr-super"/>
+	<PageSection className="post-content">
+		<div class="prose prose-slate dark:prose-invert max-w-[56rem] w-full">
+			<Content/>
+		</div>
+	</PageSection>
+</Layout>
