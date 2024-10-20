@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 
 let countdownData = null;
 
+// Handle POST request to set countdown data
 if (Astro.request.method === 'POST') {
     const formData = await Astro.request.formData();
     const year = formData.get('year');
@@ -40,11 +41,10 @@ if (Astro.request.method === 'POST') {
                 </section>
                 <section class="text-start">
                     <p class="text-2xl font-bold text-center">How to Use</p>
-                    <p><code class="text-pink-400">time</code> = <span>Countdown target time in the format <code>YYYY<span class="text-pink-400">-</span>MM<span class="text-pink-400">-</span>DD<span class="text-pink-400">T</span>HH<span class="text-pink-400">:</span>mm<span class="text-pink-400">:</span>ss</code> (make sure to preserve the "T").</span></p>
-                    <p>For example: <code><span class="text-blue-400">https://</span>techit.win<span class="text-blue-400">/</span>countdown<span class="text-blue-400">/</span><code class="text-emerald-200">?</code><span class="text-pink-400">time</span>=2024<span class="text-pink-400">-</span>12<span class="text-pink-400">-</span>31<span class="text-pink-400">T</span>23<span class="text-pink-400">:</span>59<span class="text-pink-400">:</span>59</code><br/>will be December 31, 2024 at 23:59:59</p>
-                    <p><code class="text-pink-400">endtext</code> = <span>The text to be show when the countdown is ended.</span></p>
-                    <p>For example: <code><span class="text-blue-400">https://</span>techit.win<span class="text-blue-400">/</span>countdown<span class="text-blue-400">/</span><code class="text-emerald-200">?</code><span class="text-pink-400">time</span>=2024<span class="text-pink-400">-</span>12<span class="text-pink-400">-</span>31<span class="text-pink-400">T</span>23<span class="text-pink-400">:</span>59<span class="text-pink-400">:</span>59<span class="text-emerald-200">&amp;</span>endtext=Happy%20New%20Year!</code><br/>This will set the countdown to December 31, 2024, at 23:59:59 and display "Happy New Year!" when the countdown ends.</p>
-                    <p>Note: You need to use <code class="text-emerald-200">&amp;</code> instead of <code class="text-emerald-200">?</code> for the second and subsequent query parameters.</p>
+                    <p><code class="text-pink-400">time</code> = <span>Countdown target time in the format <code>YYYY-MM-DDTHH:mm:ss</code>.</span></p>
+                    <p>For example: <code>https://techit.win/countdown?time=2024-12-31T23:59:59</code> will be December 31, 2024 at 23:59:59</p>
+                    <p><code class="text-pink-400">endtext</code> = <span>The text to be shown when the countdown ends.</span></p>
+                    <p>For example: <code>https://techit.win/countdown?time=2024-12-31T23:59:59&amp;endtext=Happy%20New%20Year!</code></p>
                 </section>
             </div>
             <div id="countdown-container" class="hidden w-full">
@@ -77,17 +77,18 @@ if (Astro.request.method === 'POST') {
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-    const startCountdown = document.getElementById("submitButton");
+        const startCountdown = document.getElementById("submitButton");
 
-    if (startCountdown) {
+        // Check if the submit button is available
+        if (startCountdown) {
             console.log("Submit button clicked");
         }
-});
+    });
 </script>
 
 <style>
     #countdown-container {
-        width: 100;
+        width: 100%;
     }
 
     #countdown-days, #countdown-hours, #countdown-minutes, #countdown-seconds {
@@ -97,104 +98,92 @@ if (Astro.request.method === 'POST') {
         align-items: center;
         font-size: 8rem;
     }
-    .dd,.hh,.mm,.ss {
+    .dd, .hh, .mm, .ss {
         text-align: center;
     }
 </style>
 
 <script>
-const urlSearchParams = new URLSearchParams(window.location.search);
-const time = urlSearchParams.get('time');
-const endtext = urlSearchParams.get('endtext');
+    // Get URL parameters for countdown time and end text
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const time = urlSearchParams.get('time');
+    const endtext = urlSearchParams.get('endtext');
 
-const leftuntilElement = document.getElementById('leftuntil');
-const countdownContainer = document.getElementById('countdown-container');
-const translatedTargetDateElement = document.getElementById('translatedTargetDate');
-const translatedTargetTimeElement = document.getElementById('translatedTargetTime');
-const translatedTargetDateElement2 = document.getElementById('translatedTargetDate2');
-const translatedTargetTimeElement2 = document.getElementById('translatedTargetTime2');
-const endtextElement = document.getElementById('endtext');
+    const leftuntilElement = document.getElementById('leftuntil');
+    const countdownContainer = document.getElementById('countdown-container');
+    const translatedTargetDateElement = document.getElementById('translatedTargetDate');
+    const translatedTargetTimeElement = document.getElementById('translatedTargetTime');
+    const translatedTargetDateElement2 = document.getElementById('translatedTargetDate2');
+    const translatedTargetTimeElement2 = document.getElementById('translatedTargetTime2');
+    const endtextElement = document.getElementById('endtext');
 
-const asdijo1 = document.getElementById('h1');
-const asdijo2 = document.getElementById('h2');
-const asdijo3 = document.getElementById('h3');
-const asdijo4 = document.getElementById('h4');
-const noTimeElements = [asdijo1, asdijo2, asdijo3, asdijo4];
+    const asdijo1 = document.getElementById('h1');
+    const noTimeElements = [asdijo1]; // Add other elements as needed
 
-noTimeElements.forEach(e => {
-    if (!time) {
-        e.classList.remove('hidden');
+    // Show instructions if no time parameter is provided
+    noTimeElements.forEach(e => {
+        if (!time) {
+            e.classList.remove('hidden');
+        }
+    });
+
+    if (time) {
+        // Show countdown container and update text
+        countdownContainer.classList.remove('hidden');
+        leftuntilElement.classList.remove('hidden');
+        endtextElement.classList.add('hidden');
+
+        // Function to calculate time remaining
+        function getTimeRemaining(endtime) {
+            const total = Date.parse(endtime) - Date.now();
+            const seconds = Math.floor((total / 1000) % 60);
+            const minutes = Math.floor((total / 1000 / 60) % 60);
+            const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+            const days = Math.floor(total / (1000 * 60 * 60 * 24));
+            
+            return {
+                total,
+                days,
+                hours,
+                minutes,
+                seconds
+            };
+        }
+
+        const targetTime = new Date(time);
+
+        // Format the target date
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedTargetDate = targetTime.toLocaleDateString(undefined, dateOptions);
+        translatedTargetDateElement.textContent = formattedTargetDate;
+        translatedTargetDateElement2.textContent = formattedTargetDate;
+
+        // Format the target time
+        const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+        const formattedTargetTime = targetTime.toLocaleTimeString(undefined, timeOptions);
+        translatedTargetTimeElement.textContent = formattedTargetTime;
+        translatedTargetTimeElement2.textContent = formattedTargetTime;
+
+        // Update countdown display
+        function updateCountdown() {
+            const t = getTimeRemaining(targetTime);
+
+            document.getElementById('countdown-days').textContent = t.days;
+            document.getElementById('countdown-hours').textContent = t.hours;
+            document.getElementById('countdown-minutes').textContent = t.minutes;
+            document.getElementById('countdown-seconds').textContent = t.seconds;
+
+            // Check if countdown has finished
+            if (t.total <= 0) {
+                clearInterval(timeinterval);
+                countdownContainer.classList.add('hidden');
+                leftuntilElement.classList.add('hidden');
+                endtextElement.classList.remove('hidden');
+                endtextElement.textContent = endtext || "Countdown has ended!"; // Default message if no endtext
+            }
+        }
+
+        const timeinterval = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call to set the values immediately
     }
-});
-
-let isFullscreen = false;
-const checkFullscreen = () => {
-    isFullscreen = !!document.fullscreenElement;
-    updateLayoutProps();
-};
-
-const updateLayoutProps = () => {
-    const layoutElement = document.querySelector('your-layout-selector'); // Replace with actual selector
-    if (layoutElement) {
-        layoutElement.setAttribute('noNavbar', isFullscreen);
-        layoutElement.setAttribute('noFooter', isFullscreen);
-    }
-};
-
-if (time) {
-    countdownContainer.classList.remove('hidden');
-    leftuntilElement.classList.remove('hidden');
-    endtextElement.classList.add('hidden');
-    
-
-    function getTimeRemaining(endtime) {
-      const total = Date.parse(endtime) - Date.now();
-      const seconds = Math.floor((total / 1000) % 60);
-      const minutes = Math.floor((total / 1000 / 60) % 60);
-      const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-      const days = Math.floor(total / (1000 * 60 * 60 * 24));
-      
-      return {
-        total,
-        days,
-        hours,
-        minutes,
-        seconds
-      };
-    }
-
-    const targetTime = new Date(time);
-
-    // Format the target date
-    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-    const formattedTargetDate = targetTime.toLocaleDateString(undefined, dateOptions);
-    translatedTargetDateElement.textContent = formattedTargetDate;
-    translatedTargetDateElement2.textContent = formattedTargetDate;
-
-    // Format the target time
-    const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-    const formattedTargetTime = targetTime.toLocaleTimeString(undefined, timeOptions);
-    translatedTargetTimeElement.textContent = formattedTargetTime;
-    translatedTargetTimeElement2.textContent = formattedTargetTime;
-
-    function updateCountdown() {
-      const t = getTimeRemaining(targetTime);
-
-      document.getElementById('countdown-days').textContent = t.days;
-      document.getElementById('countdown-hours').textContent = t.hours;
-      document.getElementById('countdown-minutes').textContent = t.minutes;
-      document.getElementById('countdown-seconds').textContent = t.seconds;
-
-      if (t.total <= 0) {
-        clearInterval(timeinterval);
-        countdownContainer.classList.add('hidden');
-        leftuntilElement.classList.add('hidden');
-        endtextElement.classList.remove('hidden');
-        document.getElementById('endtext').textContent = endtext;
-      }
-    }
-
-    const timeinterval = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Initial call to set the values immediately
-};
 </script>
