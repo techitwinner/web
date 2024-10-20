@@ -42,9 +42,9 @@ if (Astro.request.method === 'POST') {
                 <section class="text-start">
                     <p class="text-2xl font-bold text-center">How to Use</p>
                     <p><code class="text-pink-400">time</code> = <span>Countdown target time in the format <code>YYYY-MM-DDTHH:mm:ss</code>.</span></p>
-                    <p>For example: <code>https://techit.win/countdown?time=2024-12-31T23:59:59</code> will be December 31, 2024 at 23:59:59</p>
+                    <p>For example: <a href="https://techit.win/countdown/?time=2024-12-31T23:59:59"><code>https://techit.win/countdown/?time=2024-12-31T23:59:59</code></a> will be December 31, 2024 at 23:59:59</p>
                     <p><code class="text-pink-400">endtext</code> = <span>The text to be shown when the countdown ends.</span></p>
-                    <p>For example: <code>https://techit.win/countdown?time=2024-12-31T23:59:59&amp;endtext=Happy%20New%20Year!</code></p>
+                    <p>For example: <a href="https://techit.win/countdown/?time=2024-12-31T23:59:59&endtext=Happy%20New%20Year!"><code>https://techit.win/countdown/?time=2024-12-31T23:59:59&amp;endtext=Happy%20New%20Year!</code></a></p>
                 </section>
             </div>
             <div id="countdown-container" class="hidden w-full">
@@ -67,8 +67,28 @@ if (Astro.request.method === 'POST') {
                     </div>
                 </div>
             </div>
+            <div id="clock-container" class="hidden w-full">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="hh">
+                        <span id="clock-hours">0</span>
+                        <p>Hours</p>
+                    </div>
+                    <div class="mm">
+                        <span id="clock-minutes">0</span>
+                        <p>Minutes</p>
+                    </div>
+                    <div class="ss">
+                        <span id="clock-seconds">0</span>
+                        <p>Seconds</p>
+                    </div>
+                    <div class="ms">
+                        <span id="clock-mseconds">0</span>
+                        <p>Milli Seconds</p>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="break-words mt-12">
+        <section id="endtextParent" class="break-words">
             <p id="leftuntil" class="hidden text-2xl text-center w-full">left until <span id="translatedTargetDate">translatedTargetDate</span> at <span id="translatedTargetTime">translatedTargetTime</span></p>
             <p id="endtext" class="hidden anim-scaleIn text-5xl md:text-7xl text-center w-full">endtext</p>
         </section>
@@ -87,10 +107,9 @@ if (Astro.request.method === 'POST') {
 </script>
 
 <style>
-    #countdown-container {
+    #countdown-container, #clock-container {
         width: 100%;
     }
-
     #countdown-days, #countdown-hours, #countdown-minutes, #countdown-seconds {
         font-family: var(--font-family-monospace);
         display: flex;
@@ -98,7 +117,14 @@ if (Astro.request.method === 'POST') {
         align-items: center;
         font-size: 8rem;
     }
-    .dd, .hh, .mm, .ss {
+    #clock-hours, #clock-minutes, #clock-seconds, #clock-mseconds {
+        @apply text-6xl lg:text-8xl;
+        font-family: var(--font-family-monospace);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .dd, .hh, .mm, .ss, .ms {
         text-align: center;
     }
 </style>
@@ -116,11 +142,11 @@ if (Astro.request.method === 'POST') {
     const translatedTargetDateElement2 = document.getElementById('translatedTargetDate2');
     const translatedTargetTimeElement2 = document.getElementById('translatedTargetTime2');
     const endtextElement = document.getElementById('endtext');
+    const endtextParentElement = document.getElementById('endtextParent');
 
     const asdijo1 = document.getElementById('h1');
     const noTimeElements = [asdijo1]; // Add other elements as needed
 
-    // Show instructions if no time parameter is provided
     noTimeElements.forEach(e => {
         if (!time) {
             e.classList.remove('hidden');
@@ -132,6 +158,7 @@ if (Astro.request.method === 'POST') {
         countdownContainer.classList.remove('hidden');
         leftuntilElement.classList.remove('hidden');
         endtextElement.classList.add('hidden');
+        endtextParentElement.classList.add('mt-12');
 
         // Function to calculate time remaining
         function getTimeRemaining(endtime) {
@@ -179,8 +206,12 @@ if (Astro.request.method === 'POST') {
                 countdownContainer.classList.add('hidden');
                 leftuntilElement.classList.add('hidden');
                 endtextElement.classList.remove('hidden');
+                endtextParentElement.classList.remove('mt-12');
+                endtextParentElement.classList.add('mb-12');
                 endtextElement.textContent = endtext || "Countdown has ended!"; // Default message if no endtext
-            }
+            } else if (t.total = 1) {
+                countdownContainer.classList.add('anim-scaleOut');
+            };
         }
 
         const timeinterval = setInterval(updateCountdown, 1000);
