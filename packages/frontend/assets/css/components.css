@@ -1,0 +1,71 @@
+.grid-3-cols {
+    display: grid;
+    grid-gap: 8px;
+    gap: 8px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-flow: row;
+    .box {
+        display: block;
+        aspect-ratio: 16/9;
+        border-radius: 1rem;
+        overflow: hidden;
+        grid-column: span 1;
+        cursor: pointer;
+        background-color: var(--md-sys-color-surface-container);
+        transition: var(--web-transition);
+        transition-property: border-radius, background-color;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &:hover {
+            img {
+                object-fit: contain;
+            }
+        }
+        &:active { border-radius: 1.5rem; background-color: var(--md-sys-color-surface-container-highest); }
+    }
+}
+@media (max-width: 48rem) {
+    .grid-3-cols {
+        .box {
+            grid-column: span 3;
+        }
+    }
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.posts {
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    .post-card {
+        .card {
+            padding: 0.55rem 0 0.25rem 0;
+        }
+        &:active .card, &:active:first-child .card, &:active:last-child .card, &:active:not(:first-child):not(:last-child) {
+            &:active {
+                border-radius: 1.5rem;
+            }
+        }
+        &:only-child {
+            border-radius: 1rem;
+        }
+        &:first-child:not(:only-child) .card {
+            border-radius: 1rem 1rem 0.25rem 0.25rem;
+        }
+        &:last-child:not(:only-child) .card {
+            border-radius: 0.25rem 0.25rem 1rem 1rem;
+        }
+        &:not(:first-child):not(:last-child):not(:only-child) .card {
+            border-radius: 0.25rem;
+        }
+    }
+}

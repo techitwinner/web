@@ -1,0 +1,16 @@
+@font-face { font-family: "Sarabun"; font-style: normal; font-weight: 100; font-display: swap; src: url("Sarabun-Thin.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: italic; font-weight: 100; font-display: swap; src: url("Sarabun-ThinItalic.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: normal; font-weight: 200; font-display: swap; src: url("Sarabun-ExtraLight.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: italic; font-weight: 200; font-display: swap; src: url("Sarabun-ExtraLightItalic.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: normal; font-weight: 300; font-display: swap; src: url("Sarabun-Light.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: italic; font-weight: 300; font-display: swap; src: url("Sarabun-LightItalic.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: normal; font-weight: 400; font-display: swap; src: url("Sarabun-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: italic; font-weight: 400; font-display: swap; src: url("Sarabun-Italic.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: normal; font-weight: 500; font-display: swap; src: url("Sarabun-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: italic; font-weight: 500; font-display: swap; src: url("Sarabun-MediumItalic.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: normal; font-weight: 600; font-display: swap; src: url("Sarabun-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: italic; font-weight: 600; font-display: swap; src: url("Sarabun-SemiBoldItalic.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: normal; font-weight: 700; font-display: swap; src: url("Sarabun-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: italic; font-weight: 700; font-display: swap; src: url("Sarabun-BoldItalic.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: normal; font-weight: 800; font-display: swap; src: url("Sarabun-ExtraBold.ttf") format("truetype"); }
+@font-face { font-family: "Sarabun"; font-style: italic; font-weight: 800; font-display: swap; src: url("Sarabun-ExtraBoldItalic.ttf") format("truetype"); }

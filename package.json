@@ -1,0 +1,16 @@
+{
+    "name": "@techitwinner/web",
+    "version": "1.0",
+    "private": true,
+    "scripts": {
+        "frontend:build": "pnpm --filter @techitwinner/web-frontend build",
+        "frontend:production": "bun run packages/frontend/.output/server/index.mjs",
+        "frontend:dev": "pnpm --filter @techitwinner/web-frontend dev",
+        "frontend:generate": "pnpm --filter @techitwinner/web-frontend generate",
+        "frontend:preview": "pnpm --filter @techitwinner/web-frontend preview",
+        "frontend:prepare": "pnpm --filter @techitwinner/web-frontend postinstall",
+        "backend:unix": "pnpm --filter @techitwinner/web-backend serve:unix",
+        "backend:windows": "pnpm --filter @techitwinner/web-backend serve:windows"
+    }
+  }
+  

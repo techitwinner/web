@@ -1,0 +1,9 @@
+{
+    "name": "@techitwinner/web-backend",
+    "version": "0.25.4",
+    "private": true,
+    "scripts": {
+        "serve:unix": "pocketbase serve --http localhost:3002",
+        "serve:windows": "pocketbase.exe serve --http localhost:3002"
+    }
+}

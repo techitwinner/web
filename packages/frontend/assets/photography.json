@@ -1,0 +1,88 @@
+{
+    "scheme": {
+      "url": "https://files.techit.win/images/photography/"
+    },
+    "old": {
+      "prefix": "history/2018/",
+      "items": [
+        {
+          "filename": "IMG_20181220_064737.jpg",
+          "alt": "Leaves and reservoir view in Phayao University"
+        },
+        {
+          "filename": "IMG_20181220_064706.jpg",
+          "alt": "Reservoir view and buddha in Phayao University"
+        }
+      ]
+    },
+    "firstdslr": {
+      "prefix": "",
+      "items": [
+        {
+          "filename": "IMG_4183.JPG",
+          "alt": "Inside Martin Lee MS-41CE"
+        },
+        {
+          "filename": "IMG_4203.JPG",
+          "alt": "iPhone 14 Pro Max Dynamic Island focus"
+        },
+        {
+          "filename": "IMG_4205.JPG",
+          "alt": "IDK what is this flower called"
+        },
+        {
+          "filename": "IMG_4207.JPG",
+          "alt": "IDK what is this red blooming flower called"
+        },
+        {
+          "filename": "IMG_4208.JPG",
+          "alt": "Red Needle Flower"
+        },
+        {
+          "filename": "IMG_4186.JPG",
+          "alt": "Tissue and oranges"
+        },
+        {
+          "filename": "IMG_4213.JPG",
+          "alt": "Green sprout macro image"
+        },
+        {
+          "filename": "IMG_4217.JPG",
+          "alt": "Some grass flower IDK"
+        }
+      ]
+    },
+    "electronics": {
+      "prefix": "electronics/",
+      "items": [
+        {
+          "filename": "IMG20241125200452.jpg",
+          "alt": "Stupid BSOD on Windows 11"
+        },
+        {
+          "filename": "IMG20241210212239.jpg",
+          "alt": "Stupid updates on Windows 11"
+        },
+        {
+          "filename": "IMG20241211193235.jpg",
+          "alt": "Yay it's working again"
+        },
+        {
+          "filename": "IMG20241211193642.jpg",
+          "alt": "RX 570 (above) compared to GTX 750 Ti (below)"
+        },
+        {
+          "filename": "IMG_20241101_183242_148.jpg",
+          "alt": "Air conditioner motherboard"
+        },
+        {
+          "filename": "IMG_20241116_194732_0553.jpg",
+          "alt": "Pregnant battery in powerbank"
+        },
+        {
+          "filename": "IMG_20241122_165635_824.jpg",
+          "alt": "Fedora update screen"
+        }
+      ]
+    }
+  }

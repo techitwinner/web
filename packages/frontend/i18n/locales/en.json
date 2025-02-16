@@ -1,0 +1,94 @@
+{
+  "me": {
+    "name": "Techit Thawiang",
+    "about": "I'm a 9th grade student at Ko Pho Tuayngam Wittaya School in Chon Buri, Thailand who passionated in contributing to the FOSS (Free and open-source software) community, development and engineering."
+  },
+  "random": {
+    "ai": {
+      "1": "Artificial Intelligence (AI) is transforming the world in many aspects, from medicine to the entertainment industry. AI systems can analyze massive amounts of data in a short time, allowing them to predict market trends, analyze consumer behavior, and help doctors diagnose diseases more accurately. However, the development of AI also comes with challenges, such as ethical issues and data privacy concerns. Many are worried that AI could lead to violations of individual rights if there is no proper regulation.",
+      "2": "In the industrial sector, AI is used in manufacturing processes to enhance efficiency, reduce costs, and minimize human errors. Automated systems in factories can operate continuously without breaks, ensuring stable and faster production. Additionally, AI plays a crucial role in autonomous vehicle technology, processing data from various sensors to help vehicles navigate safely. While these advancements bring convenience, continuous development is necessary to ensure these systems function efficiently and safely in all situations."
+    }
+  },
+  "home": {
+    "nav": "Home",
+    "about": {
+      "paragraph": "Hello! My name is Techit Thawiang, and I'm a 9th-grade student at Ko Pho Tuayngam Wittaya School. I’m passionate about contributing to and using FOSS (Free and Open Source Software), as well as developing my own tools.",
+      "studies": "I have a keen interest in studying various fields of engineering, including civil, computer, and network engineering. At just 15 years old, I am gaining valuable experience on my journey through life, learning and growing along the way.",
+      "title": "About Me"
+    },
+    "contact": {
+      "title": "Get in touch",
+      "desc": "For the best way to get in touch, I recommend reaching out via email. I’ll make sure to respond as soon as I can!"
+    }
+  },
+  "projects": {
+    "nav": "Projects",
+    "desc": "Here are the things I’ve been working on—open-source contributions and development projects. Check them out!"
+  },
+  "blog": {
+    "nav": "Blog",
+    "desc": "Welcome to my blog! I share my thoughts, projects, life, reviews, and experiences here. Browse around and see what interests you!"
+  },
+  "photography": {
+    "nav": "Photo&shy;graphy\n",
+    "desc": "A collection of my photography journey, capturing moments, details, and stories through the lens.",
+    "preface": {
+      "title": "Preface",
+      "paragraph": {
+        "1": "When I was 8-9 years old, I had my first phone. Even though it was not that decent in spec, it has a place in my heart because my mom bought it for me.",
+        "2": "I started shooting random stuff like crazy, at the time, I didn&apos;t even care if these photos will be deleted or forever gone, luckily there is something called “Google Photos” that automatically backed up all of my ancient aged photos.",
+        "3": "Towards the end of 2023, I returned to Phichit, the place where I used to live before moving to Chon Buri, to visit my relatives and friends. While I was there, I stopped by Soda's house. He told me that his dad had given him his DSLR camera and asked if I'd like to take some photos with it.",
+        "4": "My new experience with my first DSLR camera I used in my entire life, I shoot photos like crazy again, here's some of them."
+      },
+      "timeflewby": "Time flew by..."
+    },
+    "title": "Photography",
+    "license": "You may use the images I provided above (above only, otherwise contact techit[at]dailitation[dot]xyz) freely, including for commercial purposes. However, claiming them as your own is not permitted."
+  },
+  "about": {
+    "nav": "About",
+    "desc": "Learn more about me, my age, my interest, my education, my everything that defines who I am.",
+    "me": {
+      "paragraph": {
+        "1": "My name is Techit “Sumo” Thawiang, or “TechitWinner” on the internet. I'm a 15 years old student who are passionated in computer engineering, other than that I'm also interested in civil engineering, network, architect and electrical engineering.",
+        "2": "When I was 7 to 11 years old, I thought studying was easy because I was always the top student in class. Everything seemed to come easily. But as I got older, I started to realize that learning was harder than I thought. Each subject presented new challenges, and I had to put in more effort to perform as well as I did before.\n",
+        "3": "Now, I don't have much to write down here, please come back here when I'm successful.",
+        "4": "Actually I have a wiki of my self at {at}."
+      },
+      "hello": "Hello!"
+    }
+  },
+  "error": {
+    "down": {
+      "actually": "Actually, you can check if one of my services is down by going to my {uptime}.",
+      "desc": "Either there are actually nothing to show, or my backend is down.",
+      "noposts": "No posts found.",
+      "noprojects": "No projects found."
+    }
+  },
+  "footer": {
+    "title": "Techit's Home by Techit Thawiang",
+    "copy": {
+      "rights": "Some rights reserved unless otherwise noted."
+    },
+    "powered": "Powered by",
+    "sourcecode": "Source Code",
+    "gpg": "GPG/PGP Public Key"
+  },
+  "ui": {
+    "language": {
+      "switch": "Switch Language"
+    }
+  },
+  "attribution": {
+    "nav": "Attri&shy;bution",
+    "whatfor": {
+      "title": "What is this page for?",
+      "desc": "This page is created to give attribution for various stuff I used on this website for example images, icons, font."
+    },
+    "desc": "Attribution to various resources I used.",
+    "main": {
+      "title": "Attribution"
+    }
+  }
+}

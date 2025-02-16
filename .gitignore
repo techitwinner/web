@@ -1,0 +1,9 @@
+packages/frontend/.nuxt
+packages/frontend/.nuxt/*
+packages/frontend/.output
+packages/frontend/.output/*
+packages/backend/pb_data
+packages/backend/pb_data/*
+packages/backend/pb_migrations
+packages/backend/pb_migrations/*
+node_modules
