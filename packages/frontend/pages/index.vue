@@ -2,10 +2,13 @@
   <main class="container">
     <div class="child header">
       <section class="primary-container">
-            <section class="content-section">
-              <h1>{{ t('me.name') }}</h1>
-              <p>{{ t('me.about') }}</p>
-          </section>
+        <section class="content-section">
+          <h1>{{ t('me.name') }}</h1>
+          <p>{{ t('me.about') }}</p>
+          <div class="action">
+            <NuxtLinkLocale class="btn btn-hero" href="/blog">Read blog</NuxtLinkLocale>
+          </div>
+        </section>
       </section>
       <section class="primary-container" style="background-image: url('https://files.techit.win/images/ROOT-10Mqtioww9RnBcLpd9ZN1KJO.png');">
       </section>
