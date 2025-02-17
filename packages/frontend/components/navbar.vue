@@ -100,6 +100,11 @@ const navItems = [
     "ico": "attribution",
     "href": "/attribution"
   },
+  {
+    "label": "copyright_notice.nav",
+    "ico": "copyright",
+    "href": "/copyright-notice"
+  },
 ];
 </script>
 
