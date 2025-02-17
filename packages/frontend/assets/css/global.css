@@ -133,7 +133,7 @@ body {
             }
         }
         &.header {
-            max-width: 110rem;
+            max-width: 111rem;
             display: grid;
             grid-gap: 8px;
             gap: 8px;
