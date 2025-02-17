@@ -27,13 +27,14 @@
 :root {
     --md-sys-color-shadow-15: rgba(0, 0, 0, 0.15);
 
-    --web-page-max-width: 48rem;
+    --web-page-max-width: 75rem;
     --web-page-padding: 0.5rem;
     --web-navbar-height: 4rem;
     --web-navbar-width: 5.5rem;
     --web-button-height: 40px;
     --web-transition: 0.3s cubic-bezier(var(--ease-fluid));
     --web-transition-in: 0.3s cubic-bezier(var(--ease-fluid-in));
+    --web-transition-state: opacity 0.2s cubic-bezier(var(--ease-fluid));
     --web-focus: 2px solid currentColor;
 
     --ease-fluid: 0.3, 0, 0, 1;
@@ -86,15 +87,20 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
+    display: block;
     width: 100%;
     .child {
         max-width: var(--web-page-max-width);
         width: 100%;
-        margin: 0 auto;
+        margin: 96px auto;
         padding: var(--web-page-padding);
         box-sizing: border-box;
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
         .content-section {
             h1, h2, h3, h4, h5, h6 {
                 margin: 0.35em 1rem;
@@ -145,19 +151,25 @@ body {
                 margin: 0;
                 padding: 56px;
                 border-radius: 24px;
-                background-color: var(--md-sys-color-primary-container);
-                color: var(--md-sys-color-on-primary-container);
+                background-color: var(--md-sys-color-surface-container-low);
+                color: var(--md-sys-color-on-surface);
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
                 background-size: cover;
                 justify-content: center;
                 align-content: center;
-                h1 { font-size: clamp(2.5rem, 10vw, 6rem); margin: 0 0 1.5rem 0; }
+                h1 { font-size: clamp(2.5rem, 10vw, 6rem); margin: 0 0 1.5rem 0; font-weight: 550; }
                 p { font-size: 22px; margin: 0; }
                 grid-column: span 1;
                 &:only-child {
                     grid-column: span 2;
                     text-align: center;
+                }
+                &:not(:only-child):last-child {
+                    border-radius: 1rem;
+                }
+                .action {
+                    margin: 1.5rem 0 0 0;
                 }
             }
             &.flex {
@@ -171,10 +183,11 @@ body {
             }
         }
         &.footer {
-            padding: var(--web-page-padding) var(--web-page-padding) calc(var(--web-page-padding)*2) var(--web-page-padding);
+            padding: var(--web-page-padding);
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            margin: 96px auto;
             .items-end {
                 display: flex;
                 align-items: end;
@@ -221,6 +234,7 @@ body {
     color: var(--md-sys-color-on-surface);
     transition: var(--web-transition);
     transition-property: width, height;
+    z-index: 9999;
     .child {
         display: flex;
         flex-direction: column;
@@ -347,7 +361,6 @@ body {
 }
 
 .btn {
-    --state-layer: var(--md-sys-color-primary);
     box-sizing: border-box;
     overflow: hidden;
     display: inline-flex;
@@ -399,9 +412,9 @@ body {
     &.btn-elevated {
         background-color: var(--md-sys-color-surface-container-low);
         color: var(--md-sys-color-primary);
-        filter: drop-shadow(0 2px 2px var(--md-sys-color-shadow-15)) drop-shadow(0 1px 1px var(--md-sys-color-shadow-15));
+        box-shadow: 0 2px 2px var(--md-sys-color-shadow-15), 0 1px 1px var(--md-sys-color-shadow-15);
         transition: var(--web-transition);
-        transition-property: filter;
+        transition-property: box-shadow;
         &:hover {
             filter: drop-shadow(0 3px 3px var(--md-sys-color-shadow-15)) drop-shadow(0 5px 4px var(--md-sys-color-shadow-15));
         }
@@ -430,21 +443,35 @@ body {
     &.btn-lg {
         height: 48px;
     }
+    &.btn-hero {
+        height: 80px;
+        padding: 0 3rem;
+        font-size: 1.5rem;
+        font-weight: 550;
+        border-radius: 2.5rem;
+        transition: var(--web-transition);
+        transition-property: border-radius, font-weight;
+        &:active {
+            border-radius: 1rem;
+            font-weight: 500;
+        }
+    }
     &.btn-round { border-radius: var(--roundness); }
 
     &::before {
         content: "";
         position: absolute;
         inset: 0;
-        background-color: var(--state-layer);
+        background-color: currentColor;
         pointer-events: none;
         opacity: 0;
+        transition: var(--web-transition-state);
     }
     &:hover::before { opacity: 0.08; }
     &:focus-active::before { opacity: 0.08 }
     &:active::before { opacity: 0.1; }
 }
-a.btn { p { margin: 0 0 4px 0; } }
+a.btn, button.btn { p { margin: 0 0 4px 0; } }
 
 a.link {
     color: var(--md-sys-color-primary);
@@ -499,7 +526,7 @@ a.link {
     transform: translateX(-100%);
     background-color: var(--md-sys-color-surface-container);
     color: var(--md-sys-color-on-surface-variant);
-    z-index: 999;
+    z-index: 9999;
     transition: var(--web-transition);
     transition-property: all;
     display: flex;

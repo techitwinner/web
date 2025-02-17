@@ -1,13 +1,7 @@
 {
   "me": {
     "name": "Techit Thawiang",
-    "about": "I'm a 9th grade student at Ko Pho Tuayngam Wittaya School in Chon Buri, Thailand who passionated in contributing to the FOSS (Free and open-source software) community, development and engineering."
-  },
-  "random": {
-    "ai": {
-      "1": "Artificial Intelligence (AI) is transforming the world in many aspects, from medicine to the entertainment industry. AI systems can analyze massive amounts of data in a short time, allowing them to predict market trends, analyze consumer behavior, and help doctors diagnose diseases more accurately. However, the development of AI also comes with challenges, such as ethical issues and data privacy concerns. Many are worried that AI could lead to violations of individual rights if there is no proper regulation.",
-      "2": "In the industrial sector, AI is used in manufacturing processes to enhance efficiency, reduce costs, and minimize human errors. Automated systems in factories can operate continuously without breaks, ensuring stable and faster production. Additionally, AI plays a crucial role in autonomous vehicle technology, processing data from various sensors to help vehicles navigate safely. While these advancements bring convenience, continuous development is necessary to ensure these systems function efficiently and safely in all situations."
-    }
+    "about": "I'm a 9th grade student who passionated in contributing to the FOSS community, development and engineering."
   },
   "home": {
     "nav": "Home",
@@ -69,7 +63,8 @@
   "footer": {
     "title": "Techit's Home by Techit Thawiang",
     "copy": {
-      "rights": "Some rights reserved unless otherwise noted."
+      "rights": "All rights reserved unless otherwise noted.",
+      "notice": "Copyright Notice"
     },
     "powered": "Powered by",
     "sourcecode": "Source Code",
@@ -90,5 +85,12 @@
     "main": {
       "title": "Attribution"
     }
+  },
+  "copyright_notice": {
+    "nav": "Copyright Notice",
+    "paragraph": {
+      "1": "The content on this website is owned by {name}, except where otherwise stated. (see also {seealso}.)\\n You may use the content for educational and non-commercial purposes only.\\n Commercial use is not permitted without prior permission.\\n For commercial inquiries, please contact techit[at]dailitation[dot]xyz.\\n Attribution is required for commercial usage."
+    },
+    "title": "&copy; 2023 - {year} {name}. {rights}."
   }
 }
