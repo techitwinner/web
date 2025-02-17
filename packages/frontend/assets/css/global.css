@@ -68,48 +68,19 @@ body {
 
 .techitwinner {
     &.web {
-        background-color: var(--md-sys-color-surface-container);
-        color: var(--md-sys-color-on-surface);
         width: 100%;
         box-sizing: border-box;
-        .wrapper {
-            box-sizing: border-box;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            padding:
-                    calc(var(--web-page-padding))
-                    calc(var(--web-page-padding))
-                    calc(var(--web-page-padding))
-                    calc(var(--web-navbar-width) + 1px);
-            transition: var(--web-transition);
-            transition-property: padding;
-            .page {
-                border-radius: var(--roundness);
-                background-color: var(--md-sys-color-surface);
-                color: var(--md-sys-color-on-surface);
-                transition: var(--web-transition);
-                transition-property: background-color;
-                outline: 1px solid var(--md-sys-color-surface-container-highest);
-                height: 100%;
-                overflow-y: auto;
-                overflow-x: hidden;
-                scrollbar-color: var(--md-sys-color-outline-variant) var(--md-sys-color-surface);
-                scrollbar-width: thin;
-            }
-        }
+        background-color: var(--md-sys-color-surface);
+        color: var(--md-sys-color-on-surface);
+        padding: 0 0 0 var(--web-navbar-width);
+        scrollbar-color: var(--md-sys-color-outline-variant) var(--md-sys-color-surface);
+        scrollbar-width: thin;
     }
 }
 @media (max-width: 48rem) {
     .techitwinner {
         &.web {
-            .wrapper {
-                padding:
-                        calc(var(--web-navbar-height) + 1px)
-                        calc(var(--web-page-padding))
-                        calc(var(--web-page-padding))
-                        calc(var(--web-page-padding));
-            }
+            padding: var(--web-navbar-height) 0 0 0;
         }
     }
 }
@@ -248,7 +219,6 @@ body {
     flex-direction: column;
     background-color: var(--md-sys-color-surface-container);
     color: var(--md-sys-color-on-surface);
-    border-radius: 1rem;
     transition: var(--web-transition);
     transition-property: width, height;
     .child {
