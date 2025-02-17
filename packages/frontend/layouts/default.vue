@@ -1,12 +1,8 @@
 <template>
-  <main class="techitwinner web">
+  <main ref="pageContainer" class="techitwinner web">
     <Navbar/>
-    <div class="wrapper">
-      <section ref="pageContainer" class="page">
-        <slot/>
-        <Footer/>
-      </section>
-    </div>
+    <slot/>
+    <Footer/>
   </main>
 </template>
 
