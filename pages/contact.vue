@@ -17,3 +17,18 @@
         </article>
     </main>
 </template>
+
+<script setup>
+const TITLE = "Contact"
+const DESC = "How to contact Techit"
+
+useHead({
+  title: TITLE,
+  meta: [
+    { name: 'description', content: DESC },
+    { property: 'og:title', content: TITLE },
+    { property: 'og:description', content: DESC },
+    { property: 'og:type', content: 'website' }
+  ]
+})
+</script>

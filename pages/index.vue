@@ -16,3 +16,18 @@
         </article>
     </main>
 </template>
+
+<script setup>
+const TITLE = "Home"
+const DESC = "Welcome to thawia.ng, a Techit's website."
+
+useHead({
+  title: TITLE,
+  meta: [
+    { name: 'description', content: DESC },
+    { property: 'og:title', content: TITLE },
+    { property: 'og:description', content: DESC },
+    { property: 'og:type', content: 'website' }
+  ]
+})
+</script>

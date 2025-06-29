@@ -13,3 +13,18 @@
         </article>
     </main>
 </template>
+
+<script setup>
+const TITLE = "Collections"
+const DESC = "Techit's personal-public collections"
+
+useHead({
+  title: TITLE,
+  meta: [
+    { name: 'description', content: DESC },
+    { property: 'og:title', content: TITLE },
+    { property: 'og:description', content: DESC },
+    { property: 'og:type', content: 'website' }
+  ]
+})
+</script>
