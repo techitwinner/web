@@ -7,17 +7,17 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://thawia.ng/contact.html</loc>
+        <loc>https://thawia.ng/contact</loc>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
-        <loc>https://thawia.ng/posts.html</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
+        <loc>https://thawia.ng/fonts</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.2</priority>
     </url>
     <url>
-        <loc>https://thawia.ng/fonts.html</loc>
+        <loc>https://thawia.ng/collections</loc>
         <changefreq>monthly</changefreq>
         <priority>0.2</priority>
     </url>
