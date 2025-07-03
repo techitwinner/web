@@ -102,21 +102,24 @@ body,main {
     color: var(--ui-text-muted);
     background-color: var(--ui-bg);
 }
-#web-header {
+#web-header, #web-footer, main {
     padding: 0 1rem;
 }
-#web-heading, #web-nav, #web-footer, .article {
+h1,h2,h3,h4,h5,h6 {
+    color: var(--ui-text);
+}
+#web-heading, #web-nav, #web-footer-content, .article {
     margin: 1rem auto;
     width: 100%;
     max-width: var(--ui-container);
 }
 .nav-text {
     margin: 1rem 0;
-    line-height: 1.5rem;
-    font-size: 1.5rem;
+    line-height: 2rem;
+    font-size: 2rem;
     text-transform: uppercase;
     font-variation-settings: 'wdth' 75;
-    font-weight: 900;
+    font-weight: 700;
     a {
         color: var(--ui-text-muted);
         text-decoration: none;
