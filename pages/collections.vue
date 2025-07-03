@@ -3,6 +3,14 @@
         <article class="article">
             <h1>Techit's Collections</h1>
             <p>
+                Collections of interesting documents.
+            </p>
+            <ul>
+                <li>
+                    <a href="/portal/f/act/Copyright_Act2_TH.pdf"><b>Thailand Copyright Act</b>: พระราชบัญญัติลิขสิทธิ์ พ.ศ. ๒๕๓๗</a>
+                </li>
+            </ul>
+            <p>
                 Collections of interesting tools.
             </p>
             <ul>
