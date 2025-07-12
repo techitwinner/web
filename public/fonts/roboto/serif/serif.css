@@ -1,13 +1,13 @@
 @font-face {
     font-family: RobotoSerifVariable;
-    src: url("RobotoSerif-VariableFont_GRAD\,opsz\,wdth\,wght.ttf") format("woff2");
+    src: url("RobotoSerif-VariableFont_GRAD\,opsz\,wdth\,wght.woff2") format("woff2");
     font-style: normal;
     font-display: swap;
     font-weight: 100 900;
 }
 @font-face {
     font-family: RobotoSerifVariable;
-    src: url("RobotoSerif-Italic-VariableFont_GRAD\,opsz\,wdth\,wght.ttf") format("woff2");
+    src: url("RobotoSerif-Italic-VariableFont_GRAD\,opsz\,wdth\,wght.woff2") format("woff2");
     font-style: italic;
     font-display: swap;
     font-weight: 100 900;
