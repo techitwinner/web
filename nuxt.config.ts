@@ -10,8 +10,8 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  modules: ['@nuxt/content', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/color-mode'],
-    app: {
+  modules: ['@nuxt/content', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/color-mode', '@nuxt/icon'],
+  app: {
     head: {
       titleTemplate: `%s / ${process.env.NUXT_PUBLIC_SITE_NAME || 'thawia.ng'}`,
       meta: [
@@ -63,5 +63,10 @@ export default defineNuxtConfig({
       ]
     },
   },
-
+  icon: {
+    customCollections: [
+      { prefix: 'oundr', dir: './assets/icons/oundr' },
+      { prefix: 'arpsh', dir: './assets/icons/arpsh' }
+    ]
+  }
 })
