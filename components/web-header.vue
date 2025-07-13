@@ -33,7 +33,43 @@
                         </li>
                     </ul>
                 </nav>
+                <button class="hamburger-toggle" @click="toggleMobileHamburger">
+                    <Icon name="oundr:menu"/>
+                </button>
             </div>
         </section>
+        <nav v-if="mobileHamburger" class="hamburger-menu">
+            <ul class="nav-wrapper">
+                <li class="nav-link">
+                    <NuxtLink @click="toggleMobileHamburger" href="/">Home</NuxtLink>
+                </li>
+                <!-- <li class="nav-link">
+                    <NuxtLink href="/blog">Blog</NuxtLink>
+                </li>
+                <li class="nav-link">
+                    <NuxtLink href="/projects">Projects</NuxtLink>
+                </li> 
+                <li class="nav-link">
+                    <NuxtLink href="/about">About</NuxtLink>
+                </li>-->
+                <li class="nav-link">
+                    <NuxtLink @click="toggleMobileHamburger" href="/contact">Contact</NuxtLink>
+                </li>
+                <li class="nav-link">
+                    <NuxtLink @click="toggleMobileHamburger" href="/fonts">Fonts</NuxtLink>
+                </li>
+                <li class="nav-link">
+                    <NuxtLink @click="toggleMobileHamburger" href="/collections">Collections</NuxtLink>
+                </li>
+            </ul>
+        </nav>
     </header>
 </template>
+
+<script setup>
+const mobileHamburger = ref(false);
+
+function toggleMobileHamburger() {
+    mobileHamburger.value = !mobileHamburger.value
+}
+</script>

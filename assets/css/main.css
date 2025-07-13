@@ -125,7 +125,7 @@ body,main {
     line-height: 1.35;
     font-weight: 500;
 }
-.web-header, .web-footer, main {
+.web-header, .web-footer, main, footer {
     padding: 0 calc(var(--spacing)*4);
 }
 .web-header {
@@ -134,7 +134,8 @@ body,main {
     position: sticky;
     top: 0;
     height: calc(var(--spacing)*16);
-    @apply bg-(--ui-bg-elevated)/80 backdrop-blur-xl backdrop-saturate-150 backdrop-contrast-150;
+    z-index: 1000;
+    @apply bg-(--ui-bg-elevated);
 }
 .web-nav, .web-footer-content, .article {
     margin: 1rem auto;
@@ -178,7 +179,7 @@ p {
     @apply text-2xl font-medium;
 }
 .web-title {
-    @apply text-5xl sm:text-6xl font-bold my-[.2em] transition-[color] ease-fluid duration-100;
+    @apply text-5xl sm:text-6xl my-[.2em] transition-[color] ease-fluid duration-100;
     font-variation-settings: 'wdth' 125;
     a {
         cursor: pointer;
@@ -233,7 +234,38 @@ p {
         height: 2.5em;
     }
 }
+.hamburger-toggle {
+    @apply flex md:hidden h-16 w-9 cursor-pointer items-center justify-center hover:bg-(--ui-text)/5 active:bg-(--ui-text)/10 transition-colors duration-100 ease-fluid;
+}
+.hamburger-menu {
+    @apply flex flex-col fixed left-0 top-16 w-full bg-(--ui-bg-elevated) h-full z-[1000];
+    .nav-wrapper {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        margin-left: calc(var(--spacing)*4);
+        width: 100%;
+        .nav-link {
+            height: calc(var(--spacing)*16);
+            width: 100%;
+            @apply ml-0;
+            a {
+                display: flex;
+                align-items: center;
+                font-variation-settings: 'wdth' 75;
+                height: calc(var(--spacing)*16);
+                width: 100%;
+                @apply pl-3 cursor-pointer hover:bg-(--ui-text)/5 active:bg-(--ui-text)/10 transition-colors duration-100 ease-fluid;
+            }
+            a.router-link-exact-active {
+                @apply border-l-2 border-primary box-border pl-2.5 text-primary;
+            }
+        }
+    }
+}
 .nav-links {
+    @apply hidden md:flex;
     height: 100%;
     .nav-wrapper {
         list-style-type: none;
@@ -251,7 +283,7 @@ p {
                 @apply px-3 cursor-pointer hover:bg-(--ui-text)/5 active:bg-(--ui-text)/10 transition-colors duration-100 ease-fluid;
             }
             a.router-link-exact-active {
-                @apply border-t-3 border-primary box-border pb-0.5 text-primary;
+                @apply border-t-2 border-primary box-border pb-0.5 text-primary;
             }
         }
     }
