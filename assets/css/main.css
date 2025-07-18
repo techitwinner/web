@@ -215,36 +215,29 @@ p {
 .project-card {
     --ui-ring-offset: -2px;
     height: 100%;
-    width: fit-content;
-    position: relative;
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    background-color: linear;
-    background-position: center center;
-    background-size: cover;
-    @apply not-first:border-l border-(--ui-border-accented) hover:bg-(--ui-text)/5 active:bg-(--ui-text)/10;
+    @apply bg-(--ui-bg-muted) hover:bg-(--ui-bg-elevated);
     h3 { @apply text-3xl font-bold; font-variation-settings: 'wdth' 125; }
     h3,p { @apply w-96; z-index: 1; }
-    img { @apply mb-2 aspect-video object-cover w-96; }
+    img { @apply mb-2 aspect-video object-cover w-full; }
     p {
         @apply line-clamp-2;
         margin: 0;
         height: 2.5em;
+        width: 100%;
     }
 }
 .hamburger-toggle {
     @apply flex md:hidden h-16 w-9 cursor-pointer items-center justify-center hover:bg-(--ui-text)/5 active:bg-(--ui-text)/10 transition-colors duration-100 ease-fluid;
 }
 .hamburger-menu {
-    @apply flex flex-col fixed left-0 top-16 w-full bg-(--ui-bg-elevated) h-full z-[1000];
+    @apply flex flex-col fixed left-0 top-16 w-full bg-(--ui-bg-elevated) h-full z-[1000] border-(--ui-border-accented) border-t;
     .nav-wrapper {
         list-style-type: none;
         display: flex;
         flex-direction: column;
         margin: 0;
-        margin-left: calc(var(--spacing)*4);
+        padding-left: calc(var(--spacing)*4);
         width: 100%;
         .nav-link {
             height: calc(var(--spacing)*16);

@@ -10,12 +10,16 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  runtimeConfig: {
+    public: {
+      baseUrl: process.env.NUXT_PUBLIC_BASE_URL
+    }
+  },
   modules: ['@nuxt/content', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/color-mode', '@nuxt/icon'],
   app: {
     head: {
       titleTemplate: `%s / ${process.env.NUXT_PUBLIC_SITE_NAME || 'thawia.ng'}`,
       meta: [
-        { name: 'google-site-verification', content: 'lLsgPlllQ5O3Vsn5kDQgo88ORYyhRMV-GnrXtkjuJeg' }, // PRESERVE FOR TECHIT.DAILITATION.XYZ ONLY, DO NOT USE IT IN YOUR WEBSITE!
         { name: 'description', content: `Just another personal website, Created by ${process.env.NUXT_PUBLIC_AUTHOR}` },
         { name: 'referrer', content: 'strict-origin-when-cross-origin' },
         { name: 'canonical', content: process.env.NUXT_PUBLIC_BASE_URL },

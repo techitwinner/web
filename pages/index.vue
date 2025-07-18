@@ -17,21 +17,21 @@
                 <h2 class="web-title" id="projects">Projects</h2>
                 <p id="projects-paragraph-1">As I said above, I usually spend my free time learning more about software engineering. This includes server administration for <a class="link" href="https://dailitation.xyz">dailitation.xyz</a>. Over time, small and large projects have been born and have died.</p>
                 <p id="projects-paragraph-2">Let's go take a look of my projects collection!</p>
-                <div class="flex flex-row border border-(--ui-border-accented) overflow-x-auto">
+                <div class="grid grid-cols-3 gap-2">
                     <a href="https://github.com/TechitWinner/warehouse" class="project-card">
-                        <img src="https://thawia.ng/portal/f/assets/warehouseAPI.jpg">
+                        <img :src="baseUrl + '/portal/f/assets/warehouse.jpg'">
                         <h3>Warehouse</h3>
-                        <p>I planned it to be my API for personal website and other stuff; written in Rust and Axum.</p>
+                        <p title="I planned it to be my API for personal website and other stuff; written in Rust and Axum.">I planned it to be my API for personal website and other stuff; written in Rust and Axum.</p>
                     </a>
                     <a href="https://github.com/TechitWinner/web" class="project-card">
-                        <img src="https://opengraph.githubassets.com/79ca3021ce93e3d277062d399d623842564bc2f9407600e5b6102036f01e8277/TechitWinner/web">
+                        <img :src="baseUrl + '/portal/f/assets/web.png'">
                         <h3>Web</h3>
-                        <p>Nothing much, just this website written in Nuxt (Vue) and some cool CSS.</p>
+                        <p title="Nothing much, just this website written in Nuxt (Vue) and some cool CSS.">Nothing much, just this website written in Nuxt (Vue) and some cool CSS.</p>
                     </a>
                     <a href="https://github.com/TechitWinner/coinbag-pro" class="project-card">
                         <img src="https://opengraph.githubassets.com/79ca3021ce93e3d277062d399d623842564bc2f9407600e5b6102036f01e8277/TechitWinner/coinbag-pro">
                         <h3>Coinbag Pro</h3>
-                        <p>A handwriting typeface, created by me but it is a dead project now.</p>
+                        <p title="A handwriting typeface, created by me but it is a dead project now.">A handwriting typeface, created by me but it is a dead project now.</p>
                     </a>
                 </div>
             </section>
@@ -40,8 +40,10 @@
 </template>
 
 <script setup>
+const config = useRuntimeConfig();
 const TITLE = "Home"
 const DESC = "Welcome to thawia.ng, a Techit's website."
+const baseUrl = config.public.baseUrl
 
 useHead({
   title: TITLE,
