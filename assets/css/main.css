@@ -218,13 +218,18 @@ p {
     padding: 1rem;
     @apply bg-(--ui-bg-muted) hover:bg-(--ui-bg-elevated);
     h3 { @apply text-3xl font-bold; font-variation-settings: 'wdth' 125; }
-    h3,p { @apply w-96; z-index: 1; }
+    h3,p { z-index: 1; }
     img { @apply mb-2 aspect-video object-cover w-full; }
     p {
         @apply line-clamp-2;
         margin: 0;
         height: 2.5em;
         width: 100%;
+    }
+    .iconify {
+        background-color: var(--ui-text);
+        width: calc(var(--spacing)*16);
+        height: calc(var(--spacing)*16);
     }
 }
 .hamburger-toggle {
