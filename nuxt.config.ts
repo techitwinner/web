@@ -54,13 +54,15 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       link: [
         { rel: 'icon', type: 'image/vnd.microsoft.icon', href: '/favicon.ico' },
+        // { rel: 'stylesheet', href: '/style.css' },
         // TYPEFACES
-        //{ rel: 'stylesheet', href: '/style.css' },
         // { rel: 'stylesheet', href: '/fonts/roboto/roboto.css' },
-        { rel: 'stylesheet', href: '/fonts/tiktoksans/tiktoksans.css' },
-        { rel: 'stylesheet', href: '/fonts/roboto/mono/mono.css' },
+        // { rel: 'stylesheet', href: '/fonts/tiktoksans/tiktoksans.css' },
+        { rel: 'stylesheet', href: '/fonts/noto/thai/noto+sans.css' },
+        { rel: 'stylesheet', href: '/fonts/noto/mono/noto+sans+mono.css' },
+        // { rel: 'stylesheet', href: '/fonts/roboto/mono/mono.css' },
         // { rel: 'stylesheet', href: '/fonts/roboto/serif/serif.css' },
-        { rel: 'stylesheet', href: '/fonts/noto/thai/thai.css' },
+        { rel: 'stylesheet', href: '/fonts/noto/thai/noto+sans+thai.css' },
       ],
       script: [
         //{ src: '/js/ripple.js', type: 'text/javascript', defer: true }
