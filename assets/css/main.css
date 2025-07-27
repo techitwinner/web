@@ -58,7 +58,7 @@
     --color-mc-container-top: 90, 91, 92;
     --color-mc-container-bottom: 50, 51, 52;
 
-    --font-sans: NotoSansVariable, NotoSansThai, sans-serif;
+    --font-sans: TikTokSans, NotoSansThai, sans-serif;
     --font-mono: NotoSansMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
     --ease-fluid: 0.2, 0, 0, 1;
@@ -66,12 +66,12 @@
 }
 @supports (font-variation-settings: normal) {
     :root {
-        --font-sans: NotoSansVariable, NotoSansThaiVariable, sans-serif;
+        --font-sans: TikTokSansVariable, NotoSansThaiVariable, sans-serif;
         --font-monospace: NotoSansMonoVariable, NotoSansThaiVariable, sans-serif;
         font-optical-sizing: auto;
         font-variation-settings:
             "slnt" 0,
-            "wdth" 100;
+            "wdth" 92.5;
     }
 }
 .dark-mode {
@@ -121,8 +121,8 @@ body,main {
     margin: 0;
     color: var(--ui-text-muted);
     background-color: var(--ui-bg);
-    /* font-size: 20px;
-    line-height: 1.35; */
+    font-size: 20px;
+    line-height: 1.35;
     font-weight: 500;
 }
 .web-header, .web-footer, main, footer {
@@ -173,12 +173,16 @@ p {
 }
 .font-hero {
     @apply text-6xl sm:text-7xl md:text-8xl font-bold my-[.2em];
+    font-variation-settings:
+        "wdth" 125;
 }
 .font-hero-desc {
     @apply text-2xl font-medium;
 }
 .web-title {
     @apply text-5xl sm:text-6xl my-[.2em] transition-[color] ease-fluid duration-100;
+    font-variation-settings:
+        "wdth" 125;
     a {
         cursor: pointer;
     }

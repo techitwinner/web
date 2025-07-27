@@ -57,8 +57,8 @@ export default defineNuxtConfig({
         // { rel: 'stylesheet', href: '/style.css' },
         // TYPEFACES
         // { rel: 'stylesheet', href: '/fonts/roboto/roboto.css' },
-        // { rel: 'stylesheet', href: '/fonts/tiktoksans/tiktoksans.css' },
-        { rel: 'stylesheet', href: '/fonts/noto/thai/noto+sans.css' },
+        { rel: 'stylesheet', href: '/fonts/tiktoksans/tiktoksans.css' },
+        // { rel: 'stylesheet', href: '/fonts/noto/thai/noto+sans.css' },
         { rel: 'stylesheet', href: '/fonts/noto/mono/noto+sans+mono.css' },
         // { rel: 'stylesheet', href: '/fonts/roboto/mono/mono.css' },
         // { rel: 'stylesheet', href: '/fonts/roboto/serif/serif.css' },
