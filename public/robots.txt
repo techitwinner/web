@@ -1,2 +1,5 @@
 User-Agent: *
-Disallow:
+Allow: /
+Disallow: /portal/f
+Disallow: /portal/s
+Disallow: /portal
