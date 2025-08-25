@@ -1,0 +1,47 @@
+@font-face {
+    font-family: NotoSansThaiVariable;
+    src: url("NotoSansThai[wdth\,wght].woff2?v=2.002") format("woff2");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 900;
+}
+
+@font-face { font-family:NotoSansThai; font-style:normal; font-weight:100; font-display:swap; src:url("static/NotoSansThai-Thin.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThai; font-style:normal; font-weight:200; font-display:swap; src:url("static/NotoSansThai-ExtraLight.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThai; font-style:normal; font-weight:300; font-display:swap; src:url("static/NotoSansThai-Light.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThai; font-style:normal; font-weight:400; font-display:swap; src:url("static/NotoSansThai-Regular.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThai; font-style:normal; font-weight:500; font-display:swap; src:url("static/NotoSansThai-Medium.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThai; font-style:normal; font-weight:600; font-display:swap; src:url("static/NotoSansThai-SemiBold.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThai; font-style:normal; font-weight:700; font-display:swap; src:url("static/NotoSansThai-Bold.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThai; font-style:normal; font-weight:800; font-display:swap; src:url("static/NotoSansThai-ExtraBold.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThai; font-style:normal; font-weight:900; font-display:swap; src:url("static/NotoSansThai-Black.woff2?v=2.002") format("woff2"); }
+
+@font-face { font-family:NotoSansThaiSemiCondensed; font-style:normal; font-weight:100; font-display:swap; src:url("static/NotoSansThai-SemiCondensed-Thin.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiSemiCondensed; font-style:normal; font-weight:200; font-display:swap; src:url("static/NotoSansThai-SemiCondensed-ExtraLight.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiSemiCondensed; font-style:normal; font-weight:300; font-display:swap; src:url("static/NotoSansThai-SemiCondensed-Light.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiSemiCondensed; font-style:normal; font-weight:400; font-display:swap; src:url("static/NotoSansThai-SemiCondensed-Regular.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiSemiCondensed; font-style:normal; font-weight:500; font-display:swap; src:url("static/NotoSansThai-SemiCondensed-Medium.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiSemiCondensed; font-style:normal; font-weight:600; font-display:swap; src:url("static/NotoSansThai-SemiCondensed-SemiBold.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiSemiCondensed; font-style:normal; font-weight:700; font-display:swap; src:url("static/NotoSansThai-SemiCondensed-Bold.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiSemiCondensed; font-style:normal; font-weight:800; font-display:swap; src:url("static/NotoSansThai-SemiCondensed-ExtraBold.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiSemiCondensed; font-style:normal; font-weight:900; font-display:swap; src:url("static/NotoSansThai-SemiCondensed-Black.woff2?v=2.002") format("woff2"); }
+
+@font-face { font-family:NotoSansThaiCondensed; font-style:normal; font-weight:100; font-display:swap; src:url("static/NotoSansThai-Condensed-Thin.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiCondensed; font-style:normal; font-weight:200; font-display:swap; src:url("static/NotoSansThai-Condensed-ExtraLight.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiCondensed; font-style:normal; font-weight:300; font-display:swap; src:url("static/NotoSansThai-Condensed-Light.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiCondensed; font-style:normal; font-weight:400; font-display:swap; src:url("static/NotoSansThai-Condensed-Regular.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiCondensed; font-style:normal; font-weight:500; font-display:swap; src:url("static/NotoSansThai-Condensed-Medium.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiCondensed; font-style:normal; font-weight:600; font-display:swap; src:url("static/NotoSansThai-Condensed-SemiBold.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiCondensed; font-style:normal; font-weight:700; font-display:swap; src:url("static/NotoSansThai-Condensed-Bold.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiCondensed; font-style:normal; font-weight:800; font-display:swap; src:url("static/NotoSansThai-Condensed-ExtraBold.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiCondensed; font-style:normal; font-weight:900; font-display:swap; src:url("static/NotoSansThai-Condensed-Black.woff2?v=2.002") format("woff2"); }
+
+@font-face { font-family:NotoSansThaiExtraCondensed; font-style:normal; font-weight:100; font-display:swap; src:url("static/NotoSansThai-ExtraCondensed-Thin.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiExtraCondensed; font-style:normal; font-weight:200; font-display:swap; src:url("static/NotoSansThai-ExtraCondensed-ExtraLight.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiExtraCondensed; font-style:normal; font-weight:300; font-display:swap; src:url("static/NotoSansThai-ExtraCondensed-Light.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiExtraCondensed; font-style:normal; font-weight:400; font-display:swap; src:url("static/NotoSansThai-ExtraCondensed-Regular.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiExtraCondensed; font-style:normal; font-weight:500; font-display:swap; src:url("static/NotoSansThai-ExtraCondensed-Medium.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiExtraCondensed; font-style:normal; font-weight:600; font-display:swap; src:url("static/NotoSansThai-ExtraCondensed-SemiBold.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiExtraCondensed; font-style:normal; font-weight:700; font-display:swap; src:url("static/NotoSansThai-ExtraCondensed-Bold.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiExtraCondensed; font-style:normal; font-weight:800; font-display:swap; src:url("static/NotoSansThai-ExtraCondensed-ExtraBold.woff2?v=2.002") format("woff2"); }
+@font-face { font-family:NotoSansThaiExtraCondensed; font-style:normal; font-weight:900; font-display:swap; src:url("static/NotoSansThai-ExtraCondensed-Black.woff2?v=2.002") format("woff2"); }
