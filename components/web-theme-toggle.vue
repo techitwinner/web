@@ -1,9 +1,5 @@
 <script setup>
 const colorMode = useColorMode()
-defineProps({
-  isCompact: Boolean,
-  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-})
 const isDark = computed({
   get() {
     return colorMode.value === 'dark'
@@ -16,10 +12,10 @@ const isDark = computed({
 
 <template>
   <ClientOnly v-if="!colorMode?.forced">
-    <button @click="isDark = !isDark" class="btn btn-neutral">Toggle Theme</button>
+    <button @click="isDark = !isDark" class="btn btn-sm btn-neutral">Toggle Theme</button>
 
     <template #fallback>
-      <button class="btn btn-neutral">Loading...</button>
+      <button class="btn btn-sm btn-neutral">Loading...</button>
     </template>
   </ClientOnly>
 </template>

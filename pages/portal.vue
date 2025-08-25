@@ -1,7 +1,7 @@
 <template>
     <main>
         <article class="article">
-            <section class="web-hero" aria-labelledby="hero" aria-describedby="hero-desc">
+            <section class="web-hero web-hero-bg" aria-labelledby="hero" aria-describedby="hero-desc">
                 <h1 id="hero" class="font-hero">Portal</h1>
                 <p id="hero-desc" class="font-hero-desc">Take a portal to travel to various dimensions.</p>
             </section>

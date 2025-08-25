@@ -1,35 +1,32 @@
 <template>
-    <header class="web-header">
+    <header class="web-header web-header-bg web-header-emit-shadow-when-top">
         <section class="web-heading">
-            <NuxtLink href="/" class="web-heading-left-section hover:bg-(--ui-text)/5 active:bg-(--ui-text)/10">
+            <NuxtLink href="/" @click="closeMobileHamburger" class="web-heading-left-section text-(--ui-text) hover:text-primary">
                 <div class="flex items-center h-full bg-[#0066FF]">
                     <img width="36" height="36"src="/favicon.ico">
                 </div>
-                <p class="web-nav-title mx-2 text-(--ui-text)">thawia.ng</p>
+                <p title="thawia.ng, Go home" class="web-nav-title mx-2">thawia.ng/</p>
             </NuxtLink>
             <div class="web-heading-right-section">
                 <nav class="nav-links">
                     <ul class="nav-wrapper">
                         <li class="nav-link">
-                            <NuxtLink href="/">Home</NuxtLink>
+                            <NuxtLink href="/posts">/posts</NuxtLink>
                         </li>
                         <!-- <li class="nav-link">
-                            <NuxtLink href="/blog">Blog</NuxtLink>
-                        </li>
-                        <li class="nav-link">
                             <NuxtLink href="/projects">Projects</NuxtLink>
                         </li> 
                         <li class="nav-link">
                             <NuxtLink href="/about">About</NuxtLink>
-                        </li>-->
+                        </li> -->
                         <li class="nav-link">
-                            <NuxtLink href="/contact">Contact</NuxtLink>
+                            <NuxtLink title="Contact" href="/contact">/contact</NuxtLink>
                         </li>
                         <li class="nav-link">
-                            <NuxtLink href="/fonts">Fonts</NuxtLink>
+                            <NuxtLink title="Fonts" href="/fonts">/fonts</NuxtLink>
                         </li>
                         <li class="nav-link">
-                            <NuxtLink href="/collections">Collections</NuxtLink>
+                            <NuxtLink title="Collection" href="/collections">/collections</NuxtLink>
                         </li>
                     </ul>
                 </nav>
@@ -41,25 +38,19 @@
         <nav v-if="mobileHamburger" class="hamburger-menu">
             <ul class="nav-wrapper">
                 <li class="nav-link">
-                    <NuxtLink @click="toggleMobileHamburger" href="/">Home</NuxtLink>
-                </li>
-                <!-- <li class="nav-link">
-                    <NuxtLink href="/blog">Blog</NuxtLink>
+                    <NuxtLink aria-label="Go home" @click="closeMobileHamburger" href="/">/</NuxtLink>
                 </li>
                 <li class="nav-link">
-                    <NuxtLink href="/projects">Projects</NuxtLink>
-                </li> 
-                <li class="nav-link">
-                    <NuxtLink href="/about">About</NuxtLink>
-                </li>-->
-                <li class="nav-link">
-                    <NuxtLink @click="toggleMobileHamburger" href="/contact">Contact</NuxtLink>
+                    <NuxtLink aria-label="Go to posts" @click="closeMobileHamburger" href="/posts">/posts</NuxtLink>
                 </li>
                 <li class="nav-link">
-                    <NuxtLink @click="toggleMobileHamburger" href="/fonts">Fonts</NuxtLink>
+                    <NuxtLink aria-label="Go to contact" @click="closeMobileHamburger" href="/contact">/contact</NuxtLink>
                 </li>
                 <li class="nav-link">
-                    <NuxtLink @click="toggleMobileHamburger" href="/collections">Collections</NuxtLink>
+                    <NuxtLink aria-label="Go to fonts" @click="closeMobileHamburger" href="/fonts">/fonts</NuxtLink>
+                </li>
+                <li class="nav-link">
+                    <NuxtLink aria-label="Go to collections" @click="closeMobileHamburger" href="/collections">/collections</NuxtLink>
                 </li>
             </ul>
         </nav>
@@ -71,5 +62,8 @@ const mobileHamburger = ref(false);
 
 function toggleMobileHamburger() {
     mobileHamburger.value = !mobileHamburger.value
+}
+function closeMobileHamburger() {
+    mobileHamburger.value = false
 }
 </script>
