@@ -1,0 +1,3 @@
+[submodule "content"]
+	path = content
+	url = git@gitlab.com:techit.win/techit/content.git
