@@ -15,7 +15,7 @@ export default defineNuxtConfig({
       baseUrl: process.env.NUXT_PUBLIC_BASE_URL
     }
   },
-  modules: ['@nuxt/content', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/color-mode', '@nuxt/icon'],
+  modules: ['@nuxt/content', '@nuxtjs/sitemap', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/color-mode', '@nuxt/icon'],
   app: {
     head: {
       titleTemplate: `%s / ${process.env.NUXT_PUBLIC_SITE_NAME || 'thawia.ng'}`,
@@ -56,16 +56,11 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/vnd.microsoft.icon', href: '/favicon.ico' },
         // { rel: 'stylesheet', href: '/style.css' },
         // TYPEFACES
-        // { rel: 'stylesheet', href: '/fonts/roboto/roboto.css' },
-        { rel: 'stylesheet', href: '/fonts/tiktoksans/tiktoksans.css' },
-        // { rel: 'stylesheet', href: '/fonts/noto/thai/noto+sans.css' },
-        { rel: 'stylesheet', href: '/fonts/noto/mono/noto+sans+mono.css' },
-        // { rel: 'stylesheet', href: '/fonts/roboto/mono/mono.css' },
-        // { rel: 'stylesheet', href: '/fonts/roboto/serif/serif.css' },
-        { rel: 'stylesheet', href: '/fonts/noto/thai/noto+sans+thai.css' },
+        { rel: 'stylesheet', href: '/fonts/inter/inter.css' },
       ],
       script: [
-        //{ src: '/js/ripple.js', type: 'text/javascript', defer: true }
+        // { src: '/js/ripple.js', type: 'text/javascript', defer: true },
+        { src: '/js/nav.js', type: 'text/javascript', defer: true }
       ]
     },
   },
