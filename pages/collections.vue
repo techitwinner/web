@@ -6,14 +6,10 @@
                 <p id="hero-desc" class="font-hero-desc">Techit's personal collection of various interesting, trending media/materials.</p>
             </section>
             <section class="web-section" aria-labelledby="docs" aria-describedby="docs-desc">
-                <h3 id="docs" class="web-title">Interesting Documents</h3>
+                <h3 id="docs" class="web-title">All Bookmarks</h3>
                 <ul>
+                    <li><a class="link" href="https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso">VirtIO Windows Driver</a></li>
                     <li><a class="link" href="https://thawia.ng/portal/f/act/Copyright_Act2_TH.pdf">Thailand Copyright Act: พระราชบัญญัติลิขสิทธิ์ พ.ศ. ๒๕๓๗</a></li>
-                </ul>
-            </section>
-            <section class="web-section" aria-labelledby="tools" aria-describedby="tools-desc">
-                <h3 id="tools" class="web-title">Interesting Tools</h3>
-                <ul>
                     <li><a class="link" href="https://github.com/Tyrrrz/YoutubeDownloader">YoutubeDownloader: Downloads videos and playlists from YouTube</a></li>
                 </ul>
             </section>
