@@ -1,3 +1,4 @@
 [submodule "content"]
 	path = content
-	url = git@gitlab.com:techit.win/techit/content.git
+	url = git@github.com:techitwinner/web-content.git
+	branch = main
