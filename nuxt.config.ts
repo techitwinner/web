@@ -32,7 +32,7 @@ export default defineNuxtConfig({
         { name: 'author', content: process.env.NUXT_PUBLIC_AUTHOR },
         { name: 'application-name', content: process.env.NUXT_PUBLIC_SITE_NAME },
         { name: 'keywords', content: 'techit, techit thawiang, techit, techitwinner, thawiang, dailitation, dtt, dailitation.xyz' },
-        { name: 'theme-color', content: '#1355BE' },
+        { name: 'theme-color', content: '#0066FF' },
         // Open Graph
         { property: 'og:title', content: `${process.env.NUXT_PUBLIC_SITE_NAME} by ${process.env.NUXT_PUBLIC_AUTHOR}` },
         { property: 'og:description', content: `Just another personal website, Created by ${process.env.NUXT_PUBLIC_AUTHOR}` },
