@@ -135,7 +135,6 @@ body,main {
     line-height: 1.35;
 }
 .web-header {
-    padding: 0 calc(var(--spacing)*4);
     display: flex;
     flex-direction: row;
     position: sticky;
@@ -158,6 +157,7 @@ body,main {
 }
 .web-heading {
     margin: 0 auto;
+    padding: 0 calc(var(--spacing)*4);
     display: flex;
     flex-direction: row;
     align-items: center;
