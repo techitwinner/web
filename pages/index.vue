@@ -1,7 +1,7 @@
 <template>
     <main>
         <article class="article">
-            <section class="web-hero web-hero-bg" aria-labelledby="hero" aria-describedby="what-does-he-do?">
+            <section class="web-hero" aria-labelledby="hero" aria-describedby="what-does-he-do?">
                 <img width="240" height="240" class="mb-6" src="https://thawia.ng/portal/f/assets/profile/techit/sumo-clipart.png" alt="Techit Thawiang's avatar.">
                 <h1 id="hero" class="font-hero">Techit Thawiang</h1>
                 <p id="what-does-he-do?" class="font-hero-desc">A 10th grader <span class="text-pink-500">hobbyist developer</span>, <span class="text-green-600">a math nerd</span>, <span class="text-blue-500">self-hoster</span> and a KDE user who's exploring computer science.</p>

@@ -1,7 +1,7 @@
 <template>
     <main>
         <article class="article">
-            <section class="web-hero web-hero-bg" aria-labelledby="hero" aria-describedby="hero-desc">
+            <section class="web-hero" aria-labelledby="hero" aria-describedby="hero-desc">
                 <h1 id="hero" class="font-hero">Techit's Collection</h1>
                 <p id="hero-desc" class="font-hero-desc">Techit's personal collection of various interesting, trending media/materials.</p>
             </section>

@@ -1,7 +1,7 @@
 <template>
     <main>
         <article class="article">
-            <section class="web-hero web-hero-bg" aria-labelledby="hero" aria-describedby="hero-desc">
+            <section class="web-hero" aria-labelledby="hero" aria-describedby="hero-desc">
                 <h1 id="hero" class="font-hero">Fonts</h1>
                 <p id="hero-desc" class="font-hero-desc">Welcome to /fonts! This page were created to list all fonts I have hosted it here, so you can use it too.</p>
             </section>
@@ -31,17 +31,17 @@ const fonts = [
             {
                 id: "roboto",
                 name: "Roboto",
-                css: "/fonts/roboto/roboto.css"
+                css: "/portal/f/fonts/roboto/roboto.css"
             },
             {
                 id: "roboto-mono",
                 name: "Roboto Mono",
-                css: "/fonts/roboto-mono/roboto-mono.css"
+                css: "/portal/f/fonts/roboto-mono/roboto-mono.css"
             },
             {
                 id: "roboto-serif",
                 name: "Roboto Serif",
-                css: "/fonts/roboto-serif/roboto-serif.css"
+                css: "/portal/f/fonts/roboto-serif/roboto-serif.css"
             }
         ]
     },
@@ -53,7 +53,7 @@ const fonts = [
             {
                 id: "inter",
                 name: "Inter",
-                css: "/fonts/inter/inter.css"
+                css: "/portal/f/fonts/inter/inter.css"
             }
         ]
     },
@@ -65,23 +65,23 @@ const fonts = [
             {
                 id: "noto-sans",
                 name: "Noto Sans",
-                css: "/fonts/noto-sans/noto-sans.css"
+                css: "/portal/f/fonts/noto-sans/noto-sans.css"
             },
             {
                 id: "noto-sans-mono",
                 name: "Noto Sans Mono",
-                css: "/fonts/noto-sans-mono/noto-sans-mono.css"
+                css: "/portal/f/fonts/noto-sans-mono/noto-sans-mono.css"
             },
             {
                 id: "noto-sans-thai",
                 name: "Noto Sans Thai",
-                css: "/fonts/noto-sans-thai/noto-sans-thai.css"
+                css: "/portal/f/fonts/noto-sans-thai/noto-sans-thai.css"
             },
             {
                 disabled: true,
                 id: "noto-sans-thai-looped",
                 name: "Noto Sans Thai Looped",
-                css: "/fonts/noto-sans-thai-looped/noto-sans-thai-looped.css"
+                css: "/portal/f/fonts/noto-sans-thai-looped/noto-sans-thai-looped.css"
             }
         ]
     },
@@ -93,7 +93,41 @@ const fonts = [
             {
                 id: "tiktok-sans",
                 name: "TikTok Sans",
-                css: "/fonts/tiktok-sans/tiktok-sans.css"
+                css: "/portal/f/fonts/tiktok-sans/tiktok-sans.css"
+            }
+        ]
+    },
+    {
+        id: "cmu",
+        family: "Computer Modern",
+        desc: "Computer Modern, the default font family for TeX and LaTeX, designed by Donald Knuth.",
+        childrens: [
+            {
+                id: "cmu-serif",
+                name: "Computer Modern Serif",
+                css: "/portal/f/fonts/cmu-serif/cmu-serif.css"
+            }
+        ]
+    },
+    {
+        id: "tlwg",
+        family: "Thai Linux Working Group",
+        desc: "Thai Linux Working Group (TLWG) fonts, a collection of free and open-source fonts designed for the Thai language.",
+        childrens: [
+            {
+                id: "garuda",
+                name: "Garuda (ครุฑ)",
+                css: "/portal/f/fonts/garuda/garuda.css"
+            },
+            {
+                id: "kinnari",
+                name: "Kinnari (กินรี)",
+                css: "/portal/f/fonts/kinnari/kinnari.css"
+            },
+            {
+                id: "kinnari-oblique",
+                name: "Kinnari (กินรี; Oblique)",
+                css: "/portal/f/fonts/kinnari/kinnari-oblique.css"
             }
         ]
     }
