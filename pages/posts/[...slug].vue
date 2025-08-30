@@ -3,13 +3,14 @@
         <article class="article">
             <section class="web-hero-post web-hero-bg relative bg-cover bg-center" :style="`background-image: url('${baseUrl + '/portal/f/assets/' + post?.coverImage}');`" aria-labelledby="hero" aria-describedby="hero-desc">
                 <div class="absolute inset-0 bg-(--color-deep-semidark)/80"></div>
-                <h1 id="hero" class="font-hero z-[1]">{{ post?.title }}</h1>
-                <p id="hero-desc" class="font-hero-desc z-[1]">{{ post?.description }}</p>
+                <section class="max-w-6xl mx-auto z-[1]">
+                  <h1 id="hero" class="font-hero">{{ post?.title }}</h1>
+                  <p id="hero-desc" class="font-hero-desc">{{ post?.description }}</p>
+                </section>
             </section>
             <section class="web-section web-section-narrow" aria-labelledby="post-content" aria-describedby="post-content-desc">
                 <div class="prose">
                     <ContentRenderer v-if="post" :value="post"/>
-                    {{ post ? '' : 'Loading...' }}
                 </div>
             </section>
         </article>
@@ -27,7 +28,7 @@ const { data: post } = await useAsyncData(route.path, () => {
 
 const ogUrl = config.public.baseUrl + route.path
 useSeoMeta({
-  title: post.value?.title || 'Loading...',
+  title: post.value?.title,
   description: post.value?.description || 'Content from our blog',
   keywords: post.value?.tags?.join(', ') || 'blog, article, post',
   ogTitle: post.value?.title + ' / thawia.ng',
