@@ -13,7 +13,10 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      baseUrl: process.env.NUXT_PUBLIC_BASE_URL
+      baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
+      siteAuthor: process.env.NUXT_PUBLIC_SITE_AUTHOR,
+      siteName: process.env.NUXT_PUBLIC_SITE_NAME,
+      twitterUsername: process.env.NUXT_PUBLIC_TWITTER_USERNAME
     }
   },
   modules: ['@nuxt/content', '@nuxtjs/sitemap', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/color-mode', '@nuxt/icon'],
