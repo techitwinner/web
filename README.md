@@ -1,75 +1,26 @@
-# Nuxt Minimal Starter
+# Web
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Techit's personal website, built with Nuxt.
 
-## Setup
+## Getting started
 
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+This project is set to use `pnpm` as the package manager.
 
 ```bash
-# npm
-npm run dev
+# clone the repository
+git clone https://github.com/techitwinner/web.git
 
-# pnpm
+# update submodule (which now has content)
+git submodule update --remote
+
+# install packages
+pnpm i
+
+# start development server
 pnpm dev
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
+# enjoy coding!
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## License
+Code, pages, layout are licensed under GPT 3.0, please refer to [LICENSE](/LICENSE) file, but this does not include blog posts (content), images, media, etc.
