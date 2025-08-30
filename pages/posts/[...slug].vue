@@ -22,9 +22,11 @@ const config = useRuntimeConfig();
 const baseUrl = config.public.baseUrl
 const route = useRoute()
 
-const { data: post } = await useAsyncData(route.path, () => {
-  return queryCollection('posts').path(route.path).first()
-})
+// const { data: post } = await useAsyncData(route.path, () => {
+//   return queryCollection('posts').path(route.path).first()
+// })
+
+const { data: post } = await useAsyncData(() => queryCollection('posts').path(route.path).first())
 
 const ogUrl = config.public.baseUrl + route.path
 useSeoMeta({
