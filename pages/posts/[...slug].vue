@@ -25,18 +25,22 @@ const { data: post } = await useAsyncData(route.path, () => {
   return queryCollection('posts').path(route.path).first()
 })
 
-const ogUrl = `${config.public.baseUrl}${route.path}`
-useHead({
-  title: post.value?.title || 'Untitled blog post',
-  meta: [
-    { name: 'description', content: post.value?.description || 'A blog post with no description provided.' },
-    { property: 'og:title', content: `${post.value?.title || 'Untitled blog post'} · ${config.public.siteName}`},
-    { property: 'og:description', content: post.value?.description || 'A blog post with no description provided.' },
-    { property: 'og:url', content: ogUrl },
-    { property: 'og:type', content: 'article' },
-    { name: 'twitter:title', content: `${post.value?.title || 'Untitled blog post'} · ${config.public.siteName}` },
-    { name: 'twitter:description', content: post.value?.description || 'A blog post with no description provided.' }
-  ]
+const ogUrl = config.public.baseUrl + route.path
+useSeoMeta({
+  title: post.value?.title || 'Loading...',
+  description: post.value?.description || 'Content from our blog',
+  keywords: post.value?.tags?.join(', ') || 'blog, article, post',
+  ogTitle: post.value?.title + ' / thawia.ng',
+  ogDescription: post.value?.description,
+  ogType: 'article',
+  ogUrl: ogUrl,
+  ogImage: post.value?.coverImage ? baseUrl + '/portal/f/assets/' + post.value?.coverImage : undefined,
+  ogSiteName: config.public.siteName,
+  twitterCard: 'summary_large_image',
+  twitterTitle: post.value?.title + ' / thawia.ng',
+  twitterDescription: post.value?.description,
+  twitterImage: post.value?.coverImage ? `${baseUrl}/portal/f/assets/${post.value?.coverImage}` : undefined,
+  twitterSite: '@' + config.public.twitterUsername
 })
 </script>
 
