@@ -18,6 +18,7 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxt/content', '@nuxtjs/sitemap', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/color-mode', '@nuxt/icon'],
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       titleTemplate: `%s / ${process.env.NUXT_PUBLIC_SITE_NAME || 'thawia.ng'}`,
       meta: [
@@ -57,7 +58,11 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/vnd.microsoft.icon', href: '/favicon.ico' },
         // { rel: 'stylesheet', href: '/style.css' },
         // TYPEFACES
-        { rel: 'stylesheet', href: '/fonts/inter/inter.css' },
+        { rel: 'stylesheet', href: process.env.NUXT_PUBLIC_BASE_URL + '/portal/f/fonts/inter/inter.css' },
+        { rel: 'stylesheet', href: process.env.NUXT_PUBLIC_BASE_URL + '/portal/f/fonts/noto-sans-thai/noto-sans-thai.css' },
+        { rel: 'stylesheet', href: process.env.NUXT_PUBLIC_BASE_URL + '/portal/f/fonts/noto-serif-thai/noto-serif-thai.css' },
+        { rel: 'stylesheet', href: process.env.NUXT_PUBLIC_BASE_URL + '/portal/f/fonts/noto-serif/noto-serif.css' },
+        { rel: 'stylesheet', href: process.env.NUXT_PUBLIC_BASE_URL + '/portal/f/fonts/cmu-serif/cmu-serif.css' }
       ],
       script: [
         // { src: '/js/ripple.js', type: 'text/javascript', defer: true },
@@ -70,5 +75,17 @@ export default defineNuxtConfig({
       { prefix: 'oundr', dir: './assets/icons/oundr' },
       { prefix: 'arpsh', dir: './assets/icons/arpsh' }
     ]
+  },
+  content: {
+    build: {
+      markdown: {
+        remarkPlugins: {
+          'remark-math': {},
+        },
+        rehypePlugins: {
+          'rehype-katex': {}
+        }
+      }
+    }
   }
 })
