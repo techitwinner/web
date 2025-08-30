@@ -3,7 +3,8 @@
 @custom-variant dark (&:where(.dark-theme, .dark-theme *));
 @theme {
     --ui-primary: var(--color-deep-dark);
-    --ui-container: var(--container-5xl);
+    --ui-container: var(--container-4xl);
+    --ui-container-narrow: var(--container-3xl);
     --ui-radius: var(--radius-sm);
     --ui-bg: white;
     --ui-bg-muted: var(--color-cloud-semilight);
@@ -13,6 +14,7 @@
     --ui-bg-elevated-inverted: var(--color-deep-medium);
     --ui-border: var(--color-cloud-medium);
     --ui-border-accented: var(--color-cloud-semidark);
+    --ui-border-intense: var(--color-cloud-dark);
     --ui-text: var(--color-deep-dark);
     --ui-text-muted: var(--color-smoke-medium);
     --ui-text-blind: var(--color-smoke-dark);
@@ -65,17 +67,18 @@
     --font-sans: Inter, NotoSansThai, sans-serif;
     --font-sans--font-feature-settings: "liga", "calt", "ss01", "cv05", "cv06", "cv11";
     --font-mono: RobotoMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --font-serif: RobotoSerif, Georgia, Garamond, "Times New Roman", Times, serif;
+    --font-serif: NotoSerif, Georgia, Garamond, "Times New Roman", Times, serif;
+    --font-math: CMUSerif, "Cambria Math", "LatinModern Math", "STIXGeneral", math;
 
     --ease-fluid: 0.2, 0, 0, 1;
     --ease-fluid-in: .6, .2, .7, .4;
 }
 @supports (font-variation-settings: normal) {
     :root {
-        --font-display: InterVariable, NotoSansThai, sans-serif;
+        --font-display: InterVariable, NotoSansThaiVariable, sans-serif;
         --font-sans: InterVariable, NotoSansThaiVariable, sans-serif;
-        --font-monospace: RobotoMonoVariable, NotoSansThaiVariable, sans-serif;
-        --font-serif: RobotoSerifVariable, Georgia, Garamond, "Times New Roman", Times, serif;
+        --font-serif: NotoSerifVariable, NotoSerifThaiVariable, Georgia, Garamond, "Times New Roman", Times, serif;
+        --font-monospace: NotoSansMonoVariable, NotoSansThaiVariable, sans-serif;
         font-optical-sizing: auto;
     }
 }
@@ -139,7 +142,7 @@ body,main {
     top: 0;
     height: calc(var(--spacing)*14);
     z-index: 1000;
-    @apply bg-(--ui-bg) shadow-xs shadow-[rgb(0,0,0,0.07)] transition-shadow;
+    @apply bg-(--ui-bg) shadow-xs shadow-[rgb(0,0,0,0.1)] transition-shadow;
 }
 .web-header.web-header-bg {
     .web-nav-title {
@@ -214,19 +217,29 @@ p {
 .web-nav-title {
     @apply text-lg font-bold;
 }
-.web-hero.web-hero-bg {
+.web-hero.web-hero-bg, .web-hero-post.web-hero-bg {
     @apply bg-(--color-deep-semidark) text-(--color-cloud-medium);
     h1,h2,h3,h4,h5,h6 {
         @apply text-(--color-cloud-light)
     }
 }
 .web-hero {
+    margin: clamp(calc(var(--spacing) * 32), 9vw, calc(var(--spacing) * 48)) 0;
+    padding: 0 calc(var(--spacing)*4);
+    @apply flex flex-col items-center text-center;
+}
+.web-hero-post {
     padding: clamp(calc(var(--spacing) * 32), 9vw, calc(var(--spacing) * 48)) calc(var(--spacing)*4);
     @apply flex flex-col items-center text-center;
 }
 .web-section {
     @apply my-16 px-4;
     max-width: var(--ui-container);
+    margin: calc(var(--spacing)*16) auto;
+}
+.web-section.web-section-narrow {
+    @apply my-16 px-4;
+    max-width: var(--ui-container-narrow);
     margin: calc(var(--spacing)*16) auto;
 }
 .web-section:first-child {
@@ -326,7 +339,7 @@ p {
 code, pre, tt, kbd, samp {
     font-size: 1em;
 }
-.link {
+.link, .prose a {
     &:hover {
         @apply underline text-(--ui-text);
     }
@@ -361,10 +374,21 @@ img {
 }
 
 .prose {
+    @apply font-serif;
+    ol { @apply list-decimal ml-[1em]; }
+    p, li { line-height: 1.5; }
+    hr { margin-block: 1em; @apply border-(--ui-border-intense); }
+    li { margin-block: 1em; }
     h1,h2,h3,h4,h5,h6 {
-        @apply font-bold;
+        @apply font-serif font-bold;
     }
     h2 {
-        @apply text-3xl my-6;
+        @apply text-2xl my-6;
+    }
+    h3 {
+        @apply text-xl my-6;
+    }
+    h4 {
+        @apply text-lg my-6;
     }
 }
