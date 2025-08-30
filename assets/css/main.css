@@ -63,11 +63,10 @@
     --color-mc-container-top: 90, 91, 92;
     --color-mc-container-bottom: 50, 51, 52;
 
-    --font-display: Inter, NotoSansThai, sans-serif;
-    --font-sans: Inter, NotoSansThai, sans-serif;
+    --font-sans: Inter, Sarabun, sans-serif;
     --font-sans--font-feature-settings: "liga", "calt", "ss01", "cv05", "cv06", "cv11";
-    --font-mono: RobotoMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --font-serif: NotoSerif, Georgia, Garamond, "Times New Roman", Times, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-serif: "Noto Serif", "Noto Serif Thai", Georgia, Garamond, "Times New Roman", Times, serif;
     --font-math: CMUSerif, "Cambria Math", "LatinModern Math", "STIXGeneral", math;
 
     --ease-fluid: 0.2, 0, 0, 1;
@@ -75,10 +74,7 @@
 }
 @supports (font-variation-settings: normal) {
     :root {
-        --font-display: InterVariable, NotoSansThaiVariable, sans-serif;
-        --font-sans: InterVariable, NotoSansThaiVariable, sans-serif;
-        --font-serif: NotoSerifVariable, NotoSerifThaiVariable, Georgia, Garamond, "Times New Roman", Times, serif;
-        --font-monospace: NotoSansMonoVariable, NotoSansThaiVariable, sans-serif;
+        --font-sans: InterVariable, Sarabun, sans-serif;
         font-optical-sizing: auto;
     }
 }
@@ -123,7 +119,6 @@
     outline-offset: var(--ui-ring-offset);
 }
 h1,h2,h3,h4,h5,h6 {
-    @apply font-display;
     color: var(--ui-text);
 }
 body,main {
@@ -187,6 +182,7 @@ p {
 }
 .font-hero {
     @apply text-5xl sm:text-6xl md:text-7xl font-bold my-[.2em];
+    line-height: 1.3;
 }
 .font-hero-desc {
     @apply text-xl font-medium;
@@ -374,13 +370,16 @@ img {
 }
 
 .prose {
-    @apply font-serif;
+    @apply font-serif text-lg;
     ol { @apply list-decimal ml-[1em]; }
     p, li { line-height: 1.5; }
+    a { @apply text-primary }
+    h2 a, h3 a, h4 a, h5 a, h6 a  { @apply text-(--ui-text); }
     hr { margin-block: 1em; @apply border-(--ui-border-intense); }
     li { margin-block: 1em; }
     h1,h2,h3,h4,h5,h6 {
         @apply font-serif font-bold;
+        scroll-margin-top: 80px;
     }
     h2 {
         @apply text-2xl my-6;
@@ -390,5 +389,8 @@ img {
     }
     h4 {
         @apply text-lg my-6;
+    }
+    img {
+        @apply my-3;
     }
 }
