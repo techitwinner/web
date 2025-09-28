@@ -4,7 +4,7 @@
             <section class="web-hero" aria-labelledby="hero" aria-describedby="what-does-he-do?">
                 <img width="240" height="240" class="mb-6" src="https://thawia.ng/portal/f/assets/profile/techit/sumo-clipart.png" alt="Techit Thawiang's avatar.">
                 <h1 id="hero" class="font-hero">Techit Thawiang</h1>
-                <p id="what-does-he-do?" class="font-hero-desc">A 10th grader <span class="text-pink-500">hobbyist developer</span>, <span class="text-green-600">a math nerd</span>, <span class="text-blue-500">self-hoster</span> and a KDE user who's exploring computer science.</p>
+                <p id="what-does-he-do?" class="font-hero-desc">A 10th grader <span class="text-pink-500">hobbyist developer</span>, <span class="text-green-600">a math lover</span>, <span class="text-blue-500">self-hoster</span> and a KDE user who's exploring computer science.</p>
             </section>
             <section class="web-section" aria-labelledby="about-me" aria-describedby="about-me-paragraph-1">
                 <!-- <h2 class="web-title" id="about-me"><NuxtLink href="/about" title="Navigate to about me page." class="link link-no-underline">About Me <span aria-hidden="true" class="inline-icon">→</span></NuxtLink></h2> -->
