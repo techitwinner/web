@@ -3,140 +3,47 @@
         <article class="article">
             <section class="web-hero" aria-labelledby="hero" aria-describedby="hero-desc">
                 <h1 id="hero" class="font-hero">Fonts</h1>
-                <p id="hero-desc" class="font-hero-desc">Welcome to /fonts! This page were created to list all fonts I have hosted it here, so you can use it too.</p>
+                <p id="hero-desc" class="font-hero-desc">This page were created to list all fonts I have hosted it here, so you can use it too.</p>
             </section>
-            <section v-for="family in fonts" class="web-section" :aria-labelledby="family.id" aria-describedby="family.desc">
-                <h3 id="noto" class="web-title">{{ family.family }}</h3>
-                <p id="noto-desc">{{ family.desc }}</p>
-                <div class="font-cards">
-                    <a v-for="font in family.childrens" :disabled="font.disabled" :href="font.css" class="font-card">
-                        <div class="font-card-content">
-                            <h3>{{ font.name }}</h3>
-                            <p>{{ font.css }}</p>
-                        </div>
-                   </a>
-                </div>
+            <section v-if="pending" class="web-section">
+                <h2 id="noto" class="web-title">Pending...</h2>
+                <p id="noto-desc">Loading font lists, please wait...</p>
+            </section>
+            <section v-else-if="error" class="web-section">
+                <h2 id="noto" class="web-title">Error</h2>
+                <p id="noto-desc">{{ error.message }}</p>
+            </section>
+            <section v-else-if="fonts" v-for="family in fonts" key="family.id" class="web-section" :aria-labelledby="family.id + '-title'" :aria-describedby="family.desc + '-desc'">
+                <h2 :id="family.id + '-title'" class="web-title">{{ family.family }}</h2>
+                <p :id="family.id + '-desc'">{{ family.desc }}</p>
+                <ul class="font-cards">
+                    <li v-for="font in family.children" :key="font.id">
+                        <a :class="'font-card', {disabled: font.disabled}" :href="fontUrl + font.css">
+                            <div class="font-card-content text-2xl">
+                                {{ font.name }}
+                                <!-- <p>{{ fontUrl + font.css }}</p> -->
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section v-else class="web-section">
+                <h2 id="noto" class="web-title">An unknown error occured</h2>
+                <p id="noto-desc">Oh no! An unknown error occured, please tell site administrator to fix this ASAP.</p>
             </section>
         </article>
     </main>
 </template>
 
 <script setup>
-const fonts = [
-    {
-        id: "roboto",
-        family: "Roboto Family",
-        desc: "Roboto, a neo-grotesque sans-serif typeface family developed by Google as the system font for its mobile operating system Android.",
-        childrens: [
-            {
-                id: "roboto",
-                name: "Roboto",
-                css: "/portal/f/fonts/roboto/roboto.css"
-            },
-            {
-                id: "roboto-mono",
-                name: "Roboto Mono",
-                css: "/portal/f/fonts/roboto-mono/roboto-mono.css"
-            },
-            {
-                id: "roboto-serif",
-                name: "Roboto Serif",
-                css: "/portal/f/fonts/roboto-serif/roboto-serif.css"
-            }
-        ]
-    },
-    {
-        id: "inter",
-        family: "Inter Family",
-        desc: "Inter, a typeface designed for computer screens. It features a tall x-height to aid in readability of mixed-case and lower-case text.",
-        childrens: [
-            {
-                id: "inter",
-                name: "Inter",
-                css: "/portal/f/fonts/inter/inter.css"
-            }
-        ]
-    },
-    {
-        id: "noto",
-        family: "Noto Family",
-        desc: "Noto Sans, a free font family from Google that aims to support all languages with a harmonious look and feel.",
-        childrens: [
-            {
-                id: "noto-sans",
-                name: "Noto Sans",
-                css: "/portal/f/fonts/noto-sans/noto-sans.css"
-            },
-            {
-                id: "noto-sans-mono",
-                name: "Noto Sans Mono",
-                css: "/portal/f/fonts/noto-sans-mono/noto-sans-mono.css"
-            },
-            {
-                id: "noto-sans-thai",
-                name: "Noto Sans Thai",
-                css: "/portal/f/fonts/noto-sans-thai/noto-sans-thai.css"
-            },
-            {
-                disabled: true,
-                id: "noto-sans-thai-looped",
-                name: "Noto Sans Thai Looped",
-                css: "/portal/f/fonts/noto-sans-thai-looped/noto-sans-thai-looped.css"
-            }
-        ]
-    },
-    {
-        id: "tiktok-sans",
-        family: "TikTok Sans",
-        desc: "TikTok Sans, the official typeface of TikTok, designed to reflect the brand's dynamic and creative spirit.",
-        childrens: [
-            {
-                id: "tiktok-sans",
-                name: "TikTok Sans",
-                css: "/portal/f/fonts/tiktok-sans/tiktok-sans.css"
-            }
-        ]
-    },
-    {
-        id: "cmu",
-        family: "Computer Modern",
-        desc: "Computer Modern, the default font family for TeX and LaTeX, designed by Donald Knuth.",
-        childrens: [
-            {
-                id: "cmu-serif",
-                name: "Computer Modern Serif",
-                css: "/portal/f/fonts/cmu-serif/cmu-serif.css"
-            }
-        ]
-    },
-    {
-        id: "tlwg",
-        family: "Thai Linux Working Group",
-        desc: "Thai Linux Working Group (TLWG) fonts, a collection of free and open-source fonts designed for the Thai language.",
-        childrens: [
-            {
-                id: "garuda",
-                name: "Garuda (ครุฑ)",
-                css: "/portal/f/fonts/garuda/garuda.css"
-            },
-            {
-                id: "kinnari",
-                name: "Kinnari (กินรี)",
-                css: "/portal/f/fonts/kinnari/kinnari.css"
-            },
-            {
-                id: "kinnari-oblique",
-                name: "Kinnari (กินรี; Oblique)",
-                css: "/portal/f/fonts/kinnari/kinnari-oblique.css"
-            }
-        ]
-    }
-]
+import { useFontLists } from '@/composables/useFontLists';
 
 const config = useRuntimeConfig();
 const TITLE = "Fonts"
 const DESC = "Fonts hosted on thawia.ng"
-const baseUrl = config.public.baseUrl
+const fontUrl = config.public?.fontUrl || 'https://fonts.thawiang.com/';
+const fontListFile = 'api/typefaces.json';
+const { fonts, error, pending } = useFontLists(fontUrl, fontListFile);
 
 useHead({
   title: TITLE,
