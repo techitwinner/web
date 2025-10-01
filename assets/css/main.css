@@ -22,27 +22,31 @@
     --ui-text-muted-inverted: var(--color-cloud-medium);
     --ui-text-blind-inverted: var(--color-cloud-dark);
     --ui-header-logo-inverted: 1;
-    --color-primary-dark: oklch(0.56 0.2408 260.82);
-    --color-primary: oklch(0.56 0.2408 260.82);
-    --color-primary-ghost: oklch(0.56 0.2408 260.82 / 0);
-    --color-primary-light: oklch(0.68 0.1765 252.26);
-    --color-primary-lighter: oklch(0.76 0.13 250.21);
-    --color-primary-content: oklch(0.975 0.0234 256.1);
-    --color-deep-dark: oklch(0.185 0 0);
-    --color-deep-semidark: oklch(0.225 0 0);
-    --color-deep-medium: oklch(0.245 0 0);
-    --color-deep-semilight: oklch(0.265 0 0);
-    --color-deep-light: oklch(0.285 0 0);
-    --color-smoke-dark: oklch(0.405 0 0);
-    --color-smoke-semidark: oklch(0.425 0 0);
-    --color-smoke-medium: oklch(0.445 0 0);
-    --color-smoke-semilight: oklch(0.465 0 0);
-    --color-smoke-light: oklch(0.485 0 0);
-    --color-cloud-dark: oklch(0.905 0 0);
-    --color-cloud-semidark: oklch(0.925 0 0);
-    --color-cloud-medium: oklch(0.945 0 0);
-    --color-cloud-semilight: oklch(0.965 0 0);
-    --color-cloud-light: oklch(0.985 0 0);
+    --color-primary-dark: rgb(0, 101, 254);
+    --color-primary: rgb(0, 101, 254);
+    --color-primary-ghost: rgba(0, 101, 254, 0);
+    --color-primary-light: rgb(53, 154, 255);
+    --color-primary-lighter: rgb(109, 182, 255);
+    --color-primary-content: rgb(237, 248, 255);
+
+    --color-text: rgb(50,50,50);
+
+    --color-deep-dark: rgb(19, 19, 19);
+    --color-deep-semidark: rgb(28, 28, 28);
+    --color-deep-medium: rgb(32, 32, 32);
+    --color-deep-semilight: rgb(37, 37, 37);
+    --color-deep-light: rgb(42, 42, 42);
+    --color-smoke-dark: rgb(73, 73, 73);
+    --color-smoke-semidark: rgb(78, 78, 78);
+    --color-smoke-medium: rgb(84, 84, 84);
+    --color-smoke-semilight: rgb(89, 89, 89);
+    --color-smoke-light: rgb(95, 95, 95);
+    --color-cloud-dark: rgb(223, 223, 223);
+    --color-cloud-semidark: rgb(230, 230, 230);
+    --color-cloud-medium: rgb(237, 237, 237);
+    --color-cloud-semilight: rgb(243, 243, 243);
+    --color-cloud-light: rgb(250, 250, 250);
+
     --color-mc-outline: 30, 30, 31;
     --color-mc-inline: 255, 255, 255, 0.2;
     --color-mc-primary: 79, 160, 51;
@@ -88,13 +92,15 @@
     --ui-bg-elevated-inverted: var(--color-cloud-medium);
     --ui-border: var(--color-deep-medium);
     --ui-border-accented: var(--color-deep-light);
-    --ui-text: var(--color-cloud-light);
+    --ui-text: var(--color-cloud-dark);
     --ui-text-muted: var(--color-cloud-medium);
     --ui-text-blind: var(--color-cloud-dark);
     --ui-text-inverted: var(--color-deep-light);
     --ui-text-muted-inverted: var(--color-deep-medium);
     --ui-text-blind-inverted: var(--color-deep-dark);
     --ui-header-logo-inverted: 0;
+
+    --color-text: rgb(180,180,180);
 }
 @keyframes ring {
     0% {
@@ -118,14 +124,11 @@
     outline: var(--ui-ring-size) solid var(--ui-ring-color);
     outline-offset: var(--ui-ring-offset);
 }
-h1,h2,h3,h4,h5,h6 {
-    color: var(--ui-text);
-}
 body,main {
     font-family: var(--font-sans);
     padding: 0;
     margin: 0;
-    color: var(--ui-text-muted);
+    color: var(--ui-text);
     background-color: var(--ui-bg);
     line-height: 1.35;
 }
@@ -181,14 +184,14 @@ p {
     @apply my-[1em];
 }
 .font-hero {
-    @apply text-5xl sm:text-6xl md:text-7xl font-bold my-[.2em];
+    @apply text-5xl font-bold my-[.2em];
     line-height: 1.3;
 }
 .font-hero-desc {
     @apply text-xl font-medium;
 }
 .web-title {
-    @apply text-3xl sm:text-4xl my-[.7em] transition-[color] ease-fluid duration-100;
+    @apply text-3xl font-bold my-[.7em] transition-[color] ease-fluid duration-100;
     a {
         cursor: pointer;
     }
@@ -219,13 +222,8 @@ p {
         @apply text-(--color-cloud-light)
     }
 }
-.web-hero {
-    margin: clamp(calc(var(--spacing) * 32), 9vw, calc(var(--spacing) * 48)) 0;
-    padding: 0 calc(var(--spacing)*4);
-    @apply flex flex-col items-center text-center;
-}
 .web-hero-post {
-    padding: clamp(calc(var(--spacing) * 32), 9vw, calc(var(--spacing) * 48)) calc(var(--spacing)*4);
+    /* padding: clamp(calc(var(--spacing) * 32), 9vw, calc(var(--spacing) * 48)) calc(var(--spacing)*4); */
     @apply flex flex-col items-center text-center;
 }
 .web-section {
@@ -238,26 +236,29 @@ p {
     max-width: var(--ui-container-narrow);
     margin: calc(var(--spacing)*16) auto;
 }
-.web-section:first-child {
-    @apply mt-0;
+.project-card-container, .font-card-container, .post-card-container {
+@apply flex flex-col gap-1 ml-0 list-none;
 }
-.project-cards, .font-cards {
-    @apply flex flex-col gap-1 ml-0 list-none;
-}
-.project-cards > li:not(:last-child):not(:first-child):not(:only-child) > .project-card, .font-cards > li:not(:last-child):not(:first-child):not(:only-child) > .font-card {
+/* .project-card-container > li:not(:last-child):not(:first-child):not(:only-child) > .project-card,
+.project-card-container > a.project-card:not(:last-child):not(:first-child):not(:only-child),
+.font-card-container > li:not(:last-child):not(:first-child):not(:only-child) > .font-card {
     @apply rounded-md;
 }
-.project-cards > li:last-child:not(:only-child) > .project-card, .font-cards > li:last-child:not(:only-child) > .font-card {
+.project-card-container > li:last-child:not(:only-child) > .project-card,
+.project-card-container > a.project-card:last-child:not(:only-child),
+.font-card-container > li:last-child:not(:only-child) > .font-card {
     @apply rounded-t-md;
 }
-.project-cards > li:first-child:not(:only-child) > .project-card, .font-cards > li:first-child:not(:only-child) > .font-card {
+.project-card-container > li:first-child:not(:only-child) > .project-card,
+.project-card-container > a.project-card:first-child:not(:only-child),
+.font-card-container > li:first-child:not(:only-child) > .font-card {
     @apply rounded-b-md;
-}
-.project-cards > li, .font-cards > li { @apply ml-0; }
-.project-card, .font-card {
+} */
+.project-card-container > li, .font-card-container > li { @apply ml-0; }
+.project-card, .font-card, .post-card {
     height: 100%;
-    padding: 1rem;
-    @apply flex flex-col items-center sm:flex-row sm:gap-4 bg-(--ui-bg-muted) hover:bg-(--ui-bg-elevated) rounded-3xl transition-colors duration-100 ease-fluid ml-0;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    @apply flex flex-col items-center sm:flex-row sm:gap-4 bg-(--ui-bg-muted) hover:bg-(--ui-bg-elevated) transition-colors duration-100 ease-fluid ml-0;
     h3 { @apply text-2xl font-bold; }
     h3,p { z-index: 1; }
     img { @apply mb-2 sm:mb-0 aspect-video object-cover w-full sm:max-w-56; }
@@ -271,12 +272,15 @@ p {
         width: calc(var(--spacing)*16);
         height: calc(var(--spacing)*16);
     }
-    .project-card-content, .font-card-content {
+    .project-card-content, .font-card-content, .post-card-content {
         @apply block w-full;
     }
     &.disabled {
         @apply opacity-50 pointer-events-none cursor-not-allowed;
     }
+}
+.font-card {
+    padding: 0.5rem 1rem;
 }
 .font-card {
     @apply flex-row;
@@ -337,12 +341,21 @@ code, pre, tt, kbd, samp {
     font-size: 1em;
 }
 .link, .prose a {
-    &:hover {
+    & {
         @apply underline text-(--ui-text);
+    }
+    &:hover {
+        @apply no-underline bg-(--ui-text) text-(--ui-bg);
+    }
+    &:active {
+        @apply opacity-80;
     }
     &.link-no-underline {
         @apply no-underline;
     }
+}
+.prose h2 > a {
+    @apply no-underline
 }
 ul,li { @apply ml-[1em] }
 ul { @apply list-disc; }
@@ -351,7 +364,7 @@ button.btn, a.btn {
     @apply cursor-pointer;
 }
 .btn {
-    @apply h-10 bg-primary text-primary-content px-4 rounded-[20px];
+    @apply h-10 bg-primary text-primary-content px-4;
 }
 .btn.btn-sm {
     @apply h-9;
@@ -366,15 +379,10 @@ button.btn, a.btn {
     }
 }
 
-img {
-    @apply rounded-lg;
-}
-
 .prose {
     @apply font-serif text-lg;
     ol { @apply list-decimal ml-[1em]; }
     p, li { line-height: 1.5; }
-    a { @apply text-primary }
     h2 a, h3 a, h4 a, h5 a, h6 a  { @apply text-(--ui-text); }
     hr { margin-block: 1em; @apply border-(--ui-border-intense); }
     li { margin-block: 1em; }
@@ -394,4 +402,9 @@ img {
     img {
         @apply my-3;
     }
+}
+.post-cover {
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: row-reverse;
 }
