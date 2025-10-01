@@ -15,6 +15,11 @@ import WebThemeToggle from './web-theme-toggle.vue';
                         Powered by <a class="link" href="https://dailitation.xyz">dailitation.xyz</a>, <a class="link" href="https://github.com/TechitWinner/web">Source Code</a>.
                     </small>
                 </p>
+                <p>
+                    <small>
+                        More from me: <a class="link" href="https://unix.in.th">unix.in.th</a>, <NuxtLink class="link" href="/portal">Portal</NuxtLink> and <a class="link" href="https://uptime.dailitation.xyz">Network Status</a>
+                    </small>
+                </p>
                 <WebThemeToggle/>
             </section>
         </div>

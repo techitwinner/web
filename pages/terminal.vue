@@ -1,7 +1,7 @@
 <template>
     <main>
         <article class="article">
-            <section class="web-hero" aria-labelledby="hero" aria-describedby="what-does-he-do?">
+            <section class="web-section" aria-labelledby="hero" aria-describedby="what-does-he-do?">
                 <h1 id="hero" class="font-hero">Terminal</h1>
                 <p id="what-does-he-do?" class="font-hero-desc">This will be a emulator for website visitor (simulator)</p>
             </section>

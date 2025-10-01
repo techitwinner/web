@@ -1,7 +1,7 @@
 <template>
     <main>
         <article class="article">
-            <section class="web-hero" aria-labelledby="hero" aria-describedby="hero-desc">
+            <section class="web-section" aria-labelledby="hero" aria-describedby="hero-desc">
                 <h1 id="hero" class="font-hero">Fonts</h1>
                 <p id="hero-desc" class="font-hero-desc">This page were created to list all fonts I have hosted it here, so you can use it too.</p>
             </section>
@@ -16,10 +16,10 @@
             <section v-else-if="fonts" v-for="family in fonts" key="family.id" class="web-section" :aria-labelledby="family.id + '-title'" :aria-describedby="family.desc + '-desc'">
                 <h2 :id="family.id + '-title'" class="web-title">{{ family.family }}</h2>
                 <p :id="family.id + '-desc'">{{ family.desc }}</p>
-                <ul class="font-cards">
+                <ul class="font-card-container">
                     <li v-for="font in family.children" :key="font.id">
                         <a :class="'font-card', {disabled: font.disabled}" :href="fontUrl + font.css">
-                            <div class="font-card-content text-2xl">
+                            <div class="font-card-content text-xl">
                                 {{ font.name }}
                                 <!-- <p>{{ fontUrl + font.css }}</p> -->
                             </div>

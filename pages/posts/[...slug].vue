@@ -1,14 +1,18 @@
 <template>
     <main>
         <article class="article">
-            <section class="web-hero-post web-hero-bg relative bg-cover bg-center" :style="`background-image: url('${baseUrl + '/portal/f/assets/' + post?.coverImage}');`" aria-labelledby="hero" aria-describedby="hero-desc">
-                <div class="absolute inset-0 bg-(--color-deep-semidark)/80"></div>
+            <section class="web-section" aria-labelledby="hero" aria-describedby="hero-desc">
                 <section class="max-w-6xl mx-auto z-[1]">
                   <h1 id="hero" class="font-hero">{{ post?.title }}</h1>
-                  <p id="hero-desc" class="font-hero-desc">{{ post?.description }}</p>
+                  <div class="post-cover">
+                    <section class="w-full">
+                      <p id="hero-desc" class="font-hero-desc">{{ post?.description }}</p>
+                    </section>
+                    <img :width="512" class="max-w-[55%] aspect-[4/3] w-full object-cover" :src="baseUrl + '/portal/f/assets/' + post?.coverImage" />
+                  </div>
                 </section>
             </section>
-            <section class="web-section web-section-narrow" aria-labelledby="post-content" aria-describedby="post-content-desc">
+            <section class="web-section web-section" aria-labelledby="post-content" aria-describedby="post-content-desc">
                 <div class="prose">
                     <ContentRenderer v-if="post" :value="post"/>
                 </div>

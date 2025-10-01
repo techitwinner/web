@@ -1,10 +1,10 @@
 <template>
     <main>
         <article class="article">
-            <section class="web-hero" aria-labelledby="hero" aria-describedby="what-does-he-do?">
-                <img width="240" height="240" class="mb-6" src="https://thawia.ng/portal/f/assets/profile/techit/sumo-clipart.png" alt="Techit Thawiang's avatar.">
+            <section class="web-section" aria-labelledby="hero" aria-describedby="what-does-he-do?">
+                <img width="240" height="240" class="mb-6" src="https://thawia.ng/portal/f/assets/profile/techit/1758801557516.jpeg" alt="Techit Thawiang's avatar.">
                 <h1 id="hero" class="font-hero">Techit Thawiang</h1>
-                <p id="what-does-he-do?" class="font-hero-desc">A 10th grader <span class="text-pink-500">hobbyist developer</span>, <span class="text-green-600">a math lover</span>, <span class="text-blue-500">self-hoster</span> and a KDE user who's exploring computer science.</p>
+                <p id="what-does-he-do?" class="font-hero-desc">A 10th grader <span class="text-pink-500">hobbyist developer</span>, <span class="text-green-600">a math lover</span> and a <span class="text-blue-500">self-hoster</span> who's exploring computer science.</p>
             </section>
             <section class="web-section" aria-labelledby="about-me" aria-describedby="about-me-paragraph-1">
                 <!-- <h2 class="web-title" id="about-me"><NuxtLink href="/about" title="Navigate to about me page." class="link link-no-underline">About Me <span aria-hidden="true" class="inline-icon">→</span></NuxtLink></h2> -->
@@ -17,7 +17,7 @@
                 <h2 class="web-title" id="projects">Projects</h2>
                 <p id="projects-paragraph-1">As I said above, I usually spend my free time learning more about software engineering. This includes server administration for <a class="link" href="https://dailitation.xyz">dailitation.xyz</a>. Over time, small and large projects have born and died.</p>
                 <p id="projects-paragraph-2">Let's go take a look of my projects collection!</p>
-                <div class="project-cards">
+                <div class="project-card-container">
                     <a target="_blank" href="https://github.com/TechitWinner/warehouse" class="project-card">
                         <img :src="baseUrl + '/portal/f/assets/warehouse.jpg'">
                         <div class="project-card-content">

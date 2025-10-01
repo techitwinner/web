@@ -1,20 +1,29 @@
 <template>
     <main>
         <article class="article">
-            <section class="web-hero" aria-labelledby="hero" aria-describedby="hero-desc">
+            <section class="web-section" aria-labelledby="hero" aria-describedby="hero-desc">
                 <h1 id="hero" class="font-hero">Portal</h1>
                 <p id="hero-desc" class="font-hero-desc">Take a portal to travel to various dimensions.</p>
             </section>
             <section class="web-section" aria-labelledby="projects" aria-describedby="projects-paragraph-1">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-                    <a :href="baseUrl + '/portal/f/'" class="project-card">
-                        <div class="flex flex-row gap-2 items-center">
-                            <Icon name="oundr:folder"/>
-                            <h3>Files</h3>
-                        </div>
-                        <p title="A portal that collects this website data, whether it's mine or not.">A portal that collects this website data, whether it's mine or not.</p>
-                    </a>
-                </div>
+                <ul class="font-card-container">
+                    <li>
+                        <a :class="'font-card'" :href="baseUrl + '/portal/f/'">
+                            <div class="font-card-content">
+                                <h3>Files</h3>
+                                <p>A portal that collects this website data, whether it's mine or not.</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a :class="'font-card'" :href="baseUrl + '/portal/s/'">
+                            <div class="font-card-content">
+                                <h3>Share</h3>
+                                <p>A portal that were created by me to share media, It works like Google Drive public share.</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </section>
         </article>
     </main>

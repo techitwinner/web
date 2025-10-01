@@ -1,8 +1,8 @@
 <template>
     <template v-if="post">
-        <NuxtLink class="project-card" :to="post.path">
+        <NuxtLink class="post-card" :to="post.path">
             <img :src="baseUrl + '/portal/f/assets/' + post.coverImage" :alt="post?.title + '’s cover image'"/>
-            <div class="project-card-content">
+            <div class="post-card-content">
                 <h3>{{ post.title }}</h3>
                 <p :title="post.description">{{ post.description }}</p>
                 <p class="mt-4 text-xs" :title="useFormatDate(post.dateUpdated)">{{ useRelativeDate(post.dateUpdated) }}</p>

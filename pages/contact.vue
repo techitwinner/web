@@ -1,7 +1,7 @@
 <template>
     <main>
         <article class="article">
-            <section class="web-hero" aria-labelledby="hero" aria-describedby="hero-desc">
+            <section class="web-section" aria-labelledby="hero" aria-describedby="hero-desc">
                 <h1 id="hero" class="font-hero">Contact Techit</h1>
                 <p id="hero-desc" class="font-hero-desc">You can reach me in countless ways — I’m on basically every social media app out there.</p>
             </section>
