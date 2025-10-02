@@ -23,4 +23,4 @@ pnpm dev
 ```
 
 ## License
-Code, pages, layout are licensed under GPT 3.0, please refer to [LICENSE](/LICENSE) file, but this does not include blog posts (content), images, media, etc.
+Code, pages, and layout are licensed under GPL 3.0, please refer to [LICENSE](/LICENSE) file, but this does not include blog posts (content), images, media, etc.
