@@ -195,13 +195,14 @@ p {
     a {
         cursor: pointer;
     }
-    .inline-icon {
+    .link-inline-icon {
         @apply transition-[opacity_margin] ease-fluid duration-100 select-none;
+        margin-left: 0.5rem;
         opacity: 0.5;
     }
-    &:hover .inline-icon {
+    &:hover .link-inline-icon {
         opacity: 1;
-        margin-left: 0.5rem;
+        margin-left: 1rem;
     }
     &:active a {
         @apply text-primary;
