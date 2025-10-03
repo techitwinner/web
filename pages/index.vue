@@ -2,7 +2,7 @@
     <main>
         <article class="article">
             <section class="web-section" aria-labelledby="hero" aria-describedby="what-does-he-do?">
-                <img width="240" height="240" class="mb-6" src="https://thawia.ng/portal/f/assets/profile/techit/1758801557516.jpeg" alt="Techit Thawiang's avatar.">
+                <img width="240" height="240" class="mb-6" src="https://files.thawia.ng/files/assets/profile/techit/1758801557516.jpeg" alt="Techit Thawiang's avatar.">
                 <h1 id="hero" class="font-hero">Techit Thawiang</h1>
                 <p id="what-does-he-do?" class="font-hero-desc">A 10th grader <span class="text-pink-500">hobbyist developer</span>, <span class="text-green-600">a math lover</span> and a <span class="text-blue-500">self-hoster</span> who's exploring computer science.</p>
             </section>
@@ -12,6 +12,14 @@
                 <p id="about-me-paragraph-1">My name is Techit Thawiang, aka <u>TechitWinner</u>. I'm a 15 years old 10th grader at Ko Pho Tuay Ngam Wittaya School. In my free time, I usually spend my time playing video games or learning more about software engineering.</p>
                 <p id="about-me-paragraph-2">In the future, I dream of having my own tech company, being a network engineer or a software engineer.</p>
             </section>
+            <!-- <section class="web-section" aria-labelledby="posts" aria-describedby="posts-paragraph-1">
+                <h2 class="web-title" id="posts">
+                    <NuxtLink href="/posts" title="Navigate to posts page." class="link link-no-underline">Posts<span aria-hidden="true" class="link-inline-icon">→</span></NuxtLink>
+                </h2>
+                <p id="posts-paragraph-1"></p>
+                <p id="posts-paragraph-2">Let's go take a look of my posts collection!</p>
+                <PostsArticleList/>
+            </section> -->
             <section class="web-section" aria-labelledby="projects" aria-describedby="projects-paragraph-1">
                 <!-- <h2 class="web-title" id="projects"><NuxtLink href="/projects" title="Navigate to projects page." class="link link-no-underline">Projects <span aria-hidden="true" class="inline-icon">→</span></NuxtLink></h2> -->
                 <h2 class="web-title" id="projects">Projects</h2>
@@ -19,14 +27,14 @@
                 <p id="projects-paragraph-2">Let's go take a look of my projects collection!</p>
                 <div class="project-card-container">
                     <a target="_blank" href="https://github.com/TechitWinner/warehouse" class="project-card">
-                        <img :src="baseUrl + '/portal/f/assets/warehouse.jpg'">
+                        <img src="https://files.thawia.ng/files/assets/warehouse.jpg">
                         <div class="project-card-content">
                             <h3>Warehouse</h3>
                             <p title="I planned it to be my API for personal website and other stuff; written in Rust and Axum.">I planned it to be my API for personal website and other stuff; written in Rust and Axum.</p>
                         </div>
                    </a>
                     <a target="_blank" href="https://github.com/TechitWinner/web" class="project-card">
-                        <img :src="baseUrl + '/portal/f/assets/web.png'">
+                        <img src="https://files.thawia.ng/files/assets/web.png">
                         <div class="project-card-content">
                             <h3>Web</h3>
                             <p title="Nothing much, just this website written in Nuxt (Vue) and some cool CSS.">Nothing much, just this website written in Nuxt (Vue) and some cool CSS.</p>

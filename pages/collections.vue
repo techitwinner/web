@@ -9,7 +9,7 @@
                 <h3 id="docs" class="web-title">All Bookmarks</h3>
                 <ul>
                     <li><a class="link" href="https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso">VirtIO Windows Driver</a></li>
-                    <li><a class="link" href="https://thawia.ng/portal/f/act/Copyright_Act2_TH.pdf">Thailand Copyright Act: พระราชบัญญัติลิขสิทธิ์ พ.ศ. ๒๕๓๗</a></li>
+                    <li><a class="link" href="https://files.thawia.ng/files/act/Copyright_Act2_TH.pdf">Thailand Copyright Act: พระราชบัญญัติลิขสิทธิ์ พ.ศ. ๒๕๓๗</a></li>
                     <li><a class="link" href="https://github.com/Tyrrrz/YoutubeDownloader">YoutubeDownloader: Downloads videos and playlists from YouTube</a></li>
                 </ul>
             </section>
