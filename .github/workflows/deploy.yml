@@ -16,6 +16,8 @@ jobs:
           node-version: "22"
       - name: Install dependencies
         run: pnpm install
+      - name: Fetch contents
+        run: git submodule update --init --remote
       - name: Generate static pages
         run: pnpm generate
         env:
