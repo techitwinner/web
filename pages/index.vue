@@ -57,7 +57,7 @@
 const config = useRuntimeConfig();
 const baseUrl = config.public.baseUrl
 const TITLE = "Home"
-const DESC = "Welcome to thawia.ng, a Techit's website."
+const DESC = "Techit Thawiang, "
 
 useHead({
   title: TITLE,

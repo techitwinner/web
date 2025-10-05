@@ -22,23 +22,23 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxt/content', '@nuxtjs/sitemap', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/color-mode', '@nuxt/icon'],
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
+    baseURL: process.env.NUXT_PUBLIC_BUILD_BASE_URL,
+    // pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      titleTemplate: `%s / ${process.env.NUXT_PUBLIC_SITE_NAME || 'thawia.ng'}`,
+      titleTemplate: `%s / ${process.env.NUXT_PUBLIC_SITE_NAME}`,
       meta: [
         { name: 'description', content: `Just another personal website, Created by ${process.env.NUXT_PUBLIC_AUTHOR}` },
         { name: 'referrer', content: 'strict-origin-when-cross-origin' },
-        { name: 'canonical', content: process.env.NUXT_PUBLIC_BASE_URL },
         { name: 'robots', content: 'index,follow' },
         { name: 'author', content: process.env.NUXT_PUBLIC_AUTHOR },
         { name: 'application-name', content: process.env.NUXT_PUBLIC_SITE_NAME },
-        { name: 'keywords', content: 'techit, techit thawiang, techit, techitwinner, thawiang, dailitation, dtt, dailitation.xyz' },
+        { name: 'keywords', content: 'techit, techit thawiang, techit, techitwinner, thawiang' },
         { name: 'theme-color', content: '#0066FF' },
         // Open Graph
         { property: 'og:title', content: `${process.env.NUXT_PUBLIC_SITE_NAME} by ${process.env.NUXT_PUBLIC_AUTHOR}` },
         { property: 'og:description', content: `Just another personal website, Created by ${process.env.NUXT_PUBLIC_AUTHOR}` },
         { property: 'og:url', content: process.env.NUXT_PUBLIC_BASE_URL },
-        { property: 'og:site_name', content: process.env.NUXT_PUBLIC_BASE_URL },
+        { property: 'og:site_name', content: process.env.NUXT_PUBLIC_SITE_NAME },
         { property: 'og:type', content: 'website' },
         { property: 'og:locale', content: 'en_US' },
         // Twitter
@@ -59,18 +59,27 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       link: [
+        { rel: 'canonical', href: process.env.NUXT_PUBLIC_BASE_URL },
         { rel: 'icon', type: 'image/vnd.microsoft.icon', href: '/favicon.ico' },
-        // { rel: 'stylesheet', href: '/style.css' },
         // TYPEFACES
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'preconnect', href: 'https://fonts.thawiang.com/' },
         { rel: 'stylesheet', href: 'https://fonts.thawiang.com/inter/inter.css' },
-        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/sarabun/sarabun.css' }
+        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/sarabun/sarabun.css' },
+        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/noto-serif/noto-serif-less.css' },
+        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/noto-serif-thai/noto-serif-thai.css' }
       ],
       script: [
         // { src: '/js/ripple.js', type: 'text/javascript', defer: true },
-        { src: '/js/nav.js', type: 'text/javascript', defer: true }
+        { src: '/js/nav.js', type: 'text/javascript', defer: true },
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": process.env.NUXT_PUBLIC_SITE_NAME,
+            "url": process.env.NUXT_PUBLIC_BASE_URL
+          })
+        }
       ]
     },
   },
@@ -91,5 +100,12 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  experimental: {
+    // inlineSSRStyles: false,
+  },
+  routeRules: {
+    "*": { experimentalNoScripts: true }, // one level deep, render all pages statically
+    "posts/*": { experimentalNoScripts: true }, // one level deep, render all post pages statically
   }
 })

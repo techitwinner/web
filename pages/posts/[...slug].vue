@@ -8,7 +8,7 @@
                     <section class="w-full">
                       <p id="hero-desc" class="font-hero-desc">{{ post?.description }}</p>
                     </section>
-                    <img :width="512" class="max-w-[55%] aspect-[4/3] w-full object-cover" :src="post?.coverImage" />
+                    <img :width="512" class="img-cover" :src="post?.coverImage" />
                   </div>
                 </section>
             </section>
