@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Generate static pages
-        run: pnpx nuxt build --preset github_pages
+        run: pnpm generate
         env:
           NUXT_PUBLIC_SITE_URL: ${{ vars.NUXT_PUBLIC_SITE_URL }}
           NUXT_PUBLIC_SITE_NAME: ${{ vars.NUXT_PUBLIC_SITE_NAME }}
