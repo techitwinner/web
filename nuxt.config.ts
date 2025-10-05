@@ -104,9 +104,9 @@ export default defineNuxtConfig({
   experimental: {
     // inlineSSRStyles: false,
   },
-  // routeRules: {
-  //   "*": { experimentalNoScripts: true }, // one level deep, render all pages statically
-  //   "posts/*": { experimentalNoScripts: true }, // one level deep, render all post pages statically
-  //   "posts": { experimentalNoScripts: false }, // enable js on /posts
-  // }
+  routeRules: {
+    "*": { experimentalNoScripts: true }, // one level deep, render all pages statically
+    "posts/*": { experimentalNoScripts: true }, // one level deep, render all post pages statically
+    "fonts": { experimentalNoScripts: false }, // except /fonts
+  }
 })
