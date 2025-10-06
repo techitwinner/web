@@ -1,15 +1,13 @@
 <template>
     <div class="sticky top-0 w-full h-14 overflow-visible">
-        <header :class="`web-header ${mobileHamburger ? '' : 'web-header-autohide'}`">
-            <section class="web-heading">
+        <header :class="{'web-header': true, 'web-header-autohide': !mobileHamburger }">
+            <section class="web-heading z-10">
                 <NuxtLink href="/" @click="closeMobileHamburger" class="web-heading-left-section text-(--ui-text) hover:text-primary">
-                    <div class="flex items-center h-full bg-[#0066FF]">
                         <img width="36" height="36"src="/favicon.ico">
-                    </div>
                     <p title="thawia.ng, Go home" class="web-nav-title mx-2" aria-hidden="true">TechitWinner</p>
                 </NuxtLink>
                 <div class="web-heading-right-section">
-                    <nav class="nav-links">
+                    <nav v-if="!mobileHamburger" class="nav-links">
                         <ul class="nav-wrapper">
                             <li class="nav-link">
                                 <NuxtLink href="/posts">Posts</NuxtLink>
@@ -37,22 +35,25 @@
                 </div>
             </section>
         </header>
-        <nav v-if="mobileHamburger" class="hamburger-menu">
+        <nav :class="{'hamburger-menu': true, 'hamburger-menu-hidden': !mobileHamburger }">
             <ul class="nav-wrapper">
                 <li class="nav-link">
-                    <NuxtLink aria-label="Go home" @click="closeMobileHamburger" href="/">Home</NuxtLink>
+                    <NuxtLink title="Go home" aria-label="Go home" @click="closeMobileHamburger" href="/">Home</NuxtLink>
                 </li>
                 <li class="nav-link">
-                    <NuxtLink aria-label="Go to posts" @click="closeMobileHamburger" href="/posts">Posts</NuxtLink>
+                    <NuxtLink title="Go to posts" aria-label="Go to posts" @click="closeMobileHamburger" href="/posts">Posts</NuxtLink>
                 </li>
                 <li class="nav-link">
-                    <NuxtLink aria-label="Go to contact" @click="closeMobileHamburger" href="/contact">Contact</NuxtLink>
+                    <NuxtLink title="Go to contact" aria-label="Go to contact" @click="closeMobileHamburger" href="/contact">Contact</NuxtLink>
                 </li>
                 <li class="nav-link">
-                    <NuxtLink aria-label="Go to fonts" @click="closeMobileHamburger" href="/fonts">Fonts</NuxtLink>
+                    <NuxtLink title="Go to fonts" aria-label="Go to fonts" @click="closeMobileHamburger" href="/fonts">Fonts</NuxtLink>
                 </li>
                 <li class="nav-link">
-                    <NuxtLink aria-label="Go to collections" @click="closeMobileHamburger" href="/collections">Collections</NuxtLink>
+                    <NuxtLink title="Go to collections" aria-label="Go to collections" @click="closeMobileHamburger" href="/collections">Collections</NuxtLink>
+                </li>
+                <li class="nav-button nav-button-only-desktop">
+                    <button role="button" class="hamburger-btn-square" @click="closeMobileHamburger" title="Close this menu" aria-label="Close this menu"><Icon name="oundr:x"/></button>
                 </li>
             </ul>
         </nav>
@@ -60,9 +61,42 @@
 </template>
 
 <script setup>
+const navs = [
+    {
+        "label": "Home",
+        "href": "/"
+    },
+    {
+        "label": "Posts",
+        "href": "/posts"
+    },
+    // {
+    //     "label": "Projects",
+    //     "href": "/projects"
+    // },
+    // {
+    //     "label": "About",
+    //     "href": "/about"
+    // },
+    {
+        "label": "Contact",
+        "href": "/contact"
+    },
+    {
+        "label": "Fonts",
+        "href": "/fonts"
+    },
+    {
+        "label": "Collections",
+        "href": "/collections"
+    }
+]
 const mobileHamburger = ref(false);
 
 function toggleMobileHamburger() {
     mobileHamburger.value = !mobileHamburger.value
+}
+function closeMobileHamburger() {
+    mobileHamburger.value = false
 }
 </script>
