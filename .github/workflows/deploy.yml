@@ -16,6 +16,8 @@ jobs:
           node-version: "22"
       - name: Install dependencies
         run: pnpm install
+      - name: Change content submodule URL
+        run: cd content/ && git remote set-url origin https://github.com/techitwinner/web-content.git && cd ../
       - name: Fetch contents
         run: git submodule update --init --remote
       - name: Generate static pages
