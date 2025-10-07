@@ -63,7 +63,9 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/vnd.microsoft.icon', href: '/favicon.ico' },
         // TYPEFACES
         { rel: 'preconnect', href: 'https://fonts.thawiang.com/' },
-        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/inter/inter.css' },
+        // { rel: 'stylesheet', href: 'https://fonts.thawiang.com/inter/inter.css' },
+        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/geist/geist.css' },
+        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/geist-mono/geist-mono.css' },
         { rel: 'stylesheet', href: 'https://fonts.thawiang.com/sarabun/sarabun.css' },
         { rel: 'stylesheet', href: 'https://fonts.thawiang.com/noto-serif/noto-serif-less.css' },
         { rel: 'stylesheet', href: 'https://fonts.thawiang.com/noto-serif-thai/noto-serif-thai.css' }
@@ -83,8 +85,8 @@ export default defineNuxtConfig({
   },
   icon: {
     customCollections: [
-      { prefix: 'oundr', dir: './assets/icons/oundr' },
-      { prefix: 'arpsh', dir: './assets/icons/arpsh' }
+      { prefix: 'oundr', dir: './app/assets/icons/oundr' },
+      { prefix: 'arpsh', dir: './app/assets/icons/arpsh' }
     ]
   },
   content: {
