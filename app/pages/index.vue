@@ -26,13 +26,13 @@
                 <p id="projects-paragraph-1">As I said above, I usually spend my free time learning more about software engineering. This includes server administration for <a class="link" href="https://dailitation.xyz">dailitation.xyz</a>. Over time, small and large projects have born and died.</p>
                 <p id="projects-paragraph-2">Let's go take a look of my projects collection!</p>
                 <div class="project-card-container">
-                    <a target="_blank" href="https://github.com/TechitWinner/warehouse" class="project-card">
+                    <!-- <a target="_blank" href="https://github.com/TechitWinner/warehouse" class="project-card">
                         <img src="https://files.thawia.ng/files/assets/warehouse.jpg">
                         <div class="project-card-content">
                             <h3>Warehouse</h3>
                             <p title="I planned it to be my API for personal website and other stuff; written in Rust and Axum.">I planned it to be my API for personal website and other stuff; written in Rust and Axum.</p>
                         </div>
-                   </a>
+                    </a> -->
                     <a target="_blank" href="https://github.com/TechitWinner/web" class="project-card">
                         <img src="https://files.thawia.ng/files/assets/web.png">
                         <div class="project-card-content">
@@ -59,13 +59,17 @@ const baseUrl = config.public.baseUrl
 const TITLE = "Home"
 const DESC = "Techit Thawiang is a 10th grader hobbyist developer, a math lover and a self-hoster who's exploring computer science."
 
-useHead({
+useSeoMeta({
   title: TITLE,
-  meta: [
-    { name: 'description', content: DESC },
-    { property: 'og:title', content: TITLE },
-    { property: 'og:description', content: DESC },
-    { property: 'og:type', content: 'website' }
-  ]
+  description: DESC,
+  ogTitle: TITLE + ' / ' + config.public.siteName,
+  ogDescription: DESC,
+  ogImage: post.value?.coverImage || undefined,
+  ogSiteName: config.public.siteName,
+  twitterCard: 'summary_large_image',
+  twitterTitle: TITLE + ' / ' + config.public.siteName,
+  twitterDescription: DESC,
+  twitterImage: post.value?.coverImage || undefined,
+  twitterSite: '@' + config.public.twitterUsername
 })
 </script>

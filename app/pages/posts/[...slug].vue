@@ -37,16 +37,16 @@ useSeoMeta({
   title: post.value?.title,
   description: post.value?.description || 'Content from our blog',
   keywords: post.value?.tags?.join(', ') || 'blog, article, post',
-  ogTitle: post.value?.title + ' / thawia.ng',
+  ogTitle: post.value?.title + ' / ' + config.public.siteName,
   ogDescription: post.value?.description,
   ogType: 'article',
   ogUrl: ogUrl,
-  ogImage: post.value?.coverImage ? baseUrl + '/portal/f/assets/' + post.value?.coverImage : undefined,
+  ogImage: post.value?.coverImage || undefined,
   ogSiteName: config.public.siteName,
   twitterCard: 'summary_large_image',
-  twitterTitle: post.value?.title + ' / thawia.ng',
+  twitterTitle: post.value?.title + ' / ' + config.public.siteName,
   twitterDescription: post.value?.description,
-  twitterImage: post.value?.coverImage ? `${baseUrl}/portal/f/assets/${post.value?.coverImage}` : undefined,
+  twitterImage: post.value?.coverImage || undefined,
   twitterSite: '@' + config.public.twitterUsername
 })
 </script>

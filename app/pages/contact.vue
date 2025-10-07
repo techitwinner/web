@@ -49,13 +49,17 @@
 const TITLE = "Contact"
 const DESC = "How to contact Techit"
 
-useHead({
+useSeoMeta({
   title: TITLE,
-  meta: [
-    { name: 'description', content: DESC },
-    { property: 'og:title', content: TITLE },
-    { property: 'og:description', content: DESC },
-    { property: 'og:type', content: 'website' }
-  ]
+  description: DESC,
+  ogTitle: TITLE + ' / ' + config.public.siteName,
+  ogDescription: DESC,
+  ogImage: post.value?.coverImage || undefined,
+  ogSiteName: config.public.siteName,
+  twitterCard: 'summary_large_image',
+  twitterTitle: TITLE + ' / ' + config.public.siteName,
+  twitterDescription: DESC,
+  twitterImage: post.value?.coverImage || undefined,
+  twitterSite: '@' + config.public.twitterUsername
 })
 </script>
