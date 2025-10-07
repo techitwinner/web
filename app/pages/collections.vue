@@ -18,6 +18,7 @@
 </template>
 
 <script setup>
+const config = useRuntimeConfig();
 const TITLE = "Collections"
 const DESC = "Techit's personal-public collections"
 

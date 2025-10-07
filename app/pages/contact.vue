@@ -46,6 +46,7 @@
 </template>
 
 <script setup>
+const config = useRuntimeConfig();
 const TITLE = "Contact"
 const DESC = "How to contact Techit"
 

@@ -14,6 +14,7 @@
 </template>
 
 <script setup>
+const config = useRuntimeConfig();
 const TITLE = "Posts"
 const DESC = "Techit's posts and writings."
 
