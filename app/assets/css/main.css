@@ -325,8 +325,7 @@ p {
                 @apply px-4 h-14 shadow-lg rounded-[28px] bg-(--ui-bg)/75 backdrop-blur border border-(--ui-text)/5 cursor-pointer hover:text-primary active:scale-[.975] transition-all duration-100 ease-fluid;
             }
             a.router-link-exact-active {
-                @apply text-white shadow-[0px_4px_16px] shadow-primary/50 bg-primary border border-primary/10 z-10;
-                text-shadow: 0px 8px 16px var(--color-primary);
+                @apply text-primary dark:text-white font-bold shadow-[0px_2px_16px] shadow-primary/35 bg-primary/25 border border-primary/10 z-10 text-shadow-[0px_0px_16px_var(--color-primary)];
             }
             .hamburger-btn-square {
                 @apply aspect-square justify-center;
@@ -364,11 +363,10 @@ p {
             a {
                 display: flex;
                 align-items: center;
-                @apply px-3 h-10 rounded-[20px] bg-(--ui-bg)/60 backdrop-blur border border-(--ui-text)/5 cursor-pointer hover:text-primary active:opacity-80 transition-colors duration-100 ease-fluid;
+                @apply px-3 h-10 shadow-xs active:shadow-none active:opacity-90 rounded-[20px] bg-(--ui-bg)/60 backdrop-blur border border-(--ui-text)/5 cursor-pointer hover:text-primary transition-all duration-100 ease-fluid;
             }
             a.router-link-exact-active {
-                @apply text-white shadow-[0px_4px_16px] shadow-primary/50 bg-primary border border-primary/10 z-10;
-                text-shadow: 0px 8px 16px var(--color-primary);
+                @apply text-white shadow-[0px_2px_10px] shadow-primary/50 bg-primary border border-primary/10;
             }
         }
     }
