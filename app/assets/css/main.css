@@ -67,18 +67,21 @@
     --color-mc-container-top: 90, 91, 92;
     --color-mc-container-bottom: 50, 51, 52;
 
-    --font-sans: Inter, Sarabun, sans-serif;
+    --font-sans: Geist, Sarabun, sans-serif;
     --font-sans--font-feature-settings: "liga", "calt", "ss01", "cv05", "cv06", "cv11";
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --font-serif: "NotoSerif", "NotoSerifThai", Georgia, Garamond, "Times New Roman", Times, serif;
+    --font-mono: GeistMono, "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-serif: NotoSerif, NotoSerifThai, Georgia, Garamond, "Times New Roman", Times, serif;
     --font-math: CMUSerif, "Cambria Math", "LatinModern Math", "STIXGeneral", math;
 
     --ease-fluid: 0.2, 0, 0, 1;
     --ease-fluid-in: .6, .2, .7, .4;
+    --ease-out-back: 0.34, 1.56, 0.64, 1;
 }
 @supports (font-variation-settings: normal) {
     :root {
-        --font-sans: InterVariable, Sarabun, sans-serif;
+        --font-sans: GeistVariable, Sarabun, sans-serif;
+        --font-mono: GeistMonoVariable, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --font-serif: NotoSerifVariable, NotoSerifThaiVariable, Georgia, Garamond, "Times New Roman", Times, serif;
         font-optical-sizing: auto;
     }
 }
@@ -299,7 +302,7 @@ p {
 }
 .hamburger-menu {
     transform-origin: top right;
-    @apply flex flex-col sticky h-fit left-0 top-14 w-full max-w-(--ui-container) mx-auto z-[1000] transition-all duration-200 ease-fluid;
+    @apply flex flex-col sticky h-fit left-0 top-14 w-full max-w-(--ui-container) mx-auto z-[1000] transition-all duration-200 ease-out-back;
     .nav-wrapper {
         list-style-type: none;
         display: flex;
@@ -319,10 +322,11 @@ p {
                 display: flex;
                 align-items: center;
                 width: 100%;
-                @apply px-4 h-14 shadow-lg rounded-[28px] bg-(--ui-bg)/75 backdrop-blur border border-(--ui-text)/5 cursor-pointer hover:text-primary active:scale-[.975] transition-colors transition-transform duration-100 ease-fluid;
+                @apply px-4 h-14 shadow-lg rounded-[28px] bg-(--ui-bg)/75 backdrop-blur border border-(--ui-text)/5 cursor-pointer hover:text-primary active:scale-[.975] transition-all duration-100 ease-fluid;
             }
             a.router-link-exact-active {
-                @apply text-primary;
+                @apply text-white shadow-[0px_4px_16px] shadow-primary/50 bg-primary border border-primary/10 z-10;
+                text-shadow: 0px 8px 16px var(--color-primary);
             }
             .hamburger-btn-square {
                 @apply aspect-square justify-center;
@@ -341,7 +345,7 @@ p {
     }
 }
 .hamburger-menu.hamburger-menu-hidden {
-    @apply scale-95 blur opacity-0 invisible;
+    @apply scale-90 blur opacity-0 invisible ;
 }
 .nav-links {
     @apply hidden md:flex;
@@ -360,10 +364,11 @@ p {
             a {
                 display: flex;
                 align-items: center;
-                @apply px-3 h-10 rounded-[20px] bg-(--ui-bg)/75 backdrop-blur border border-(--ui-text)/5 cursor-pointer hover:text-primary active:opacity-80 transition-colors duration-100 ease-fluid;
+                @apply px-3 h-10 rounded-[20px] bg-(--ui-bg)/60 backdrop-blur border border-(--ui-text)/5 cursor-pointer hover:text-primary active:opacity-80 transition-colors duration-100 ease-fluid;
             }
             a.router-link-exact-active {
-                @apply text-primary;
+                @apply text-white shadow-[0px_4px_16px] shadow-primary/50 bg-primary border border-primary/10 z-10;
+                text-shadow: 0px 8px 16px var(--color-primary);
             }
         }
     }

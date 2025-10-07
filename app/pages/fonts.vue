@@ -5,14 +5,18 @@
                 <h1 id="hero" class="font-hero">Fonts</h1>
                 <p id="hero-desc" class="font-hero-desc">This page were created to list all fonts I have hosted it here, so you can use it too.</p>
             </section>
-            <section v-if="pending" class="web-section">
-                <h2 id="noto" class="web-title">Pending...</h2>
-                <p id="noto-desc">Loading font lists, please wait...</p>
-            </section>
-            <section v-else-if="error" class="web-section">
-                <h2 id="noto" class="web-title">Error</h2>
-                <p id="noto-desc">{{ error.message }}</p>
-            </section>
+            <template v-if="pending">
+                <section class="web-section">
+                    <h2 id="noto" class="web-title">Pending...</h2>
+                    <p id="noto-desc">Loading font lists, please wait...</p>
+                </section>
+            </template>
+            <template v-else-if="error">
+                <section class="web-section">
+                    <h2 id="noto" class="web-title">Error</h2>
+                    <p id="noto-desc">{{ error.message }}</p>
+                </section>
+            </template>
             <section v-else-if="fonts" v-for="family in fonts" key="family.id" class="web-section" :aria-labelledby="family.id + '-title'" :aria-describedby="family.desc + '-desc'">
                 <h2 :id="family.id + '-title'" class="web-title">{{ family.family }}</h2>
                 <p :id="family.id + '-desc'">{{ family.desc }}</p>

@@ -57,7 +57,7 @@
 const config = useRuntimeConfig();
 const baseUrl = config.public.baseUrl
 const TITLE = "Home"
-const DESC = "Techit Thawiang, "
+const DESC = "Techit Thawiang is a 10th grader hobbyist developer, a math lover and a self-hoster who's exploring computer science."
 
 useHead({
   title: TITLE,
