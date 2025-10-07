@@ -26,12 +26,10 @@ useSeoMeta({
   description: DESC,
   ogTitle: TITLE + ' / ' + config.public.siteName,
   ogDescription: DESC,
-  ogImage: post.value?.coverImage || undefined,
   ogSiteName: config.public.siteName,
   twitterCard: 'summary_large_image',
   twitterTitle: TITLE + ' / ' + config.public.siteName,
   twitterDescription: DESC,
-  twitterImage: post.value?.coverImage || undefined,
-  twitterSite: '@' + config.public.twitterUsername
+  twitterSite: config.public.twitterUsername
 })
 </script>
