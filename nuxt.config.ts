@@ -1,16 +1,9 @@
-import tailwindcss from "@tailwindcss/vite";
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: false },
   ssr: true,
   css: ["/assets/css/main.css"],
-  vite: {
-    plugins: [
-      tailwindcss(),
-    ],
-  },
   runtimeConfig: {
     public: {
       baseUrl: process?.env?.NUXT_PUBLIC_BASE_URL,
@@ -20,7 +13,7 @@ export default defineNuxtConfig({
       fontUrl: process?.env?.NUXT_PUBLIC_FONTS_URL
     }
   },
-  modules: ['@nuxt/content', '@nuxtjs/sitemap', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/color-mode', '@nuxt/icon'],
+  modules: ['@nuxt/content', '@nuxtjs/sitemap', '@nuxt/image', '@nuxt/icon'],
   app: {
     baseURL: process?.env?.NUXT_PUBLIC_BUILD_BASE_URL,
     // pageTransition: { name: 'page', mode: 'out-in' },
@@ -64,11 +57,12 @@ export default defineNuxtConfig({
         // TYPEFACES
         { rel: 'preconnect', href: 'https://fonts.thawiang.com/' },
         // { rel: 'stylesheet', href: 'https://fonts.thawiang.com/inter/inter.css' },
-        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/geist/geist.css' },
-        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/geist-mono/geist-mono.css' },
+        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/roboto/roboto.css' },
+        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/roboto-mono/roboto-mono.css' },
+        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/roboto-serif/roboto-serif.css' },,
+        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/noto-serif-thai/noto-serif-thai.css' },
         { rel: 'stylesheet', href: 'https://fonts.thawiang.com/sarabun/sarabun.css' },
-        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/noto-serif/noto-serif-less.css' },
-        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/noto-serif-thai/noto-serif-thai.css' }
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' }
       ],
       script: [
         {
