@@ -8,38 +8,69 @@
             <section class="web-section" aria-labelledby="decentralized" aria-describedby="decentralized-paragraph-1">
                 <h2 class="web-title" id="decentralized">Decentral&shy;ized Ways</h2>
                 <p id="decentralized-paragraph-1">I recommended to contact me via these given ways.</p>
-                <ul class="list-disc">
-                    <li>
-                        <p>techit@thawia.ng — E-mail Address</p>
-                    </li>
-                    <li>
-                        <p>@techit@furnu.org — Mastodon</p>
-                    </li>
-                    <li>
-                        <p>@techitwinner:matrix.org — Matrix</p>
-                    </li>
-                </ul>
+                <section class="font-card-container">
+                    <a class="font-card" href="mailto:techit@thawia.ng">
+                        <div class="font-card-content">
+                            ✉️ techit@thawia.ng
+                        </div>
+                    </a>
+                    <a class="font-card" href="mailto:techit@dailitation.xyz">
+                        <div class="font-card-content">
+                            ✉️ techit@dailitation.xyz
+                        </div>
+                    </a>
+                    <a class="font-card" href="mailto:techit@unix.in.th">
+                        <div class="font-card-content">
+                            ✉️ techit@unix.in.th
+                        </div>
+                    </a>
+                    <a class="font-card" href="mailto:techit.th@icloud.com">
+                        <div class="font-card-content">
+                            ✉️ techit.th@icloud.com
+                        </div>
+                    </a>
+                    <a class="font-card" href="https://furnu.org/@techit">
+                        <div class="font-card-content">
+                            techit@furnu.org — Mastodon
+                        </div>
+                    </a>
+                    <div class="font-card">
+                        <div class="font-card-content">
+                            techitwinner@matrix.org — Matrix
+                        </div>
+                    </div>
+                </section>
             </section>
             <section class="web-section" aria-labelledby="centralized" aria-describedby="centralized-paragraph-1">
                 <h2 class="web-title" id="centralized">Social Media</h2>
                 <p id="centralized-paragraph-1">If I do not reply to messages sent via contact above, plesae kindly contact me via these social media accounts.</p>
-                <ul class="list-disc">
-                    <li>
-                        <p>@techitwinner — X (Twitter)</p>
-                    </li>
-                    <li>
-                        <p>@techitwinner — TikTok</p>
-                    </li>
-                    <li>
-                        <p>@techitwinner — Instagram</p>
-                    </li>
-                    <li>
-                        <p>@techitwinner — Facebook</p>
-                    </li>
-                    <li>
-                        <p>@thawia.ng — BlueSky</p>
-                    </li>
-                </ul>
+                <section class="font-card-container">
+                    <a class="font-card" href="https://x.com/techitwinner">
+                        <div class="font-card-content">
+                            @techitwinner — X (Twitter)
+                        </div>
+                    </a>
+                    <a class="font-card" href="https://tiktok.com/@techitwinner">
+                        <div class="font-card-content">
+                            @techitwinner — TikTok
+                        </div>
+                    </a>
+                    <a class="font-card" href="https://instagram.com/techitwinner">
+                        <div class="font-card-content">
+                            @techitwinner — Instagram
+                        </div>
+                    </a>
+                    <a class="font-card" href="https://facebook.com/@techitwinner">
+                        <div class="font-card-content">
+                            @techitwinner — Facebook
+                        </div>
+                    </a>
+                    <a class="font-card" href="https://bsky.app/profile/thawia.ng">
+                        <div class="font-card-content">
+                            @thawia.ng — BlueSky
+                        </div>
+                    </a>
+                </section>
             </section>
         </article>
     </main>

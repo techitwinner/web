@@ -1,10 +1,15 @@
 <template>
-    <div class="sticky top-0 w-full h-14 overflow-visible">
-        <header :class="{'web-header': true, 'web-header-autohide': !mobileHamburger }">
+    <div class="web-header-container">
+        <header class="web-header web-header-bg">
             <section class="web-heading z-10">
+                <button class="hamburger-toggle" @click="toggleMobileHamburger">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
                 <NuxtLink href="/" @click="closeMobileHamburger" class="web-heading-left-section text-(--ui-text) hover:text-primary">
-                        <img width="36" height="36"src="/favicon.ico">
-                    <p title="thawia.ng, Go home" class="web-nav-title mx-2" aria-hidden="true">TechitWinner</p>
+                    <div class="web-header-logo-banner">
+                        <img class="web-header-logo" width="36" height="36"src="/favicon.ico">
+                    </div>
+                    <p class="web-header-title" title="thawia.ng, Go home" aria-hidden="true">TechitWinner</p>
                 </NuxtLink>
                 <div class="web-heading-right-section">
                     <nav v-if="!mobileHamburger" class="nav-links">
@@ -29,13 +34,19 @@
                             </li>
                         </ul>
                     </nav>
-                    <button class="hamburger-toggle" @click="toggleMobileHamburger">
-                        <Icon name="oundr:menu"/>
-                    </button>
                 </div>
+                <div class="hamburger-toggle placeholder"></div>
             </section>
         </header>
+        <div v-if="mobileHamburger" class="hamburger-backdrop-overlay"></div>
         <nav :class="{'hamburger-menu': true, 'hamburger-menu-hidden': !mobileHamburger }">
+            <div class="hamburger-menu-header hamburger-menu-header-bg">
+                <section class="web-heading">
+                    <button class="hamburger-toggle no-autohide" @click="closeMobileHamburger">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </section>
+            </div>
             <ul class="nav-wrapper">
                 <li class="nav-link">
                     <NuxtLink title="Go home" aria-label="Go home" @click="closeMobileHamburger" href="/">Home</NuxtLink>
@@ -51,9 +62,6 @@
                 </li>
                 <li class="nav-link">
                     <NuxtLink title="Go to collections" aria-label="Go to collections" @click="closeMobileHamburger" href="/collections">Collections</NuxtLink>
-                </li>
-                <li class="nav-button nav-button-only-desktop">
-                    <button role="button" class="hamburger-btn-square" @click="closeMobileHamburger" title="Close this menu" aria-label="Close this menu"><Icon name="oundr:x"/></button>
                 </li>
             </ul>
         </nav>

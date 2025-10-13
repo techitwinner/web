@@ -7,20 +7,17 @@ import WebThemeToggle from './web-theme-toggle.vue';
     <footer>
         <div class="article">
             <section class="web-section">
-                <h3 class="text-2xl md:text-3xl mb-4 font-light">Techit's Home /// thawia.ng</h3>
-                <p>
-                    <small>
-                        Copyright &copy; Techit Thawiang 2025 (2568). All rights reserved.<br>
-                        PGP/GPG Key: <code style="font-size: 12px;"><a href="https://files.thawia.ng/files/Techit Thawiang_0xE649CED321557334_public.asc">4116 33BE 1B4A 19D4 8D77  9ADE E649 CED3 2155 7334</a></code><br>
-                        Powered by <a class="link" href="https://dailitation.xyz">dailitation.xyz</a>, <a class="link" href="https://github.com/TechitWinner/web">Source Code</a>.
-                    </small>
+                <img src="/favicon.ico" alt="" width="48" height="48">
+                <h3 class="web-footer-title">Techit Thawiang's Website /// techit.win</h3>
+                <p class="web-footer-notice">
+                    Copyright &copy; Techit Thawiang 2025 (2568). All rights reserved.<br>
+                    PGP/GPG Key: <code style="font-size: 12px;"><a href="https://files.thawia.ng/files/Techit Thawiang_0xE649CED321557334_public.asc">4116 33BE 1B4A 19D4 8D77  9ADE E649 CED3 2155 7334</a></code><br>
+                    Powered by <a class="link" href="https://dailitation.xyz">dailitation.xyz</a>, <a class="link" href="https://github.com/TechitWinner/web">Source Code</a>.
                 </p>
-                <p>
-                    <small>
-                        More from me: <a class="link" href="https://unix.in.th">unix.in.th</a> and <a class="link" href="https://uptime.dailitation.xyz">Network Status</a>
-                    </small>
+                <p class="web-footer-notice">
+                    More from me: <a class="link" href="https://unix.in.th">unix.in.th</a> and <a class="link" href="https://uptime.dailitation.xyz">Network Status</a>
                 </p>
-                <WebThemeToggle/>
+                <!-- <WebThemeToggle/> -->
             </section>
         </div>
     </footer>

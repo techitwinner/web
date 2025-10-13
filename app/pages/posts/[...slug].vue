@@ -3,6 +3,7 @@
         <article class="article">
             <section class="web-section" aria-labelledby="hero" aria-describedby="hero-desc">
                 <section class="max-w-6xl mx-auto z-[1]">
+                  <small class="prose-blog-pretext" aria-hidden="true">You are reading blog post:</small>
                   <h1 id="hero" class="font-hero">{{ post?.title }}</h1>
                   <div class="post-cover">
                     <section class="w-full">
