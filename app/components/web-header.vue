@@ -17,12 +17,12 @@
                             <li class="nav-link">
                                 <NuxtLink href="/posts">Posts</NuxtLink>
                             </li>
-                            <!-- <li class="nav-link">
+                            <li class="nav-link">
                                 <NuxtLink href="/projects">Projects</NuxtLink>
                             </li> 
                             <li class="nav-link">
                                 <NuxtLink href="/about">About</NuxtLink>
-                            </li> -->
+                            </li>
                             <li class="nav-link">
                                 <NuxtLink title="Contact" href="/contact">Contact</NuxtLink>
                             </li>
@@ -53,6 +53,12 @@
                 </li>
                 <li class="nav-link">
                     <NuxtLink title="Go to posts" aria-label="Go to posts" @click="closeMobileHamburger" href="/posts">Posts</NuxtLink>
+                </li>
+                <li class="nav-link">
+                    <NuxtLink title="Go to posts" aria-label="Go to posts" @click="closeMobileHamburger" href="/projects">Projects</NuxtLink>
+                </li>
+                <li class="nav-link">
+                    <NuxtLink title="Go to posts" aria-label="Go to posts" @click="closeMobileHamburger" href="/about">About</NuxtLink>
                 </li>
                 <li class="nav-link">
                     <NuxtLink title="Go to contact" aria-label="Go to contact" @click="closeMobileHamburger" href="/contact">Contact</NuxtLink>
