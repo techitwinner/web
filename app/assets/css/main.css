@@ -6,6 +6,7 @@
     --ui-container-narrow: 48rem;
     --ui-header-logo-inverted: 1;
     --ui-header-height: calc(var(--ui-spacing)*14);
+    --ui-header-height-collapsed: calc(var(--ui-spacing)*12);
 
     --color-surface-background: #f9f9f9;
     --color-on-surface-background: #111111;
@@ -105,8 +106,13 @@ a {
     flex-direction: row;
     position: sticky;
     top: 0;
-    height: var(--ui-header-height);
+    height: var(--ui-header-height-collapsed);
     z-index: 998;
+}
+@media screen and (min-width: 1024px) {
+    .web-header, .hamburger-menu-header {
+        height: var(--ui-header-height);
+    }
 }
 .web-header.web-header-bg,
 .hamburger-menu-header.hamburger-menu-header-bg {
