@@ -1,6 +1,6 @@
 <template>
     <main>
-        <article class="article">
+        <article v-if="post" class="article">
             <section class="web-section" aria-labelledby="hero" aria-describedby="hero-desc">
                 <section class="max-w-6xl mx-auto z-[1]">
                   <small class="prose-blog-pretext" aria-hidden="true">You are reading blog post:</small>
@@ -10,6 +10,26 @@
                       <p id="hero-desc" class="font-hero-desc">{{ post?.description }}</p>
                     </section>
                     <img :width="512" class="img-cover" :src="post?.coverImage" />
+                  </div>
+                </section>
+            </section>
+            <section class="web-section web-section" aria-labelledby="post-content" aria-describedby="post-content-desc">
+                <div class="prose">
+                    <ContentRenderer v-if="post" :value="post"/>
+                </div>
+            </section>
+        </article>
+        <article v-else class="article">
+            <section class="web-section" aria-labelledby="hero" aria-describedby="hero-desc">
+                <section class="max-w-6xl mx-auto z-[1]">
+                  <small class="prose-blog-pretext" aria-hidden="true">An error occurred:</small>
+                  <h1 id="hero" class="font-hero">Post not found!</h1>
+                  <div class="post-cover">
+                    <section class="w-full">
+                      <p id="hero-desc" class="font-hero-desc">Check the URL; there might be a misspelling, or the post may not actually exist.</p>
+                      <NuxtLink class="btn" to="/posts">All posts</NuxtLink>
+                    </section>
+                    <img :width="512" class="img-cover" src="https://files.thawia.ng/files/assets/zUJfK8p1i.webp" />
                   </div>
                 </section>
             </section>

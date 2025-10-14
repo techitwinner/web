@@ -2,8 +2,8 @@
     <main>
         <article class="article">
             <section class="web-section" aria-labelledby="hero" aria-describedby="hero-desc">
-                <h1 id="hero" class="font-hero">Techit's Collection</h1>
-                <p id="hero-desc" class="font-hero-desc">Techit's personal collection of various interesting, trending media/materials.</p>
+                <h1 id="hero" class="font-hero">Techit's {{ TITLE }}</h1>
+                <p id="hero-desc" class="font-hero-desc">{{ DESC }}</p>
             </section>
             <section class="web-section" aria-labelledby="docs" aria-describedby="docs-desc">
                 <h3 id="docs" class="web-title">All Bookmarks</h3>
@@ -20,7 +20,7 @@
 <script setup>
 const config = useRuntimeConfig();
 const TITLE = "Collections"
-const DESC = "Techit's personal-public collections"
+const DESC = "Techit's personal-public collection of various interesting, trending media/materials."
 
 useSeoMeta({
   title: TITLE,

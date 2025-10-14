@@ -26,7 +26,7 @@
 
     --font-sans: Roboto, Sarabun, sans-serif;
     --font-sans--font-feature-settings: "liga", "calt";
-    --font-mono: RobotoMono, "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-mono: RobotoMono, "Roboto Mono", "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --font-serif: RobotoSerif, NotoSerifThai, Georgia, Garamond, "Times New Roman", Times, serif;
     --font-math: CMUSerif, "Cambria Math", "LatinModern Math", "STIXGeneral", math;
 
@@ -37,7 +37,7 @@
 @supports (font-variation-settings: normal) {
     :root {
         --font-sans: RobotoVariable, Sarabun, sans-serif;
-        --font-mono: RobotoMonoVariable, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --font-mono: RobotoMonoVariable, "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         --font-serif: RobotoSerifVariable, NotoSerifThai, Georgia, Garamond, "Times New Roman", Times, serif;
         font-optical-sizing: auto;
     }
@@ -45,15 +45,15 @@
 @keyframes ring {
     0% {
         outline: 0px solid var(--ui-ring-color);
-    outline-offset: var(--ui-ring-offset);
+        outline-offset: var(--ui-ring-offset);
     }
     25% {
         outline: 12px solid var(--ui-ring-color);
-    outline-offset: var(--ui-ring-offset);
+        outline-offset: var(--ui-ring-offset);
     }
     100% {
         outline: var(--ui-ring-size) solid var(--ui-ring-color);
-    outline-offset: var(--ui-ring-offset);
+        outline-offset: var(--ui-ring-offset);
     }
 }
 * {
@@ -166,7 +166,7 @@ a {
         align-items: center;
     }
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 1024px) {
     .web-heading {
         .web-heading-right-section {
             display: flex;
@@ -189,7 +189,7 @@ p {
 .web-title {
     font-size: 30px;
     font-weight: 700;
-    margin-block: 0.7em;
+    margin-block: 0.4em;
     transition-property: color;
     transition-duration: 100ms;
     transition-timing-function: cubic-bezier(var(--ease-fluid));
@@ -234,6 +234,32 @@ p {
     margin-block: calc(var(--ui-spacing)*16);
     margin-inline: auto;
     padding-inline: calc(var(--ui-spacing)*4);
+}
+.web-section.web-section-split {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--ui-spacing)*4);
+}
+.web-section.web-section-split .about-me-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: calc(var(--ui-spacing)*1);
+}
+.web-section.web-section-big-text {
+    font-size: 20px;
+    line-height: 1.5;
+}
+@media screen and (min-width: 768px) {
+    .web-section.web-section-split {
+        flex-direction: row;
+        gap: calc(var(--ui-spacing)*8);
+    }
+    .web-section.web-section-split > .web-section-pane:first-child:not(:only-child) {
+        width: 35%;
+    }
+    .web-section.web-section-split > .web-section-pane:last-child:not(:only-child) {
+        width: 65%;
+    }
 }
 .web-section.web-section-narrow {
     max-width: var(--ui-container-narrow);
@@ -352,7 +378,7 @@ p {
 .hamburger-toggle.placeholder {
     background: none;
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 1024px) {
     .hamburger-toggle.no-autohide {
         display: flex!important;
         visibility: visible!important;
@@ -507,6 +533,9 @@ a.btn {
 
 .btn {
     all: unset;
+    display: flex;
+    align-items: center;
+    width: fit-content;
     height: calc(var(--ui-spacing)*10);
     background: var(--color-primary);
     color: var(--color-on-primary);
