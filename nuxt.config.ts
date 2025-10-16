@@ -55,14 +55,10 @@ export default defineNuxtConfig({
         { rel: 'canonical', href: process?.env?.NUXT_PUBLIC_BASE_URL },
         { rel: 'icon', type: 'image/vnd.microsoft.icon', href: '/favicon.ico' },
         // TYPEFACES
-        { rel: 'preconnect', href: 'https://fonts.thawiang.com/' },
-        // { rel: 'stylesheet', href: 'https://fonts.thawiang.com/inter/inter.css' },
-        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/roboto/roboto.css' },
-        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/roboto-mono/roboto-mono.css' },
-        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/roboto-serif/roboto-serif.css' },,
-        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/noto-serif-thai/noto-serif-thai.css' },
-        { rel: 'stylesheet', href: 'https://fonts.thawiang.com/sarabun/sarabun.css' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' }
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: "anonymous" },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+Thai+Looped:wght@100..900&display=swaphttps://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+Thai+Looped:wght@100..900&family=Noto+Serif+Thai:wght@100..900&display=swap' }
       ],
       script: [
         {
@@ -86,6 +82,9 @@ export default defineNuxtConfig({
   content: {
     build: {
       markdown: {
+        toc: {
+          depth: 4,
+        },
         remarkPlugins: {
           'remark-math': {},
         },
