@@ -13,3 +13,7 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
+
+.text-accent {
+    color: var(--color-accent);
+}
