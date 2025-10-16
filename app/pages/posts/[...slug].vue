@@ -1,6 +1,6 @@
 <template>
     <main>
-        <article v-if="post" class="article">
+        <article v-if="post" :key="route.path" class="article article-special">
             <section class="web-section" aria-labelledby="hero" aria-describedby="hero-desc">
                 <section class="max-w-6xl mx-auto z-[1]">
                   <small class="prose-blog-pretext" aria-hidden="true">You are reading blog post:</small>
@@ -13,10 +13,13 @@
                   </div>
                 </section>
             </section>
-            <section class="web-section web-section" aria-labelledby="post-content" aria-describedby="post-content-desc">
-                <div class="prose">
-                    <ContentRenderer v-if="post" :value="post"/>
-                </div>
+            <section class="web-section web-section">
+              <div class="post-container">
+                <ContentRenderer class="prose" v-if="post" :value="post"/>
+                <section class="prose-toc">
+                  <PostToc :toc="post?.body?.toc?.links"/>
+                </section>
+              </div>
             </section>
         </article>
         <article v-else class="article">
@@ -25,7 +28,7 @@
                   <small class="prose-blog-pretext" aria-hidden="true">An error occurred:</small>
                   <h1 id="hero" class="font-hero">Post not found!</h1>
                   <div class="post-cover">
-                    <section class="w-full">
+                    <section>
                       <p id="hero-desc" class="font-hero-desc">Check the URL; there might be a misspelling, or the post may not actually exist.</p>
                       <NuxtLink class="btn" to="/posts">All posts</NuxtLink>
                     </section>
@@ -33,26 +36,19 @@
                   </div>
                 </section>
             </section>
-            <section class="web-section web-section" aria-labelledby="post-content" aria-describedby="post-content-desc">
-                <div class="prose">
-                    <ContentRenderer v-if="post" :value="post"/>
-                </div>
-            </section>
         </article>
     </main>
 </template>
   
 <script lang="ts" setup>
 const config = useRuntimeConfig();
-const baseUrl = config.public.baseUrl
 const route = useRoute()
 
-// const { data: post } = await useAsyncData(route.path, () => {
-//   return queryCollection('posts').path(route.path).first()
-// })
-
-const { data: post } = await useAsyncData(() => queryCollection('posts').path(route.path).first())
-
+const { data: post } = await useAsyncData(route.path, () => {
+  return queryCollection('posts').path(route.path).first()
+})
+// This is the problem? Why the heck it decides to print every post as the same latest post?
+// const { data: post } = await useAsyncData(() => queryCollection('posts').path(route.path).first())
 const ogUrl = config.public.baseUrl + route.path
 useSeoMeta({
   title: post.value?.title,

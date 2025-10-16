@@ -1,6 +1,6 @@
 <template>
     <main>
-        <article v-if="project" class="article">
+        <article v-if="project" :key="route.path" class="article">
             <section class="web-section" aria-labelledby="hero" aria-describedby="hero-desc">
                 <section class="max-w-6xl mx-auto z-[1]">
                   <small class="prose-blog-pretext" aria-hidden="true">You are viewing project:</small>
@@ -13,10 +13,13 @@
                   </div>
                 </section>
             </section>
-            <section class="web-section web-section" aria-labelledby="project-content" aria-describedby="project-content-desc">
-                <div class="prose">
-                    <ContentRenderer v-if="project" :value="project"/>
-                </div>
+            <section class="web-section web-section">
+              <div class="post-container">
+                <ContentRenderer class="prose" v-if="project" :value="project"/>
+                <section class="prose-toc">
+                  <PostToc :toc="project?.body?.toc?.links"/>
+                </section>
+              </div>
             </section>
         </article>
         <article v-else class="article">
@@ -33,18 +36,12 @@
                   </div>
                 </section>
             </section>
-            <section class="web-section web-section" aria-labelledby="post-content" aria-describedby="post-content-desc">
-                <div class="prose">
-                    <ContentRenderer v-if="post" :value="post"/>
-                </div>
-            </section>
         </article>
     </main>
 </template>
   
 <script lang="ts" setup>
 const config = useRuntimeConfig();
-const baseUrl = config.public.baseUrl
 const route = useRoute()
 
 // const { data: post } = await useAsyncData(route.path, () => {
@@ -52,7 +49,6 @@ const route = useRoute()
 // })
 
 const { data: project } = await useAsyncData(() => queryCollection('projects').path(route.path).first())
-
 const ogUrl = config.public.baseUrl + route.path
 useSeoMeta({
   title: project.value?.title,
