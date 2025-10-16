@@ -1,6 +1,6 @@
 <template>
     <main>
-        <article class="article">
+        <article class="article article-special">
             <section class="web-section web-section-split web-section-big-text">
                 <div class="web-section-pane">
                     <img width="342" height="342" style="margin-bottom: calc(var(--ui-spacing)*6);" src="https://files.thawia.ng/files/assets/profile/techit/1758801557516.jpeg" alt="Techit Thawiang's avatar.">
