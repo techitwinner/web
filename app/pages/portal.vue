@@ -6,18 +6,18 @@
                 <p id="hero-desc" class="font-hero-desc">Take a portal to travel to various dimensions.</p>
             </section>
             <section class="web-section" aria-labelledby="projects" aria-describedby="projects-paragraph-1">
-                <ul class="font-card-container">
+                <ul class="card-container">
                     <li>
-                        <a :class="'font-card'" :href="baseUrl + '/portal/f/'">
-                            <div class="font-card-content">
+                        <a :class="'card'" :href="baseUrl + '/portal/f/'">
+                            <div class="card-content">
                                 <h3>Files</h3>
                                 <p>A portal that collects this website data, whether it's mine or not.</p>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a :class="'font-card'" :href="baseUrl + '/portal/s/'">
-                            <div class="font-card-content">
+                        <a :class="'card'" :href="baseUrl + '/portal/s/'">
+                            <div class="card-content">
                                 <h3>Share</h3>
                                 <p>A portal that were created by me to share media, It works like Google Drive public share.</p>
                             </div>

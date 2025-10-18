@@ -1,8 +1,8 @@
 <template>
     <template v-if="project">
-        <NuxtLink class="project-card" :to="project?.path">
+        <NuxtLink class="card" :to="project?.path">
             <img :src="project?.logo" :alt="project?.title + '’s cover image'"/>
-            <div class="project-card-content">
+            <div class="card-content">
                 <h3 :title="project?.title">{{ project?.title }}</h3>
                 <p style="margin-block: 0.25em" :title="project?.description">{{ project?.description }}</p>
                 <p class="post-more-info" :title="useFormatDate(project?.dateUpdated)">📅 {{ useRelativeDate(project?.dateUpdated) }}</p>

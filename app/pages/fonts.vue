@@ -20,19 +20,19 @@
             <section v-else-if="fonts" v-for="family in fonts" key="family.id" class="web-section" :aria-labelledby="family.id + '-title'" :aria-describedby="family.desc + '-desc'">
                 <h2 :id="family.id + '-title'" class="web-title">{{ family.family }}</h2>
                 <p :id="family.id + '-desc'">{{ family.desc }}</p>
-                <!-- <ul class="font-card-container">
+                <!-- <ul class="card-container">
                     <li v-for="font in family.children" :key="font.id">
-                        <a :class="'font-card', {disabled: font.disabled}" :href="fontUrl + font.css">
-                            <div class="font-card-content text-xl">
+                        <a :class="'card', {disabled: font.disabled}" :href="fontUrl + font.css">
+                            <div class="card-content text-xl">
                                 {{ font.name }}
                                 <p>{{ fontUrl + font.css }}</p>
                             </div>
                         </a>
                     </li>
                 </ul> -->
-                <section class="font-card-container">
-                    <a class="font-card" v-for="font in family.children" :key="font.id" :href="fontUrl + font.css">
-                        <div class="font-card-content">
+                <section class="card-container">
+                    <a :class="'card', {disabled: font.disabled}" v-for="font in family.children" :key="font.id" :href="fontUrl + font.css">
+                        <div class="card-content">
                             {{ font.name }}
                         </div>
                     </a>

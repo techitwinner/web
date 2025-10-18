@@ -21,26 +21,26 @@
                 <h2 class="web-title" id="projects">My projects</h2>
                 <p id="projects-paragraph-1">As I said above, I usually spend my free time learning more about software engineering. This includes server administration for <a class="link" href="https://dailitation.xyz">dailitation.xyz</a>. Over time, small and large projects have born and died.</p>
                 <p id="projects-paragraph-2">Let's go take a look of my projects collection!</p>
-                <div class="project-card-container">
-                    <!-- <a target="_blank" href="https://github.com/TechitWinner/warehouse" class="project-card">
+                <div class="card-container">
+                    <!-- <a target="_blank" href="https://github.com/TechitWinner/warehouse" class="card">
                         <img src="https://files.thawia.ng/files/assets/warehouse.jpg">
-                        <div class="project-card-content">
+                        <div class="card-content">
                             <h3>Warehouse</h3>
                             <p title="I planned it to be my API for personal website and other stuff; written in Rust and Axum.">I planned it to be my API for personal website and other stuff; written in Rust and Axum.</p>
                         </div>
                     </a> -->
-                    <a target="_blank" href="https://github.com/TechitWinner/web" class="project-card">
+                    <a target="_blank" href="https://github.com/TechitWinner/web" class="card">
                         <img src="https://files.thawia.ng/files/assets/web.png">
-                        <div class="project-card-content">
+                        <div class="card-content">
                             <h3>Web</h3>
-                            <p title="Nothing much, just this website written in Nuxt (Vue) and some cool CSS.">Nothing much, just this website written in Nuxt (Vue) and some cool CSS.</p>
+                            <p style="margin-block:0.25em;" title="Nothing much, just this website written in Nuxt (Vue) and some cool CSS.">Nothing much, just this website written in Nuxt (Vue) and some cool CSS.</p>
                         </div>
                     </a>
-                    <a target="_blank" href="https://github.com/TechitWinner/coinbag-pro" class="project-card">
+                    <a target="_blank" href="https://github.com/TechitWinner/coinbag-pro" class="card">
                         <img src="https://opengraph.githubassets.com/79ca3021ce93e3d277062d399d623842564bc2f9407600e5b6102036f01e8277/TechitWinner/coinbag-pro">
-                        <div class="project-card-content">
+                        <div class="card-content">
                             <h3>Coinbag Pro</h3>
-                            <p title="A handwriting typeface, created by me but it is a dead project now.">A handwriting typeface, created by me but it is a dead project now.</p>
+                            <p style="margin-block:0.25em;" title="A handwriting typeface, created by me but it is a dead project now.">A handwriting typeface, created by me but it is a dead project now.</p>
                         </div>
                     </a>
                 </div>

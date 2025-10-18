@@ -1,5 +1,5 @@
 <template>
-    <section class="post-card-container">
+    <section class="card-container">
         <template v-for="project in projects" :key="project.id">
             <ProjectCard :project="project" />
         </template>
