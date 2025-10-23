@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: false },
   ssr: true,
-  css: ["/assets/css/main.css", "/assets/css/additional.css"],
+  css: ["/assets/css/style.css"],
   runtimeConfig: {
     public: {
       baseUrl: process?.env?.NUXT_PUBLIC_BASE_URL,
