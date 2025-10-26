@@ -26,12 +26,6 @@
                             <li class="nav-link">
                                 <NuxtLink title="Contact" href="/contact">Contact</NuxtLink>
                             </li>
-                            <li class="nav-link">
-                                <NuxtLink title="Fonts" href="/fonts">Fonts</NuxtLink>
-                            </li>
-                            <li class="nav-link">
-                                <NuxtLink title="Collection" href="/collections">Collections</NuxtLink>
-                            </li>
                         </ul>
                     </nav>
                 </div>
