@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear();
         <div class="article article-footer">
             <section class="web-section">
                 <div class="web-footer-links-container-container">
-                    <div class="web-footer-links-container">
+                    <div class="web-footer-links-container" style="margin-right: 4rem;">
                         <h3 class="web-footer-link-title">Site</h3>
                         <ul class="web-footer-links">
                             <li class="web-footer-link"><NuxtLink href="/posts">Posts</NuxtLink></li>
@@ -16,6 +16,12 @@ const currentYear = new Date().getFullYear();
                             <li class="web-footer-link"><NuxtLink href="/contact">Contact</NuxtLink></li>
                             <li class="web-footer-link"><NuxtLink href="/fonts">Fonts</NuxtLink></li>
                             <li class="web-footer-link"><NuxtLink href="/collections">Collections</NuxtLink></li>
+                        </ul>
+                    </div>
+                    <div class="web-footer-links-container">
+                        <h3 class="web-footer-link-title">More</h3>
+                        <ul class="web-footer-links">
+                            <li class="web-footer-link"><NuxtLink href="/services">Services</NuxtLink></li>
                         </ul>
                     </div>
                 </div>
