@@ -7,7 +7,7 @@
       <a :href="banner.link" target="_blank" rel="noopener">
         {{ banner.message }}
       </a>
-      <button class="btn btn-secondary" @click="dismiss"><span class="material-symbols-outlined">close</span></button>
+      <button class="btn btn-secondary btn-sm" @click="dismiss"><span class="material-symbols-outlined">close</span></button>
     </div>
   </div>
 </template>
