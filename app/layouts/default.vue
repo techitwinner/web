@@ -4,7 +4,7 @@
 
 <template>
     <div>
-        <WebDismissableGlobalBanner/>
+        <WebDismissibleGlobalBanner/>
         <WebHeader/>
         <slot/>
         <WebFooter/>
