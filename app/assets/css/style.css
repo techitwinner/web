@@ -9,9 +9,9 @@
 
     --color-surface-background: #f9f9f9;
     --color-on-surface-background: #111111;
-    --color-primary: #2e2e2e;
+    --color-primary: #1a1a1a;
     --color-primary-strong: #3e3e3e;
-    --color-on-primary: white;
+    --color-on-primary: #eeeeee;
     --color-on-primary-weak: #ebebeb;
     --color-secondary: #efefef;
     --color-secondary-strong: #dfdfdf;
@@ -35,6 +35,26 @@
     --ease-fluid-in: .6, .2, .7, .4;
     --ease-out-back: 0.34, 1.56, 0.64, 1;
 }
+/*
+Coming soon...
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --color-surface-background: #111111;
+        --color-on-surface-background: #f9f9f9;
+        --color-primary: #d9d9d9;
+        --color-primary-strong: #c0c0c0;
+        --color-on-primary: #111111;
+        --color-on-primary-weak: #2e2e2e;
+        --color-secondary: #2e2e2e;
+        --color-secondary-strong: #3e3e3e;
+        --color-on-secondary: #efefef;
+        --color-container: #0e0e0e;
+        --color-on-container: #f8f8f8;
+        --color-outline-very-intense: #5f5f5f;
+        --color-outline-intense: #3f3f3f;
+        --color-outline: #262626;
+    }
+} */
 @keyframes ring {
     0% {
         outline: 0px solid var(--ui-ring-color);
@@ -624,15 +644,36 @@ a.btn {
     cursor: pointer;
 }
 .btn {
-    all: unset;
+    --ui-btn-bg: var(--color-surface-background);
+    --ui-btn-bg-active: var(--color-secondary);
+    --ui-btn-text: var(--color-on-surface-background);
+    --ui-btn-border-width: 1px;
+    --ui-btn-border-color: var(--color-outline);
+    --ui-btn-border-style: solid;
+    --ui-btn-height: calc(var(--ui-spacing)*10);
+    --ui-btn-padding-x: calc(var(--ui-spacing)*4);
+    --ui-btn-radius: calc(var(--ui-btn-height)/2);
+
     display: flex;
     align-items: center;
     width: fit-content;
-    height: calc(var(--ui-spacing)*10);
-    background: var(--color-primary);
-    color: var(--color-on-primary);
-    padding-inline: calc(var(--ui-spacing)*4);
-    border-radius: calc(var(--ui-spacing)*5);
+    border-width: var(--ui-btn-border-width);
+    border-color: var(--ui-btn-border-color);
+    border-style: var(--ui-btn-border-style);
+    height: var(--ui-btn-height);
+    background: var(--ui-btn-bg);
+    color: var(--ui-btn-text);
+    padding-inline: var(--ui-btn-padding-x);
+    border-radius: var(--ui-btn-radius);
+}
+.btn:active {
+    background: var(--ui-btn-bg-active);
+}
+.btn.btn-primary {
+    --ui-btn-bg: var(--color-primary);
+    --ui-btn-bg-active: var(--color-primary-strong);
+    --ui-btn-text: var(--color-on-primary);
+    --ui-btn-border-width: 0;
 }
 .btn.btn-secondary {
     background: var(--color-secondary);
@@ -646,7 +687,7 @@ a.btn {
 }
 .btn.btn-sm .material-symbols-outlined {
     font-size: 20px;
-    font-variation-setting:
+    font-variation-settings:
         'opsz' 20
 }
 .prose-blog-pretext {
@@ -734,7 +775,7 @@ a.btn {
 .toc .toc-link-indent-4 {
     margin-left: calc(var(--ui-spacing)*6);
 }
-.web-dismissable-banner {
+.web-dismissible-banner {
   position: sticky;
   width: 100%;
   text-align: center;
@@ -742,7 +783,7 @@ a.btn {
   background: var(--color-primary);
   color: var(--color-on-primary);
 }
-.web-dismissable-banner > .web-dismissable-banner-content {
+.web-dismissible-banner > .web-dismissible-banner-content {
   display: flex;
   text-align: start;
   align-items: center;
