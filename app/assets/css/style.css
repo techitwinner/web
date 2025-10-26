@@ -95,7 +95,7 @@ h6 { font-size: 0.90em; }
 .material-symbols-outlined {
     font-variation-settings:
         'FILL' 0,
-        'wght' 100,
+        'wght' 400,
         'GRAD' 0,
         'opsz' 24
 }
@@ -623,7 +623,6 @@ button.btn,
 a.btn {
     cursor: pointer;
 }
-
 .btn {
     all: unset;
     display: flex;
@@ -634,6 +633,10 @@ a.btn {
     color: var(--color-on-primary);
     padding-inline: calc(var(--ui-spacing)*4);
     border-radius: calc(var(--ui-spacing)*5);
+}
+.btn.btn-secondary {
+    background: var(--color-secondary);
+    color: var(--color-on-secondary);
 }
 .btn.btn-sm {
     height: calc(var(--ui-spacing)*9);
@@ -722,4 +725,22 @@ a.btn {
 }
 .toc .toc-link-indent-4 {
     margin-left: calc(var(--ui-spacing)*6);
+}
+.web-dismissable-banner {
+  position: sticky;
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+.web-dismissable-banner > .web-dismissable-banner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: var(--ui-container);
+  padding: 0 calc(var(--ui-spacing)*4);
+  margin: 0 auto;
+  justify-content: space-between;
 }
