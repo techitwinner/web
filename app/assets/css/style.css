@@ -637,9 +637,17 @@ a.btn {
 .btn.btn-secondary {
     background: var(--color-secondary);
     color: var(--color-on-secondary);
+    padding-inline: calc(var(--ui-spacing)*2.5);
 }
 .btn.btn-sm {
-    height: calc(var(--ui-spacing)*9);
+    
+    height: calc(var(--ui-spacing)*8);
+    font-size: 14px;
+}
+.btn.btn-sm .material-symbols-outlined {
+    font-size: 20px;
+    font-variation-setting:
+        'opsz' 20
 }
 .prose-blog-pretext {
     font-family: var(--font-mono);
@@ -736,7 +744,7 @@ a.btn {
 }
 .web-dismissable-banner > .web-dismissable-banner-content {
   display: flex;
-  justify-content: center;
+  text-align: start;
   align-items: center;
   gap: 1rem;
   max-width: var(--ui-container);
