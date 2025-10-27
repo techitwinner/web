@@ -7,8 +7,10 @@
     --ui-header-height: calc(var(--ui-spacing)*14);
     --ui-header-height-collapsed: calc(var(--ui-spacing)*12);
 
-    --color-surface-background: #f9f9f9;
-    --color-on-surface-background: #111111;
+    --color-surface-container: #f9f9f9;
+    --color-on-surface-container: #111111;
+    --color-inverse-surface-container: #111111;
+    --color-on-inverse-surface-container: #f9f9f9;
     --color-primary: #1a1a1a;
     --color-primary-strong: #3e3e3e;
     --color-on-primary: #eeeeee;
@@ -35,26 +37,26 @@
     --ease-fluid-in: .6, .2, .7, .4;
     --ease-out-back: 0.34, 1.56, 0.64, 1;
 }
-/*
-Coming soon...
 @media screen and (prefers-color-scheme: dark) {
     :root {
-        --color-surface-background: #111111;
-        --color-on-surface-background: #f9f9f9;
-        --color-primary: #d9d9d9;
-        --color-primary-strong: #c0c0c0;
-        --color-on-primary: #111111;
-        --color-on-primary-weak: #2e2e2e;
-        --color-secondary: #2e2e2e;
-        --color-secondary-strong: #3e3e3e;
-        --color-on-secondary: #efefef;
-        --color-container: #0e0e0e;
-        --color-on-container: #f8f8f8;
-        --color-outline-very-intense: #5f5f5f;
-        --color-outline-intense: #3f3f3f;
-        --color-outline: #262626;
+        --color-surface-container: #111111;
+        --color-on-surface-container: #eeeeee;
+        --color-inverse-surface-container: #eeeeee;
+        --color-on-inverse-surface-container: #111111;
+        --color-primary: #eeeeee;
+        --color-primary-strong: #dadada;
+        --color-on-primary: #1a1a1a;
+        --color-on-primary-weak: #292929;
+        --color-secondary: #1d1d1d;
+        --color-secondary-strong: #2f2f2f;
+        --color-on-secondary: #e4e4e4;
+        --color-container: #1f1f1f;
+        --color-on-container: #dfdfdf;
+        --color-outline-very-intense: #4d4d4d;
+        --color-outline-intense: #3e3e3e;
+        --color-outline: #2d2d2d;
     }
-} */
+}
 @keyframes ring {
     0% {
         outline: 0px solid var(--ui-ring-color);
@@ -87,8 +89,8 @@ body,main {
     font-family: var(--font-sans);
     padding: 0;
     margin: 0;
-    color: var(--color-on-surface-background);
-    background: var(--color-surface-background);
+    color: var(--color-on-surface-container);
+    background: var(--color-surface-container);
     line-height: 1.35;
 }
 img {
@@ -145,8 +147,8 @@ h6 { font-size: 0.90em; }
 }
 .web-header.web-header-bg,
 .hamburger-menu-header.hamburger-menu-header-bg {
-    background: #ffffff;
-    color: black;
+    background: var(--color-secondary);
+    color: var(--color-on-secondary);
     border-bottom: 1px solid var(--color-outline);
 }
 .web-header-logo-banner {
@@ -329,18 +331,18 @@ p {
     background: var(--color-on-primary);
 }
 .article.article-footer .web-footer-link > a:hover  {
-    color: white;
+    color: var(--color-on-primary);
     text-decoration: underline;
     text-decoration-style: dotted;
     background: none;
 }
+.article.article-footer {
+    color: var(--color-on-inverse-surface-container);
+    background: var(--color-inverse-surface-container);
+    padding-block: calc(var(--ui-spacing)*12);
+}
 .article.article-footer .web-footer-link > a:active  {
     text-decoration-style: solid;
-}
-.article.article-footer {
-    color: var(--color-on-primary-weak);
-    background: var(--color-primary);
-    padding-block: calc(var(--ui-spacing)*12);
 }
 .article.article-footer > .web-section {
     display: flex;
@@ -622,8 +624,8 @@ code, pre, tt, kbd, samp {
 .link:hover,
 .prose a:hover {
     text-decoration: none;
-    background: var(--color-on-surface-background);
-    color: var(--color-surface-background);
+    background: var(--color-on-surface-container);
+    color: var(--color-surface-container);
 }
 
 .link:active,
@@ -644,9 +646,9 @@ a.btn {
     cursor: pointer;
 }
 .btn {
-    --ui-btn-bg: var(--color-surface-background);
+    --ui-btn-bg: var(--color-surface-container);
     --ui-btn-bg-active: var(--color-secondary);
-    --ui-btn-text: var(--color-on-surface-background);
+    --ui-btn-text: var(--color-on-surface-container);
     --ui-btn-border-width: 1px;
     --ui-btn-border-color: var(--color-outline);
     --ui-btn-border-style: solid;
