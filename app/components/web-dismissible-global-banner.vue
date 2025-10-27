@@ -36,11 +36,17 @@ function removeStorageItem(key: string) {
   localStorage.removeItem(key)
 }
 
+interface WebBannerData {
+  id: number
+  enabled: boolean
+  message: string
+  link: string
+};
+
 onMounted(async () => {
   try {
-    const data = await $fetch('https://files.thawia.ng/files/config/web/banner/tmp/index.json')
+    const data = await $fetch<WebBannerData>('https://files.thawia.ng/files/config/web/banner/tmp/index.json')
 
-    // If no data or inactive, bail
     if (!data) return
 
     banner.value = data
@@ -49,12 +55,10 @@ onMounted(async () => {
     const lastSeenId = getStorageItem(STORAGE_KEY_LAST_ID) || ''
     const dismissedId = getStorageItem(STORAGE_KEY_DISMISSED)
 
-    // Show banner only if new or not dismissed yet
     if (currentId && (currentId !== lastSeenId || dismissedId !== currentId)) {
       visible.value = true
     }
 
-    // Update last seen ID
     setStorageItem(STORAGE_KEY_LAST_ID, currentId)
   } catch (err) {
     console.error('Banner fetch failed:', err)
