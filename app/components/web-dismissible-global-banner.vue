@@ -45,7 +45,7 @@ interface WebBannerData {
 
 onMounted(async () => {
   try {
-    const data = await $fetch<WebBannerData>('https://files.thawia.ng/files/config/web/banner/tmp/index.json')
+    const data = await $fetch<WebBannerData>('https://files.techit.win/files/config/web/banner/tmp/index.json')
 
     if (!data) return
 
