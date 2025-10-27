@@ -33,7 +33,7 @@ const currentYear = new Date().getFullYear();
                     </p>
                     <p class="web-footer-notice">
                         Copyright &copy; Techit Thawiang {{ currentYear }} ({{ currentYear + 543 }}). All rights reserved.<br>
-                        PGP/GPG Key: <code style="font-size: 12px;"><a href="https://files.thawia.ng/files/Techit Thawiang_0xE649CED321557334_public.asc">4116 33BE 1B4A 19D4 8D77  9ADE E649 CED3 2155 7334</a></code><br>
+                        PGP/GPG Key: <code style="font-size: 12px;"><a href="https://files.techit.win/files/Techit Thawiang_0xE649CED321557334_public.asc">4116 33BE 1B4A 19D4 8D77  9ADE E649 CED3 2155 7334</a></code><br>
                         Powered by <a class="link" href="https://dailitation.xyz">dailitation.xyz</a>; Website is available under <a class="link" href="https://gitskette.dailitation.xyz/techit/web">GPL-3.0</a>.
                     </p>
                 </div>

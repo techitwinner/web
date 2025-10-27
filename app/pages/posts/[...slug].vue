@@ -32,7 +32,7 @@
                       <p id="hero-desc" class="font-hero-desc">Check the URL; there might be a misspelling, or the post may not actually exist.</p>
                       <NuxtLink class="btn" to="/posts">All posts</NuxtLink>
                     </section>
-                    <img :width="512" class="img-cover" src="https://files.thawia.ng/files/assets/zUJfK8p1i.webp" />
+                    <img :width="512" class="img-cover" src="https://files.techit.win/files/assets/zUJfK8p1i.webp" />
                   </div>
                 </section>
             </section>

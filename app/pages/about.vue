@@ -3,7 +3,7 @@
         <article class="article article-special">
             <section class="web-section web-section-split web-section-big-text">
                 <div class="web-section-pane">
-                    <img width="342" height="342" style="margin-bottom: calc(var(--ui-spacing)*6);" src="https://files.thawia.ng/files/assets/profile/techit/1758801557516.jpeg" alt="Techit Thawiang's avatar.">
+                    <img width="342" height="342" style="margin-bottom: calc(var(--ui-spacing)*6);" src="https://files.techit.win/files/assets/profile/techit/1758801557516.jpeg" alt="Techit Thawiang's avatar.">
                 </div>
                 <div class="web-section-pane">
                     <h1 id="hero" class="font-hero">Hi! I'm Techit.</h1>
@@ -15,9 +15,9 @@
             <section class="web-section web-section-split web-section-big-text">
                 <div class="web-section-pane">
                     <div class="about-me-photo-grid">
-                        <img src="https://files.thawia.ng/files/assets/O1ROgWP51.jpg">
-                        <img src="https://files.thawia.ng/files/assets/7ok7K4Vz9.jpg">
-                        <img src="https://files.thawia.ng/files/assets/LDgzIx5WJ.JPG">
+                        <img src="https://files.techit.win/files/assets/O1ROgWP51.jpg">
+                        <img src="https://files.techit.win/files/assets/7ok7K4Vz9.jpg">
+                        <img src="https://files.techit.win/files/assets/LDgzIx5WJ.JPG">
                     </div>
                 </div>
                 <div class="web-section-pane">
@@ -30,8 +30,8 @@
             <section class="web-section web-section-split web-section-big-text">
                 <div class="web-section-pane">
                     <div class="about-me-photo-grid">
-                        <img src="https://files.thawia.ng/files/assets/gtFliwF2F.jpg">
-                        <img src="https://files.thawia.ng/files/assets/TbQLDYhFp.jpg">
+                        <img src="https://files.techit.win/files/assets/gtFliwF2F.jpg">
+                        <img src="https://files.techit.win/files/assets/TbQLDYhFp.jpg">
                     </div>
                 </div>
                 <div class="web-section-pane">
@@ -47,9 +47,9 @@
             <section class="web-section web-section-split web-section-big-text">
                 <div class="web-section-pane">
                     <div class="about-me-photo-grid">
-                        <img src="https://files.thawia.ng/files/assets/photography/LVlGfUDdm.webp">
-                        <img src="https://files.thawia.ng/files/assets/photography/leH4chv7X.webp">
-                        <img src="https://files.thawia.ng/files/assets/photography/-sElH1ZUi.webp">
+                        <img src="https://files.techit.win/files/assets/photography/LVlGfUDdm.webp">
+                        <img src="https://files.techit.win/files/assets/photography/leH4chv7X.webp">
+                        <img src="https://files.techit.win/files/assets/photography/-sElH1ZUi.webp">
                     </div>
                 </div>
                 <div class="web-section-pane">

@@ -2,7 +2,7 @@
     <main>
         <article class="article">
             <section class="web-section" aria-labelledby="hero" aria-describedby="what-does-he-do?">
-                <img width="240" height="240" style="margin-bottom: calc(var(--ui-spacing)*6);" src="https://files.thawia.ng/files/assets/profile/techit/1758801557516.jpeg" alt="Techit Thawiang's avatar.">
+                <img width="240" height="240" style="margin-bottom: calc(var(--ui-spacing)*6);" src="https://files.techit.win/files/assets/profile/techit/1758801557516.jpeg" alt="Techit Thawiang's avatar.">
                 <h1 id="hero" class="font-hero">Techit Thawiang</h1>
                 <p id="what-does-he-do?" class="font-hero-desc">A 10th grader <span style="color: #0066ff;">hobbyist developer</span> and a <span style="color: #ff6600;">self-hoster</span> who's exploring computer science.</p>
             </section>
@@ -23,14 +23,14 @@
                 <p id="projects-paragraph-2">Let's go take a look of my projects collection!</p>
                 <div class="card-container">
                     <!-- <a target="_blank" href="https://github.com/TechitWinner/warehouse" class="card">
-                        <img src="https://files.thawia.ng/files/assets/warehouse.jpg">
+                        <img src="https://files.techit.win/files/assets/warehouse.jpg">
                         <div class="card-content">
                             <h3>Warehouse</h3>
                             <p title="I planned it to be my API for personal website and other stuff; written in Rust and Axum.">I planned it to be my API for personal website and other stuff; written in Rust and Axum.</p>
                         </div>
                     </a> -->
                     <a target="_blank" href="https://github.com/TechitWinner/web" class="card">
-                        <img src="https://files.thawia.ng/files/assets/web.png">
+                        <img src="https://files.techit.win/files/assets/web.png">
                         <div class="card-content">
                             <h3>Web</h3>
                             <p style="margin-block:0.25em;" title="Nothing much, just this website written in Nuxt (Vue) and some cool CSS.">Nothing much, just this website written in Nuxt (Vue) and some cool CSS.</p>
