@@ -21,6 +21,12 @@ const visible = ref(false)
 const STORAGE_KEY_DISMISSED = 'web_banner_dismissed'
 const STORAGE_KEY_LAST_ID = 'web_banner_last_id'
 
+const props = defineProps<{
+  dataUrl: string;
+}>();
+
+const webBannerDataUrl = props.dataUrl;
+
 function getStorageItem(key: string): string | null {
   if (typeof window === 'undefined') return null
   return localStorage.getItem(key)
@@ -45,7 +51,7 @@ interface WebBannerData {
 
 onMounted(async () => {
   try {
-    const data = await $fetch<WebBannerData>('https://files.techit.win/files/config/web/banner/tmp/index.json')
+    const data = await $fetch<WebBannerData>(webBannerDataUrl)
 
     if (!data) return
 

@@ -10,7 +10,8 @@ export default defineNuxtConfig({
       siteAuthor: process?.env?.NUXT_PUBLIC_SITE_AUTHOR,
       siteName: process?.env?.NUXT_PUBLIC_SITE_NAME,
       twitterUsername: process?.env?.NUXT_PUBLIC_TWITTER_USERNAME,
-      fontUrl: process?.env?.NUXT_PUBLIC_FONTS_URL
+      fontUrl: process?.env?.NUXT_PUBLIC_FONTS_URL,
+      webBannerDataUrl: process?.env?.NUXT_PUBLIC_BANNER_DATA_URL
     }
   },
   modules: ['@nuxt/content', '@nuxtjs/sitemap', '@nuxt/image', '@nuxt/icon'],
