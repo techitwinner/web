@@ -1,11 +1,18 @@
 <script setup lang="ts">
 const currentYear = new Date().getFullYear();
+const props = defineProps<{
+  isCompact?: boolean;
+  isTransparent?: boolean;
+  title?: string;
+  noTitle?: boolean;
+  narrowVery?: boolean;
+}>();
 </script>
 
 <template>
     <footer>
-        <div class="article article-footer">
-            <section class="web-section">
+        <div :class="{'article': true, 'article-footer': true, 'article-footer-no-bg': props.isTransparent}">
+            <section v-if="!props.isCompact" :class="{'web-section': true, 'web-section-narrow-very': props.narrowVery}">
                 <div class="web-footer-links-container-container">
                     <div class="web-footer-links-container" style="margin-right: 4rem;">
                         <h3 class="web-footer-link-title">Site</h3>
@@ -26,10 +33,10 @@ const currentYear = new Date().getFullYear();
                     </div>
                 </div>
             </section>
-            <section class="web-section">
+            <section :class="{'web-section': true, 'web-section-narrow-very': props.narrowVery}">
                 <div>
-                    <p class="web-footer-notice">
-                        Techit Thawiang's Website
+                    <p v-if="!props.noTitle" class="web-footer-notice">
+                        {{props.title || "Techit Thawiang's Website"}}
                     </p>
                     <p class="web-footer-notice">
                         Copyright &copy; Techit Thawiang {{ currentYear }} ({{ currentYear + 543 }}). All rights reserved.<br>

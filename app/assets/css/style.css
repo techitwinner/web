@@ -3,11 +3,13 @@
     --ui-primary: var(--color-deep-dark);
     --ui-container: 64rem;
     --ui-container-narrow: 48rem;
+    --ui-container-narrow-very: 36rem;
     --ui-header-logo-inverted: 1;
     --ui-header-height: calc(var(--ui-spacing)*14);
     --ui-header-height-collapsed: calc(var(--ui-spacing)*12);
 
     --color-surface-container: #f9f9f9;
+    --color-surface-container-glass: #f9f9f9de;
     --color-on-surface-container: #111111;
     --color-inverse-surface-container: #111111;
     --color-on-inverse-surface-container: #f9f9f9;
@@ -40,6 +42,7 @@
 @media screen and (prefers-color-scheme: dark) {
     :root {
         --color-surface-container: #111111;
+        --color-surface-container-glass: #111111de;
         --color-on-surface-container: #eeeeee;
         --color-inverse-surface-container: #eeeeee;
         --color-on-inverse-surface-container: #111111;
@@ -341,6 +344,10 @@ p {
     background: var(--color-inverse-surface-container);
     padding-block: calc(var(--ui-spacing)*12);
 }
+.article.article-footer.article-footer-no-bg {
+    color: inherit;
+    background: transparent;
+}
 .article.article-footer .web-footer-link > a:active  {
     text-decoration-style: solid;
 }
@@ -362,6 +369,9 @@ p {
 }
 .web-section.web-section-narrow {
     max-width: var(--ui-container-narrow);
+}
+.web-section.web-section-narrow-very {
+    max-width: var(--ui-container-narrow-very);
 }
 .about-me-photo-grid {
     display: grid;
@@ -713,7 +723,7 @@ a.btn {
     flex: 3;
 }
 .prose p, li { line-height: 1.5; }
-.prose hr { margin-block: 1em; border: 1px solid var(--color-outline-intense); }
+hr, .prose hr { height: 1px; margin-block: 1em; border: none; border-bottom: 1px solid var(--color-outline-intense); }
 .prose li { margin-block: 1em; }
 .prose h1,h2,h3,h4,h5,h6 {
     font-family: var(--font-serif);
@@ -794,4 +804,34 @@ a.btn {
   padding: 0 calc(var(--ui-spacing)*4);
   margin: 0 auto;
   justify-content: space-between;
+}
+
+.tree-link-card {
+    display: block;
+    padding: calc(var(--ui-spacing)*4) calc(var(--ui-spacing)*6);
+    border-radius: 100px;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    margin-bottom: calc(var(--ui-spacing)*1);
+}
+.tree-link-card:hover {
+    background: var(--color-inverse);
+    color: var(--color-on-inverse);
+}
+.tree-link-card:active {
+    opacity: .8;
+}
+a.tree-link-card {
+    cursor: pointer;
+}
+.frosted-glass-backdrop-dynamic {
+    background: var(--color-surface-container-glass);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -10;
+    backdrop-filter: blur(36px);
+    -webkit-backdrop-filter: (36px);
 }

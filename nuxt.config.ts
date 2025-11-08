@@ -11,7 +11,8 @@ export default defineNuxtConfig({
       siteName: process?.env?.NUXT_PUBLIC_SITE_NAME,
       twitterUsername: process?.env?.NUXT_PUBLIC_TWITTER_USERNAME,
       fontUrl: process?.env?.NUXT_PUBLIC_FONTS_URL,
-      webBannerDataUrl: process?.env?.NUXT_PUBLIC_BANNER_DATA_URL
+      webBannerDataUrl: process?.env?.NUXT_PUBLIC_BANNER_DATA_URL,
+      treeJsonUrl: process?.env?.NUXT_PUBLIC_TREE_JSON_URL
     }
   },
   modules: ['@nuxt/content', '@nuxtjs/sitemap', '@nuxt/image', '@nuxt/icon'],
@@ -102,5 +103,6 @@ export default defineNuxtConfig({
     "*": { experimentalNoScripts: true }, // one level deep, render all pages statically
     "posts/*": { experimentalNoScripts: true }, // one level deep, render all post pages statically
     "fonts": { experimentalNoScripts: false }, // except /fonts
+    "tree/*": { experimentalNoScripts: false }, // except /tree
   }
 })
