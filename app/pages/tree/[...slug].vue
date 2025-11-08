@@ -10,7 +10,7 @@
             <section class="web-section web-section-narrow-very">
                 <div v-for="link in tree.links">
                     <a class="tree-link-card" :href="link.url" v-if="link.enabled && !link.separate">
-                        {{ link.name }}
+                        <span v-if="link.ico" class="material-symbols-outlined">{{ link.ico }}</span>{{ link.name }}
                     </a>
                     <hr v-else-if="link.separate">
                 </div>
@@ -46,33 +46,37 @@ interface TreeUserDataLink {
     url: string
 }
 
-const tree = ref<TreeUserData | null>(null)
+const { data: tree, error } = await useAsyncData('treeUserData', () =>
+  $fetch<TreeUserData>(treeUserData)
+)
 
-onMounted(async () => {
-  try {
-    const data = await $fetch<TreeUserData>(treeUserData)
+if (error.value) {
+  console.error('User tree fetch failed:', error.value)
+}
 
-    if (!data) return
+if (error.value?.statusCode === 404) {
+  await navigateTo('/tree')
+}
 
-    tree.value = data
-
-  } catch (err) {
-    console.error('User tree fetch failed:', err)
-  }
-  document.body.style.backgroundImage = `url('${tree.value?.background}')`
-
+if (tree.value) {
   useSeoMeta({
     titleTemplate: "%s",
-    title: tree.value?.name + "'s Link",
-    description: tree.value?.desc,
-    ogTitle: tree.value?.name,
-    ogDescription: tree.value?.desc,
+    title: `${tree.value.name}'s Link`,
+    description: tree.value.desc,
+    ogTitle: tree.value.name,
+    ogDescription: tree.value.desc,
     ogSiteName: config.public.siteName,
     twitterCard: 'summary_large_image',
-    twitterTitle: tree.value?.name,
-    twitterDescription: tree.value?.desc,
+    twitterTitle: tree.value.name,
+    twitterDescription: tree.value.desc,
     twitterSite: config.public.twitterUsername
   })
+}
+
+onMounted(() => {
+  if (tree.value?.background) {
+    document.body.style.backgroundImage = `url('${tree.value.background}')`
+  }
 })
 
 definePageMeta({

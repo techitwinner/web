@@ -813,10 +813,19 @@ hr, .prose hr { height: 1px; margin-block: 1em; border: none; border-bottom: 1px
     background: var(--color-primary);
     color: var(--color-on-primary);
     margin-bottom: calc(var(--ui-spacing)*1);
+    display: flex;
+    align-items: center;
+}
+.tree-link-card .material-symbols-outlined {
+    margin-right: calc(var(--ui-spacing)*1);
 }
 .tree-link-card:hover {
     background: var(--color-inverse);
     color: var(--color-on-inverse);
+}
+.tree-link-card:hover .material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1
 }
 .tree-link-card:active {
     opacity: .8;
@@ -834,4 +843,12 @@ a.tree-link-card {
     z-index: -10;
     backdrop-filter: blur(36px);
     -webkit-backdrop-filter: (36px);
+}
+pre.codebox {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: calc(var(--ui-spacing)*3);
+    border-radius: calc(var(--ui-spacing)*2);
+    background: var(--color-inverse-surface-container);
+    color: var(--color-on-inverse-surface-container);
 }
