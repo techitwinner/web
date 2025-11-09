@@ -16,7 +16,7 @@
                 <h3>Features</h3>
                 <p>Currently there aren't much features, to put it easy I only offer custom background image, custom profile image and custom open graph cover image <small>(this can leave blank but will results in no cover image for social media embeds or cards)</small> for now.</p>
                 <h3>Slug</h3>
-                <p>This is obvious and simplest thing in the system, it is named after what you'd like, think of a username you would like to use. For example I want <NuxtLink class="link" href="/tree/techit">https://techit.win/tree/techit</NuxtLink>, just tell me you want <code>techit</code> as your slug.</p>
+                <p>This is obvious and simplest thing in the system, it is named after what you'd like, think of a username you would like to use. For example I want <a class="link" href="/tree/techitwinner">https://techit.win/tree/techitwinner</a>, just tell me you want <code>techit</code> as your slug.</p>
                 <img src="https://files.techit.win/files/assets/sdfasdf.png">
                 <h3>JSON structure</h3>
                 <p>This is very messed up because I'm very lazy to make a proper API and database than to make a simple JSON static file.</p>

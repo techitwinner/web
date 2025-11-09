@@ -15,6 +15,9 @@
                     <hr v-else-if="link.separate">
                 </div>
             </section>
+            <section class="web-section web-section-narrow-very">
+              <a class="btn btn-sm" href="/tree">Get your own Tree</a>
+            </section>
         </article>
     </main>
 </template>
