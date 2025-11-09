@@ -100,7 +100,7 @@ if (tree.value) {
     link: [
       {
         rel: "canonical",
-        href: config.public.baseUrl + '/' + route.params.slug
+        href: config.public.baseUrl + '/tree/' + route.params.slug
       },
       {
         rel: 'icon',
