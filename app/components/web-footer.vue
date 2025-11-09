@@ -29,6 +29,7 @@ const props = defineProps<{
                         <h3 class="web-footer-link-title">More</h3>
                         <ul class="web-footer-links">
                             <li class="web-footer-link"><NuxtLink href="/services">Services</NuxtLink></li>
+                            <li class="web-footer-link"><NuxtLink href="/tree">Tree</NuxtLink></li>
                         </ul>
                     </div>
                 </div>
@@ -43,6 +44,7 @@ const props = defineProps<{
                         PGP/GPG Key: <code style="font-size: 12px;"><a href="https://files.techit.win/files/Techit Thawiang_0xE649CED321557334_public.asc">4116 33BE 1B4A 19D4 8D77  9ADE E649 CED3 2155 7334</a></code><br>
                         Powered by <a class="link" href="https://dailitation.xyz">dailitation.xyz</a>; Website is available under <a class="link" href="https://gitskette.dailitation.xyz/techit/web">GPL-2.0</a>.
                     </p>
+                    <p class="web-footer-notice"><NuxtLink href="/legal/privacy-policy">Privacy Policy</NuxtLink> | <NuxtLink href="/legal/cookies-policy">Cookies Policy</NuxtLink> | <NuxtLink href="/legal/terms-of-services">Terms of Services</NuxtLink></p>
                 </div>
             </section>
         </div>
