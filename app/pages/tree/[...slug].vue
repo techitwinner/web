@@ -10,13 +10,20 @@
             <section class="web-section web-section-narrow-very">
                 <div v-for="link in tree.links">
                     <a class="tree-link-card" :href="link.url" v-if="link.enabled && !link.separate">
-                        <span v-if="link.ico" class="material-symbols-outlined">{{ link.ico }}</span>{{ link.name }}
+                        <span v-if="link.ico" class="material-symbols-outlined">{{ link.ico }}</span>
+                        <img v-else-if="link.img" class="tree-link-card-img" :src="link.img">
+                        <div v-if="link.name && link.desc" class="tree-link-card-content">
+                          <span>{{ link.name }}</span>
+                          <span class="tree-link-card-content-desc">{{ link.desc }}</span>
+                        </div>
+                        <span v-else-if="link.name">{{ link.name }}</span>
                     </a>
                     <hr v-else-if="link.separate">
                 </div>
             </section>
             <section class="web-section web-section-narrow-very">
               <a class="btn btn-sm" href="/tree">Get your own Tree</a>
+              <p class="web-footer-notice"><a class="link" href="/legal/privacy-policy">Privacy Policy</a> | <a class="link" href="/legal/cookies-policy">Cookies Policy</a> | <a class="link" href="/legal/terms-of-services">Terms of Services</a></p>
             </section>
         </article>
     </main>
@@ -42,6 +49,7 @@ interface TreeUserData {
 interface TreeUserDataLink {
     id: string
     ico: string
+    img: string
     enabled: boolean
     separate: boolean
     name: string
