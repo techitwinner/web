@@ -103,6 +103,7 @@ export default defineNuxtConfig({
     "*": { experimentalNoScripts: true }, // one level deep, render all pages statically
     "posts/*": { experimentalNoScripts: true }, // one level deep, render all post pages statically
     "fonts": { experimentalNoScripts: false }, // except /fonts
-    "tree/*": { experimentalNoScripts: false }, // except /tree
+    "tree": { experimentalNoScripts: false }, // except /tree
+    "tree/*": { experimentalNoScripts: false }, // except /tree/*
   }
 })
