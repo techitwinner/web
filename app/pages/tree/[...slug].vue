@@ -11,7 +11,7 @@
                 <div v-for="link in tree.links">
                     <a class="tree-link-card" :href="link.url" v-if="link.enabled && !link.separate">
                         <span v-if="link.ico" class="material-symbols-outlined">{{ link.ico }}</span>
-                        <img v-else-if="link.img" class="tree-link-card-img" :src="link.img">
+                        <img v-else-if="link.img" width="40" height="40" class="tree-link-card-img" :src="link.img">
                         <div v-if="link.name && link.desc" class="tree-link-card-content">
                           <span>{{ link.name }}</span>
                           <span class="tree-link-card-content-desc">{{ link.desc }}</span>
@@ -30,13 +30,14 @@
 </template>
 
 <script setup lang="ts">
-const config = useRuntimeConfig();
-const route = useRoute();
-const JSON_URL = config.public.treeJsonUrl
-const treeUserData = JSON_URL + route.params.slug + '.json'
+definePageMeta({
+    layout: 'tree'
+})
 
 interface TreeUserData {
   id: string
+  index: boolean
+  twitterCreator: string
   enabled: boolean
   name: string
   desc: string
@@ -57,6 +58,10 @@ interface TreeUserDataLink {
     url: string
 }
 
+const config = useRuntimeConfig();
+const route = useRoute();
+const JSON_URL = config.public.treeJsonUrl
+const treeUserData = JSON_URL + route.params.slug + '.json'
 const { data: tree, error } = await useAsyncData('treeUserData', () =>
   $fetch<TreeUserData>(treeUserData)
 )
@@ -71,16 +76,67 @@ if (error.value?.statusCode === 404) {
 
 if (tree.value) {
   useSeoMeta({
-    titleTemplate: "%s",
+    titleTemplate: '%s',
     title: `${tree.value.name}'s Link`,
     description: tree.value.desc,
-    ogTitle: tree.value.name,
+    ogTitle: `${tree.value.name}'s Link`,
     ogDescription: tree.value.desc,
-    ogSiteName: config.public.siteName,
+    ogSiteName: `${tree.value.name}'s Link`,
     twitterCard: 'summary_large_image',
     twitterTitle: tree.value.name,
     twitterDescription: tree.value.desc,
-    twitterSite: config.public.twitterUsername
+    twitterSite: config.public.twitterUsername,
+    ogImage: tree.value.cover,
+    twitterImage: tree.value.cover,
+    ogImageType: 'image/jpeg',
+    ogLocale: 'en_US',
+    ogType: 'profile',
+    twitterCreator: tree.value.twitterCreator || null,
+    author: tree.value.name || null,
+    keywords: `${tree.value.name}, links, ${tree.value.desc.replace(/\s+/g, ', ')}`,
+  })
+
+  useHead({
+    link: [
+      {
+        rel: "canonical",
+        href: config.public.baseUrl + '/' + route.params.slug
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: tree.value.profile || '/favicon.ico',
+      }
+    ]
+  })
+
+  if (tree.value.index) {
+    useHead({
+      script: [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": tree.value.name,
+            "description": tree.value.desc,
+            "url": config.public.baseUrl + '/' + route.params.slug,
+            "image": tree.value.profile || tree.value.cover,
+            "sameAs": Object.values(tree.value.links || {}).map(l => l.url),
+          }),
+        },
+      ],
+    })
+  }
+}
+
+if (tree.value?.index) {
+  useSeoMeta({
+      robots: "index,follow",
+  })
+} else {
+  useSeoMeta({
+      robots: "noindex,nofollow",
   })
 }
 
@@ -88,14 +144,6 @@ onMounted(() => {
   if (tree.value?.background) {
     document.body.style.backgroundImage = `url('${tree.value.background}')`
   }
-})
-
-definePageMeta({
-    layout: 'tree'
-})
-
-useSeoMeta({
-    robots: "noindex",
 })
 </script>
 
